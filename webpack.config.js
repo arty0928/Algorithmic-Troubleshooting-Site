@@ -12,8 +12,10 @@ module.exports = {
     output: {
         path: __dirname + '/public',
         filename: 'bundle.js',
-        libraryTarget: 'umd',
-        libraryExport: 'default'
+        library: {
+            type: 'umd',
+            export: 'default'
+        }
     },
     mode: 'production' // development, production
 }
