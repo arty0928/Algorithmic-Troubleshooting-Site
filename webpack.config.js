@@ -13,9 +13,10 @@ module.exports = {
         path: __dirname + '/public',
         filename: 'bundle.js',
         library: {
+            name: 'bundle',
             type: 'umd',
             export: 'default'
         }
     },
-    mode: 'production' // development, production
+    mode: 'development' // development, production
 }
