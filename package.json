@@ -2,9 +2,12 @@
   "name": "algorithmic-troubleshooting-site",
   "version": "1.0.0",
   "scripts": {
-    "start": "node app.js"
+    "start": "nodemon --legacy-watch -e html,js app.js"
   },
   "dependencies": {
     "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
   }
 }
