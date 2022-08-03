@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/problem', (req, res)=>{
-    res.send('success');
+    res.json([{title: 'aaa', content: 'bbb'}, {title:'ccc', content: 'ddd'}]);
 });
 
 module.exports = router;
