@@ -20,6 +20,46 @@ return /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./api/api.js":
+/*!********************!*\
+  !*** ./api/api.js ***!
+  \********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"apiURI\": () => (/* binding */ apiURI)\n/* harmony export */ });\nconst apiURI = \"http://localhost:5000/api\";\n\n//# sourceURL=webpack://bundle/./api/api.js?");
+
+/***/ }),
+
+/***/ "./api/problem.js":
+/*!************************!*\
+  !*** ./api/problem.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getProblem\": () => (/* binding */ getProblem)\n/* harmony export */ });\n/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./api */ \"./api/api.js\");\n\nconst problemApiURI = _api__WEBPACK_IMPORTED_MODULE_0__.apiURI + \"/problem\";\nconst getProblem = async () => {\n  try {\n    return await (await fetch(problemApiURI)).text();\n  } catch (e) {\n    return e;\n  }\n};\n\n//# sourceURL=webpack://bundle/./api/problem.js?");
+
+/***/ }),
+
+/***/ "./components/Problem/Problem.js":
+/*!***************************************!*\
+  !*** ./components/Problem/Problem.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _ProblemTable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ProblemTable */ \"./components/Problem/ProblemTable.js\");\n\n\n\nconst Problem = () => {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_ProblemTable__WEBPACK_IMPORTED_MODULE_1__[\"default\"], null));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Problem);\n\n//# sourceURL=webpack://bundle/./components/Problem/Problem.js?");
+
+/***/ }),
+
+/***/ "./components/Problem/ProblemTable.js":
+/*!********************************************!*\
+  !*** ./components/Problem/ProblemTable.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _api_problem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../api/problem */ \"./api/problem.js\");\n\n\n\nconst ProblemTable = () => {\n  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(_ => {\n    (0,_api_problem__WEBPACK_IMPORTED_MODULE_1__.getProblem)().then(res => console.log(res));\n  }, []);\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"table\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"thead\", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"tbody\", null));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ProblemTable);\n\n//# sourceURL=webpack://bundle/./components/Problem/ProblemTable.js?");
+
+/***/ }),
+
 /***/ "./components/UserButton.js":
 /*!**********************************!*\
   !*** ./components/UserButton.js ***!
@@ -36,7 +76,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ \"./node_modules/react-dom/client.js\");\n/* harmony import */ var _UserButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./UserButton */ \"./components/UserButton.js\");\n\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n  React: (react__WEBPACK_IMPORTED_MODULE_0___default()),\n  ReactDOM: react_dom_client__WEBPACK_IMPORTED_MODULE_1__,\n  UserButton: _UserButton__WEBPACK_IMPORTED_MODULE_2__[\"default\"]\n});\n\n//# sourceURL=webpack://bundle/./components/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ \"./node_modules/react-dom/client.js\");\n/* harmony import */ var _UserButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./UserButton */ \"./components/UserButton.js\");\n/* harmony import */ var _Problem_Problem__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Problem/Problem */ \"./components/Problem/Problem.js\");\n\n\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n  React: (react__WEBPACK_IMPORTED_MODULE_0___default()),\n  ReactDOM: react_dom_client__WEBPACK_IMPORTED_MODULE_1__,\n  UserButton: _UserButton__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n  Problem: _Problem_Problem__WEBPACK_IMPORTED_MODULE_3__[\"default\"]\n});\n\n//# sourceURL=webpack://bundle/./components/index.js?");
 
 /***/ }),
 

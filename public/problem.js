@@ -1,4 +1,4 @@
 import './bundle.js';
-const {ReactDOM, UserButton} = bundle;
-const userButton = ReactDOM.createRoot(document.getElementById('user-button'));
-userButton.render(UserButton());
+const {ReactDOM, Problem} = bundle;
+const problem = ReactDOM.createRoot(document.getElementById('problem'));
+problem.render(Problem());
