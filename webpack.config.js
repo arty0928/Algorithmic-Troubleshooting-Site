@@ -1,4 +1,4 @@
-function createConfig(type, path) {
+function createConfig(type, path, entry) {
     return {
         entry: './components/index.js',
         module: {
@@ -11,20 +11,23 @@ function createConfig(type, path) {
             }]
         },
         output: {
-            path: __dirname + path,
+            path: __dirname + '/public',
             filename: 'bundle.js',
             library: {
                 name: 'bundle',
-                type: type,
+                type: 'umd',
                 export: 'default'
             }
         },
-        externals: { react: 'react' },
+        resolve: {
+            alias: {
+              'react': __dirname + '/node_modules/react',
+            }
+          },
         mode: 'development' // development, production
     };
 }
 
 module.exports = [
-    createConfig('umd', '/public'),
-    createConfig('commonjs2', '/routes')
+    createConfig()
 ];

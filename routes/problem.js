@@ -1,8 +1,7 @@
 const ReactDOMServer = require('react-dom/server');
 const { Router } = require('express');
 const router = Router();
-const { bundle } = require('./bundle');
-const { Problem } = bundle;
+const Problem = require('../babel/Problem/Problem').default;
 
 router.get('/', (req, res) => {
     res.send(`
