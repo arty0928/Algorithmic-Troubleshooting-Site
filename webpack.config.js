@@ -19,11 +19,6 @@ function createConfig(type, path, entry) {
                 export: 'default'
             }
         },
-        resolve: {
-            alias: {
-              'react': __dirname + '/node_modules/react',
-            }
-          },
         mode: 'development' // development, production
     };
 }
