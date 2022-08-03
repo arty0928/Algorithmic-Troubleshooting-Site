@@ -6,17 +6,7 @@
  * or disable the default devtool with "devtool: false".
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("react"));
-	else if(typeof define === 'function' && define.amd)
-		define(["react"], factory);
-	else if(typeof exports === 'object')
-		exports["bundle"] = factory(require("react"));
-	else
-		root["bundle"] = factory(root["react"]);
-})(self, (__WEBPACK_EXTERNAL_MODULE_react__) => {
-return /******/ (() => { // webpackBootstrap
+/******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
@@ -136,7 +126,7 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
   \************************/
 /***/ ((module) => {
 
-module.exports = __WEBPACK_EXTERNAL_MODULE_react__;
+module.exports = require("react");
 
 /***/ })
 
@@ -213,9 +203,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_react__;
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	var __webpack_exports__ = __webpack_require__("./components/index.js");
-/******/ 	__webpack_exports__ = __webpack_exports__["default"];
+/******/ 	module.exports.bundle = __webpack_exports__["default"];
 /******/ 	
-/******/ 	return __webpack_exports__;
 /******/ })()
 ;
-});
