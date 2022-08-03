@@ -5,4 +5,8 @@ router.get('/', (req, res) => {
     res.send('hi');
 });
 
+router.get('/problem', (req, res)=>{
+    res.send('success');
+});
+
 module.exports = router;
