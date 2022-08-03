@@ -1,9 +1,8 @@
 import {apiURI} from './api';
-const problemApiURI = apiURI + "/problem";
 
 export const getProblem = async () => {
     try {
-        return await (await fetch(problemApiURI)).text();
+        return await (await fetch(apiURI + "/problem")).text();
     } catch(e) {
         return e;
     }
