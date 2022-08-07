@@ -1,7 +1,8 @@
 import React from 'react';
+import Table from 'react-bootstrap/Table';
 
 const ProblemTable = ({problemHeader, problemList}) => {
-    return <table>
+    return <Table bordered>
         <thead>
             <tr>{problemHeader.map((val, index)=>
                 <td key={index}>{val}</td>
@@ -14,7 +15,7 @@ const ProblemTable = ({problemHeader, problemList}) => {
                 <td><a href=''>{val.content}</a></td>
             </tr>
         )}</tbody>
-    </table>;
+    </Table>;
 };
 
 export default ProblemTable;
