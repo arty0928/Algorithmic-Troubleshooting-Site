@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Problem from './Problem/Problem';
+import ProblemBoard from './ProblemBoard/ProblemBoard';
 
-export default {React, ReactDOM, Problem};
+export default {React, ReactDOM, ProblemBoard};
