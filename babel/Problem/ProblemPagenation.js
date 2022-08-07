@@ -9,7 +9,7 @@ const ProblemPagenation = ({
 
     for (let i = 1; i <= pageNumber; i++) list.push( /*#__PURE__*/React.createElement(Pagination.Item, {
       key: i,
-      href: "/"
+      href: `/problem/${i}`
     }, i));
 
     return list;

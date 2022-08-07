@@ -1,1 +1,1 @@
-export default apiURI = "http://localhost:5000/api";
+export const apiURI = "http://localhost:5000/api";

@@ -19,14 +19,14 @@
 return /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./api/api.js":
-/*!********************!*\
-  !*** ./api/api.js ***!
-  \********************/
+/***/ "./api/apiURI.js":
+/*!***********************!*\
+  !*** ./api/apiURI.js ***!
+  \***********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"apiURI\": () => (/* binding */ apiURI)\n/* harmony export */ });\nconst apiURI = \"http://localhost:5000/api\";\n\n//# sourceURL=webpack://bundle/./api/api.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"apiURI\": () => (/* binding */ apiURI)\n/* harmony export */ });\nconst apiURI = \"http://localhost:5000/api\";\n\n//# sourceURL=webpack://bundle/./api/apiURI.js?");
 
 /***/ }),
 
@@ -37,7 +37,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getProblemAPI\": () => (/* binding */ getProblemAPI)\n/* harmony export */ });\n/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./api */ \"./api/api.js\");\n\nconst getProblemAPI = async () => {\n  try {\n    const res = await fetch(_api__WEBPACK_IMPORTED_MODULE_0__.apiURI + \"/problem\");\n    const json = await res.json();\n    return json;\n  } catch (e) {\n    return e;\n  }\n};\n\n//# sourceURL=webpack://bundle/./api/problem.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getProblemAPI\": () => (/* binding */ getProblemAPI)\n/* harmony export */ });\n/* harmony import */ var _apiURI__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./apiURI */ \"./api/apiURI.js\");\n\nconst getProblemAPI = async () => {\n  try {\n    const res = await fetch(_apiURI__WEBPACK_IMPORTED_MODULE_0__.apiURI + \"/problem\");\n    const json = await res.json();\n    return json;\n  } catch (e) {\n    return e;\n  }\n};\n\n//# sourceURL=webpack://bundle/./api/problem.js?");
 
 /***/ }),
 
