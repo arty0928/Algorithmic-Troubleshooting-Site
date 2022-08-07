@@ -10,6 +10,7 @@ router.get('/', (req, res) => {
         <html>
             <head>
                 <title></title>
+                <link href="./css/bootstrap.min.css" rel="stylesheet">
             </head>
             <body>
                 <div id="root">${ReactDOMServer.renderToString(React.createElement(Problem))}</div>
