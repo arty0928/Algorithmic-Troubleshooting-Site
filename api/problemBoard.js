@@ -1,6 +1,6 @@
 import {apiURI} from './apiURI';
 
-export const getProblemAPI = async () => {
+export const getProblemBoardAPI = async () => {
     try {
         const res = await fetch(apiURI + "/problem");
         const json = await res.json();
