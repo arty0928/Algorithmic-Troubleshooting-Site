@@ -1,3 +1,4 @@
+const React = require('react');
 const ReactDOMServer = require('react-dom/server');
 const { Router } = require('express');
 const router = Router();
@@ -11,7 +12,12 @@ router.get('/', (req, res) => {
                 <title></title>
             </head>
             <body>
-                <div id="root">${ReactDOMServer.renderToString(Problem())}</div>
+                <div id="root">${ReactDOMServer.renderToString(React.createElement(Problem))}</div>
+                <script type="module">
+                    import './bundle.js';
+                    const {React, ReactDOM, Problem} = bundle;
+                    const root = ReactDOM.hydrateRoot(document.getElementById('root'), React.createElement(Problem));
+                </script> 
             </body>
         </html>
     `);
