@@ -1,16 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { getProblemAPI } from '../../api/problem';
+import React from 'react';
 
-const ProblemTable = () => {
-  const [problem, setProblem] = useState([]);
-  useEffect(_ => {
-    getProblemAPI().then(val => {
-      setProblem([...problem, ...val]);
-    }).catch(console.error);
-  }, []);
-  return /*#__PURE__*/React.createElement("table", null, /*#__PURE__*/React.createElement("thead", null), /*#__PURE__*/React.createElement("tbody", null, problem.map((val, index) => /*#__PURE__*/React.createElement("tr", {
+const ProblemTable = ({
+  problemHeader,
+  problemList
+}) => {
+  return /*#__PURE__*/React.createElement("table", null, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, problemHeader.map((val, index) => /*#__PURE__*/React.createElement("td", {
     key: index
-  }, /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("a", null, val.title)), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("a", null, val.content))))));
+  }, val)))), /*#__PURE__*/React.createElement("tbody", null, problemList.map((val, index) => /*#__PURE__*/React.createElement("tr", {
+    key: index
+  }, /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("a", {
+    href: ""
+  }, val.title)), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("a", {
+    href: ""
+  }, val.content))))));
 };
 
 export default ProblemTable;

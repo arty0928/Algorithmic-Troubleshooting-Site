@@ -1,19 +1,17 @@
-import React, {useState, useEffect} from 'react';
-import {getProblemAPI} from '../../api/problem';
+import React from 'react';
 
-const ProblemTable = () => {
-    const [problem, setProblem] = useState([]);
-    useEffect(_=>{
-        getProblemAPI()
-            .then(val=>{setProblem( [...problem, ...val] );})
-            .catch(console.error);
-    }, []);
+const ProblemTable = ({problemHeader, problemList}) => {
     return <table>
-        <thead></thead>
-        <tbody>{problem.map((val, index)=>
+        <thead>
+            <tr>{problemHeader.map((val, index)=>
+                <td key={index}>{val}</td>
+            )}    
+            </tr>
+        </thead>
+        <tbody>{problemList.map((val, index)=>
             <tr key={index}>
-                <td><a>{val.title}</a></td>
-                <td><a>{val.content}</a></td>
+                <td><a href=''>{val.title}</a></td>
+                <td><a href=''>{val.content}</a></td>
             </tr>
         )}</tbody>
     </table>;
