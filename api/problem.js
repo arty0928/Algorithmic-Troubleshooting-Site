@@ -1,4 +1,4 @@
-import {apiURI} from './api';
+import {apiURI} from './apiURI';
 
 export const getProblemAPI = async () => {
     try {
