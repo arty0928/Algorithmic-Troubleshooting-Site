@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="page4-2.css">
+
+</head>
+<body>
+    <header>
+        <!-- 메인 화면의 헤더를 그대로 사용 -->
+    </header>
+    
+
+    <nav class="navigation">
+        <ul class="navigation-menu">
+            <li id="problem_number"><a href="./page4-1.html">11478번</a></li>
+            <li id="example_solution"><a href="./page4-2.html">예시 풀이</a></li>
+        </ul>
+    </nav>
+
+
+    <section class="section">
+        <input type="radio" name="tabmenu" id="tab1" checked>
+        <label for="tab1">c++</label>
+        <input type="radio" name="tabmenu" id="tab2" checked>
+        <label for="tab2">java</label>
+        <input type="radio" name="tabmenu" id="tab3" checked>
+        <label for="tab3">python</label>
+
+        <div class="conbox con1" id="code1">
+            <p>
+                코드.................
+            </p>
+        </div>
+        <div class="conbox con2">
+            <p>
+            import java.util.*;<br><br>
+            public class Main{<br>
+                public static void main(String args[]){<br>
+                    Scanner sc = new Scanner(System.in);<br>
+                    String s = sc.next();<br>
+                    int strlen=s.length();<br>
+                    String a [] = new String [strlen];<br>
+                    for(int i=0;i<strlen;i++) {<br>
+                        a[i]=s.substring(i);<br>
+                    }<br>
+                    Arrays.sort(a);<br>
+                    int lcs=0;<br>
+                    for(int i=1;i<strlen;i++) {<br>
+                        int t=0;<br>
+                        while(a[i].charAt(t) == a[i-1].charAt(t)) {<br>
+                            lcs++;<br>
+                            t++;<br>
+                            if(t>=a[i].length() || t>=a[i-1].length())<br>
+                                break;<br>
+                        }
+                        
+                    }
+                strlen=(strlen*(strlen+1))/2;
+                System.out.println(strlen-lcs);
+                }
+            }
+            </p>
+        </div>
+        <div class="conbox con3">
+            <p>
+            def sol(s: str) -> int:<br>
+            s_len = len(s)<br>
+            return sum(len({s[i:i+gap] for i in range(s_len+1-gap)}) for gap in range(1, s_len+1))<br>
+            print(sol(input()))<br>
+            </p>
+        </div>
+    </section>
+
+
+    <footer>
+        <!-- 메인 화면의 푸터를 그대로 사용 -->
+    </footer>
+
+</body>
+</html>
+
+
+
