@@ -6,7 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="/css/problem/solution.css">
-
+    <style>
+        .editor {
+            border-radius: 6px;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+            font-family: 'Source Code Pro', monospace;
+            font-size: 14px;
+            font-weight: 400;
+            height: 340px;
+            letter-spacing: normal;
+            line-height: 20px;
+            padding: 10px;
+            tab-size: 4;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -75,11 +88,26 @@
         </div>
     </section>
 
+    <div class="editor language-javascript">
+    </div>
+
 
     <footer>
         <!-- 메인 화면의 푸터를 그대로 사용 -->
     </footer>
-
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/javascript.min.js"></script>
+    <script type="module">
+        import {CodeJar} from '/codejar.js';
+        const highlight = editor => {
+            hljs.highlightElement(editor);
+        }
+        const jar = CodeJar(document.querySelector('.editor'), hljs.highlightElement);
+        jar.updateCode('');
+        hljs.configure({ignoreUnescapedHTML: true});
+    </script>
 </body>
 </html>
 
