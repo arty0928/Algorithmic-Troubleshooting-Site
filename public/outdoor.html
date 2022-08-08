@@ -14,9 +14,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <!-- Bootstrap core CSS -->
-    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="/css/bootstrap.min.css" type="text/css" rel="stylesheet">
 
-    <script src="/bootstrap.bundle.min-booy.js"></script>
+    <script src="/bootstrap.bundle.min-boot.js"></script>
 
     <script>
         let page = 0;
@@ -31,7 +32,7 @@
 
         function load() {
             //console.log("page:"+page+"category:"+category+"keyword:"+keyword);
-            fetch(`/search?page=${page}&category=${category}&keyword=${keyword}`)
+            fetch(`/outdoor/search?page=${page}&category=${category}&keyword=${keyword}`)
                 .then(response => {
                     return response.json();
                 })
@@ -391,21 +392,21 @@
         
             <div class="row">
                 <div class="team-intro">
-                    <img src="img_team1.jpg">
+                    <img src="img/img_team1.jpg">
                     <h3>박은서</h3>
                     <p>
                         기술경영학과 202012174
                     </p>
                 </div>
                 <div class="team-intro">
-                    <img src="img_team1.jpg">
+                    <img src="img/img_team1.jpg">
                     <h3>강혜리</h3>
                     <p>
                         ...
                     </p>
                 </div>
                 <div class="team-intro">
-                    <img src="img_team1.jpg">
+                    <img src="img/img_team1.jpg">
                     <h3>김진웅</h3>
                     <p>
                         ...
@@ -413,7 +414,7 @@
                 </div>
 
                 <div class="team-intro">
-                    <img src="img_team1.jpg">
+                    <img src="img/img_team1.jpg">
                     <h3>배유빈</h3>
                     <p>
                         ...
@@ -421,7 +422,7 @@
                 </div>
 
                 <div class="team-intro">
-                    <img src="img_team1.jpg">
+                    <img src="img/img_team1.jpg">
                     <h3>김시진</h3>
                     <p>
                         ...
