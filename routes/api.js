@@ -16,9 +16,13 @@ router.get('/problemBoard/:id?', (req, res)=>{
     ]);
 });
 
-router.get('/problem/:id?', (req, res) => {
+router.get('/problem/:id?', (req, res, next) => {
     const problemId = req.params.id === undefined ? 1 : Number(req.params.id);
-    res.json(probleminfo[problemId]);
+    const problem = probleminfo[problemId];
+    if (problem === undefined) return next('problem not exist');
+    res.json({status: "success", content: probleminfo[problemId]});
+}, (err, req, res, next) => {
+    res.json({status: "error", content: err});
 });
 
 module.exports = router;

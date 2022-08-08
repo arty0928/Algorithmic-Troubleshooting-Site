@@ -5,8 +5,12 @@ const {Router} = require('express');
 const router = Router();
 
 const getProblemAPI = async (id) => {
-    const res = await axios.get(apiURI + `/problem/${id}`);
-    return res.data;
+    try {
+        const res = await axios.get(apiURI + `/problem/${id}`);
+        return res.data;
+    } catch(e) {
+        return e;
+    }
 };
 
 router.get('/:id', (req, res) => {
@@ -15,13 +19,17 @@ router.get('/:id', (req, res) => {
             console.log(err);
             res.send('cannot get template file');
         } else {
-            getProblemAPI(req.params.id).then(val => {
-                data = data.replace(/{{problem_number}}/g, val.problem_number)
-                           .replace(/{{problem_title}}/g, val.problem_title)
-                           .replace(/{{problem_header_time}}/g, val.problem_header.time)
-                res.send(data);
-            });
-            
+            getProblemAPI(req.params.id)
+                .then(val => {
+                    if (val.status === "error") res.send(val.content);
+                    else {
+                        const content = val.content;
+                        data = data.replace(/{{problem_number}}/g, content.problem_number)
+                            .replace(/{{problem_title}}/g, content.problem_title)
+                            .replace(/{{problem_header_time}}/g, content.problem_header.time)
+                        res.send(data);
+                    }
+                });
         }
     });
 });
