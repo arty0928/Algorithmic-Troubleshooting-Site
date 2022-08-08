@@ -6,6 +6,7 @@
     "build": "npx webpack && babel components -d babel"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "bootstrap": "^5.2.0",
     "cors": "^2.8.5",
     "express": "^4.18.1",

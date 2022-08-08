@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="/css/problem.css">
+    <link rel="stylesheet" type="text/css" href="/css/problem/problem.css">
 
 </head>
 <body>
@@ -16,14 +16,14 @@
 
     <nav class="navigation">
         <ul class="navigation-menu">
-            <li id="problem_number"><a href="./problem.html">11478번</a></li>
+            <li id="problem_number"><a href="./problem.html">{{problem_number}}</a></li>
             <li id="example_solution"><a href="./solution.html">예시 풀이</a></li>
         </ul>
     </nav>
 
     <section class="section1">
         <div class="section1-problem_information">
-            <h1 class="problem_information1">서로 다른 부분 문자열의 개수</h2>
+            <h1 class="problem_information1">{{problem_title}}</h2>
             <table class="problem_information2">
                 <thead id="row1" style="width: 20%;">
                     <th>시간 제한</th>
@@ -34,7 +34,7 @@
                     <th>정답 비율</th>
                 </thead>
                 <tbody>
-                    <th>1초</th>
+                    <th>{{problem_header_time}}</th>
                     <th>512MB</th>
                     <th>7847</th>
                     <th>4721</th>
