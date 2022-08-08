@@ -27,9 +27,24 @@ router.get('/:id', (req, res) => {
                         data = data.replace(/{{problem_number}}/g, content.problem_number)
                             .replace(/{{problem_title}}/g, content.problem_title)
                             .replace(/{{problem_header_time}}/g, content.problem_header.time)
+                            .replace(/{{link_problem}}/g, `/problem/${req.params.id}`)
+                            .replace(/{{link_solution}}/g, `/problem/${req.params.id}/solution`);
                         res.send(data);
                     }
                 });
+        }
+    });
+});
+
+router.get('/:id/solution', (req, res) => {
+    fs.readFile(__dirname + '/template/solution.html', 'utf8', (err, data) => {
+        if (err) {
+            console.log(err);
+            res.send('cannot get template file');
+        } else {
+            data = data.replace(/{{link_problem}}/g, `/problem/${req.params.id}`)
+                       .replace(/{{link_solution}}/g, `/problem/${req.params.id}/solution`);
+            res.send(data);
         }
     });
 });
