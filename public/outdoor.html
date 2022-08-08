@@ -14,9 +14,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <!-- Bootstrap core CSS -->
-    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <script src="/bootstrap.bundle.min-booy.js"></script>
 
     <script>
         let page = 0;
@@ -31,7 +28,7 @@
 
         function load() {
             //console.log("page:"+page+"category:"+category+"keyword:"+keyword);
-            fetch(`/search?page=${page}&category=${category}&keyword=${keyword}`)
+            fetch(`/outdoor/search?page=${page}&category=${category}&keyword=${keyword}`)
                 .then(response => {
                     return response.json();
                 })

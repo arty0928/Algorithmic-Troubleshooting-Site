@@ -43,7 +43,7 @@ router.get("/search", function(req,res){
         res.status(400).send("페이지 값을 넣어주세요");
         return;
     }
-    console.log(req.query);
+    //console.log(req.query);
 
     fs.readFile("models/product.json", 'utf8', function(error, product){
         if(error){
