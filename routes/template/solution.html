@@ -105,7 +105,12 @@
             hljs.highlightElement(editor);
         }
         const jar = CodeJar(document.querySelector('.editor'), hljs.highlightElement);
-        jar.updateCode('');
+        const link = document.location.href.split('/');
+        const id = link[link.length-2];
+        fetch(`/api/problem/${id}`).then(res=>res.json()).then(val=>{
+            jar.updateCode(val.content.solution.code);
+        }).catch(console.err);
+        
         hljs.configure({ignoreUnescapedHTML: true});
     </script>
 </body>

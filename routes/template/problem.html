@@ -24,67 +24,37 @@
     <section class="section1">
         <div class="section1-problem_information">
             <h1 class="problem_information1">{{problem_title}}</h2>
-            <table class="problem_information2">
-                <thead id="row1" style="width: 20%;">
-                    <th>시간 제한</th>
-                    <th>메모리 제한</th>
-                    <th>제출</th>
-                    <th>정답</th>
-                    <th>맞힌 사람</th>
-                    <th>정답 비율</th>
-                </thead>
-                <tbody>
-                    <th>{{problem_header_time}}</th>
-                    <th>512MB</th>
-                    <th>7847</th>
-                    <th>4721</th>
-                    <th>3764</th>
-                    <th>62.619%</th>
-                </tbody>
-            </table>
         </div>
 
         <div class="section1-problem_discription">
             <h2 class="problem_discription1">문제 설명</h2>
-            <p class="problem_discription2">문자열 S가 주어졌을 때, S의 서로 다른 부분 문자열의 개수를 구하는 프로그램을 작성하시오.<br>
-                부분 문자열은 S에서 연속된 일부분을 말하며, 길이가 1보다 크거나 같아야 한다.<br>             
-                예를 들어, ababc의 부분 문자열은 a, b, a, b, c, ab, ba, ab, bc, aba, bab, abc, abab, babc, ababc가 있고, 서로 다른것의 개수는 12개이다.</p>
+            <p class="problem_discription2">{{problem_description}}</p>
         </div>
 
         <div class="section1-problem_input">
             <h2 class="problem_input1">입력 조건</h2>
-            <p class="problem_input2">첫째 줄에 문자열 S가 주어진다. S는 알파벳 소문자로만 이루어져 있고, 길이는 1000 이하이다.</p>
+            <p class="problem_input2">{{problem_input_description}}</p>
         </div>
 
         <div class="section1-problem_output">
             <h2 class="problem_output1">출력 조건</h2>
-            <p class="problem_output2">첫째 줄에 S의 서로 다른 부분 문자열의 개수를 출력한다.</p>
+            <p class="problem_output2">{{problem_output_description}}</p>
         </div>
 
         <div class="section1-problem_example_input">
             <h2 class="problem_example_input1">예제 입력</h2>
-            <pre class="problem_example_input2">ababc</pre>
+            <pre class="problem_example_input2">{{problem_input_example}}</pre>
         </div>
 
         <div class="section1-problem_example_output">
             <h2 class="problem_example_output1">예제 출력</h2>
-            <pre class="problem_example_output2">12</pre>
-        </div>
-
-        <div class="section1-problem_algorithm">
-            <h2 class="problem_algorithm1">알고리즘 분류</h2>
-            <ul class="problem_algorithm2">
-                <li>자료구조</li>
-                <li>문자열</li>
-                <li>해시를 사용한 집합과 맵</li>
-                <li>트리를 사용한 집합과 맵</li>
-            </ul>
+            <pre class="problem_example_output2">{{problem_output_example}}</pre>
         </div>
 
         <div class="div-page4_content_source">
             <h2 class="div-h2_page4_content_common">문제 출처</h2>
             <ul>
-                <li>문제를 만든 사람: baekjoon</li>
+                <li>문제를 만든 사람: {{problem_author}}</li>
             </ul>
         </div>
     </section>

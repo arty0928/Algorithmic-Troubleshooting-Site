@@ -26,7 +26,12 @@ router.get('/:id', (req, res) => {
                         const problem = val.content;
                         data = data.replace(/{{problem_number}}/g, `${problem.header.source} ${problem.header.problemId}`)
                             .replace(/{{problem_title}}/g, problem.header.title)
-                            .replace(/{{problem_header_time}}/g, 12)
+                            .replace(/{{problem_description}}/g, problem.content.description)
+                            .replace(/{{problem_input_description}}/g, problem.content.input_description)
+                            .replace(/{{problem_output_description}}/g, problem.content.output_description)
+                            .replace(/{{problem_input_example}}/g, problem.content.input_example)
+                            .replace(/{{problem_output_example}}/g, problem.content.output_example)
+                            .replace(/{{problem_author}}/g, problem.content.author)
                             .replace(/{{link_problem}}/g, `/problem/${req.params.id}`)
                             .replace(/{{link_solution}}/g, `/problem/${req.params.id}/solution`);
                         res.send(data);
