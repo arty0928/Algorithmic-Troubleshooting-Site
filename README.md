@@ -2,6 +2,10 @@
 Algorithmic Troubleshooting Web Site (ESG Team Projects)
 
 ## Usage
+module install
+
+    npm install
+
 build bundle
     
     npm run build
