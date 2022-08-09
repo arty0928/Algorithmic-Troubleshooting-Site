@@ -1,5 +1,5 @@
 import React from 'react';
-const headerWidth = ["10%", "90%"];
+const headerWidth = ["10%", "60%", "10%", "10%", "10%"];
 
 const ProblemBoardTable = ({
   problemBoardHeader,
@@ -17,9 +17,15 @@ const ProblemBoardTable = ({
     key: index
   }, /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("a", {
     href: `/problem/${val.id}`
-  }, val.title)), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("a", {
+  }, val.id)), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("a", {
     href: `/problem/${val.id}`
-  }, val.content))))));
+  }, val.header.title)), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("a", {
+    href: `/problem/${val.id}`
+  }, val.header.rank)), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("a", {
+    href: `/problem/${val.id}`
+  }, val.header.source)), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("a", {
+    href: `/problem/${val.id}`
+  }, val.header.problemId))))));
 };
 
 export default ProblemBoardTable;

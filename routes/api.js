@@ -1,8 +1,7 @@
 const { Router } = require('express');
 const router = Router();
 
-const problem = require('../models/problem');
-const probleminfo = require('../models/probleminfo')
+const problems = require('../models/problem');
 
 router.get('/', (req, res) => {
     res.send('hi');
@@ -10,17 +9,16 @@ router.get('/', (req, res) => {
 
 router.get('/problemBoard/:id?', (req, res)=>{
     const pageId = req.params.id === undefined ? 1 : Number(req.params.id);
-    const pageNumber = problem.length === 0 ? 1 : Math.floor((problem.length - 1) / 10) + 1;
-    res.json([{pageNumber, header: ['문제번호', '문제제목']},
-        ...problem.slice((pageId - 1) * 10, pageId * 10)
-    ]);
+    const pageNumber = problems.length === 0 ? 1 : Math.floor((problems.length - 1) / 10) + 1;
+    const problemList = problems.slice((pageId - 1) * 10, pageId * 10).map(val=>{const {id, header} = val; return {id, header}});
+    res.json([{pageNumber, header: ['번호', '문제제목', "난이도", "출처", '문제번호']}, ...problemList]);
 });
 
 router.get('/problem/:id?', (req, res, next) => {
     const problemId = req.params.id === undefined ? 1 : Number(req.params.id);
-    const problem = probleminfo[problemId];
+    const problem = problems.find(x=>x.id===problemId);
     if (problem === undefined) return next('problem not exist');
-    res.json({status: "success", content: probleminfo[problemId]});
+    res.json({status: "success", content: problem});
 }, (err, req, res, next) => {
     res.json({status: "error", content: err});
 });
