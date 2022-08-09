@@ -21,7 +21,9 @@ const ProblemBoard = () => {
       setProblemBoardPageNumber(header.pageNumber);
     }).catch(e => console.error('getProblemBoardAPI', e));
   }, [id]);
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(ProblemBoardTable, {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement(ProblemBoardTable, {
     problemBoardHeader: problemBoardHeader,
     problemBoardList: problemBoardList
   }), /*#__PURE__*/React.createElement(ProblemBoardPagination, {

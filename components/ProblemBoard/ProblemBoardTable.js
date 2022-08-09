@@ -1,11 +1,12 @@
 import React from 'react';
-import Table from 'react-bootstrap/Table';
+
+const headerWidth = ["10%", "90%"];
 
 const ProblemBoardTable = ({problemBoardHeader, problemBoardList}) => {
-    return <Table bordered>
+    return <table className="table table-bordered">
         <thead>
             <tr>{problemBoardHeader.map((val, index)=>
-                <td key={index}>{val}</td>
+                <td key={index} style={{width: headerWidth[index], fontWeight: "bold"}}>{val}</td>
             )}    
             </tr>
         </thead>
@@ -15,7 +16,7 @@ const ProblemBoardTable = ({problemBoardHeader, problemBoardList}) => {
                 <td><a href={`/problem/${val.id}`}>{val.content}</a></td>
             </tr>
         )}</tbody>
-    </Table>;
+    </table>;
 };
 
 export default ProblemBoardTable;

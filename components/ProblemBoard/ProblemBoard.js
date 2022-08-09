@@ -21,10 +21,10 @@ const ProblemBoard = () => {
             })
             .catch(e=>console.error('getProblemBoardAPI', e));
     }, [id]);
-    return <>
+    return <div className="container">
             <ProblemBoardTable problemBoardHeader={problemBoardHeader} problemBoardList={problemBoardList}/>
             <ProblemBoardPagination problemBoardPageNumber={problemBoardPageNumber} id={id}/>
-        </>;
+        </div>;
 };
 
 const ProblemBoardRouter = () => {
