@@ -1,0 +1,32 @@
+[
+    {"id": 1, "header": { "title": "서로 다른 부분 문자열의 개수", "rank": "silver3", "source": "backjoon", "problemId": "11478번"}, "content": {
+        "description": "문자열 S가 주어졌을 때, S의 서로 다른 부분 문자열의 개수를 구하는 프로그램을 작성하시오.<br>부분 문자열은 S에서 연속된 일부분을 말하며, 길이가 1보다 크거나 같아야 한다.<br>예를 들어, ababc의 부분 문자열은 a, b, a, b, c, ab, ba, ab, bc, aba, bab, abc, abab, babc, ababc가 있고, 서로 다른것의 개수는 12개이다.",
+        "input_description": "첫째 줄에 문자열 S가 주어진다. S는 알파벳 소문자로만 이루어져 있고, 길이는 1000 이하이다.",
+        "output_description": "첫째 줄에 S의 서로 다른 부분 문자열의 개수를 출력한다.",
+        "input_example": "ababc",
+        "output_example": "12",
+        "author": "baekjoon"
+    }, "solution": {
+        "code": "const a;"
+    }},
+    {"id": 2, "header": { "title": "1aa", "rank": "bronze5", "source": "backjoon", "problemId": ""}, "content": {
+        "main": "1bb"}},
+    {"id": 3, "header": { "title": "1aa", "rank": "bronze5", "source": "backjoon", "problemId": ""}, "content": {
+        "main": "1bb"}},
+    {"id": 4, "header": { "title": "1aa", "rank": "bronze5", "source": "backjoon", "problemId": ""}, "content": {
+        "main": "1bb"}},
+    {"id": 5, "header": { "title": "1aa", "rank": "bronze5", "source": "backjoon", "problemId": ""}, "content": {
+        "main": "1bb"}},
+    {"id": 6, "header": { "title": "1aa", "rank": "bronze5", "source": "backjoon", "problemId": ""}, "content": {
+        "main": "1bb"}},
+    {"id": 7, "header": { "title": "1aa", "rank": "bronze5", "source": "backjoon", "problemId": ""}, "content": {
+        "main": "1bb"}},
+    {"id": 8, "header": { "title": "1aa", "rank": "bronze5", "source": "backjoon", "problemId": ""}, "content": {
+        "main": "1bb"}},
+    {"id": 9, "header": { "title": "1aa", "rank": "bronze5", "source": "backjoon", "problemId": ""}, "content": {
+        "main": "1bb"}},
+    {"id": 10, "header": { "title": "1aa", "rank": "bronze5", "source": "backjoon", "problemId": ""}, "content": {
+        "main": "1bb"}},
+    {"id": 11, "header": { "title": "1aa", "rank": "bronze5", "source": "backjoon", "problemId": ""}, "content": {
+        "main": "1bb"}}
+]

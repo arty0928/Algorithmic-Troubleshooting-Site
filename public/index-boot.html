@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.84.0">
+  <title>Album example · Bootstrap v5.0</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet">
+  <title>인프컬리</title>
+  <script>
+    let page = 0;
+    let category = "";
+    let keyword = "";
+    document.addEventListener('DOMContentLoaded', load);
+    window.onscroll = () => {
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+        load();
+      }
+    };
+
+    function load() {
+      //console.log("page:"+page+"category:"+category+"keyword:"+keyword);
+      fetch(`/search?page=${page}&category=${category}&keyword=${keyword}`)
+        .then(response => {
+          return response.json();
+        })
+        .then(products => {
+          if (products == "") { return; }
+          console.log(products);
+          products.forEach(productJson => {
+            addProduct(productJson);
+          });
+          page = page + 1;
+        })
+    };
+
+    function search() {
+      document.querySelector('#products').innerHTML = "";
+      page = 0
+      load();
+    }
+    function categoryChange(value) {
+      category = value;
+      search();
+    }
+    function keywordChange(value) {
+      keyword = value;
+    }
+    function addExplain(id, title, img, organization, dday, url, category) {
+      const explain = document.createElement('div');
+      explain.innerHTML = `
+            <div>기관</div>
+            <div>${organization}</div>
+
+            <div>제목</div>
+            <div>${title}</div>
+
+            <div>DAY</div>
+            <div>${dday}</div>
+
+            <div>카테고리:</div>
+            <div>${category}</div>`;
+
+      explain.className = 'productEx';
+      document.querySelector('#product' + id).append(explain);
+      console.log(title, img, organization, dday, url, category);
+    }
+
+    function addProduct(productJson) {
+
+      const col = document.createElement('div');
+      col.className = 'col';
+
+      const cardShadowSm = document.createElement('div');
+      cardShadowSm.className = 'car shadow-sm';
+      col.append(cardShadowSm);
+
+      const link = document.createElement('a');
+      link.href = productJson.url;
+      cardShadowSm.append(link);
+
+      const image = document.createElement('img');
+      image.className = 'card-img-top';
+      image.src = productJson.image;
+      link.append(image);
+
+      const cardBody = document.createElement('div');
+      cardBody.className = "card-body";
+      cardShadowSm.append(cardBody);
+
+      const cardName = ""
+
+
+      /**
+  console.log(productJson.image);
+  product.style.backgroundImage = `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url('${productJson.image}')`;
+
+  product.addEventListener("click", function () { addExplain(productJson.id, productJson.title, productJson.image, productJson.organization, productJson.dday, productJson.url, productJson.category); });
+
+  product.innerHTML = productJson.title;
+
+  **/
+
+      document.querySelector('#products').append(col);
+
+    }
+  </script>
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .bd-placeholder-img card-img-top {
+      width: 100%;
+      height: 225px;
+
+    }
+
+    .card-img-top {
+      width: 100%;
+      height: 250px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id=wrapper>
+    <nav id="navi">
+      <a class="menu" href="./index.html">
+        메인
+      </a>
+      <a class="menu" href="./signup.html">
+        회원가입
+      </a>
+      <a class="menu" href="./login.html">
+        로그인
+      </a>
+    </nav>
+
+    <div class="searchbar">
+      <input placeholder="제목 검색" type="text" id="keyword" oninput="keywordChange(this.value)"
+        onkeyup="if(window.event.keyCode==13){search()}" class="bar">
+      <select id="category" size="1" onchange="categoryChange(this.value)" class="bar">
+        <option>all</option>
+        <option>공모전</option>
+        <option>대외활동</option>
+      </select>
+
+      <button onclick="search()" class="bar">검색</button>
+    </div>
+
+
+    <div class="vertical">
+      <div class="horizontal" id="products">
+      </div>
+
+      
+    </div>
+  </div>
+  
+</body>
+
+</html>
