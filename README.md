@@ -6,8 +6,9 @@ module install
 
     npm install
 
-build bundle
+build bundle (dev)
     
+    npm -D install
     npm run build
 
 run server
