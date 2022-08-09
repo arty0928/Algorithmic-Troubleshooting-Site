@@ -1,7 +1,6 @@
 # Algorithmic-Troubleshooting-Site
 Algorithmic Troubleshooting Web Site (ESG Team Projects)
 
-# `branch devHxNi`
 ## Usage
 build bundle
     
