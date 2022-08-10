@@ -45,6 +45,7 @@ const TheadTd = styled.td`
 
 const TbodyA = styled.a`
     text-decoration: none;
+    color: black;
     img {
         width: 1.2em;
         height: 1.2em;
