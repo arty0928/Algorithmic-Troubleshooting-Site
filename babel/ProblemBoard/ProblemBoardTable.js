@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 const headerWidth = ["10%", "60%", "10%", "10%", "10%"];
 const rankImage = {
   bronze5: "/img/rank/1.svg",
@@ -19,12 +20,9 @@ const ProblemBoardTable = ({
 }) => {
   return /*#__PURE__*/React.createElement("table", {
     className: "table table-bordered"
-  }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, problemBoardHeader.map((val, index) => /*#__PURE__*/React.createElement("td", {
+  }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, problemBoardHeader.map((val, index) => /*#__PURE__*/React.createElement(TheadTd, {
     key: index,
-    style: {
-      width: headerWidth[index],
-      fontWeight: "bold"
-    }
+    index: index
   }, val)))), /*#__PURE__*/React.createElement("tbody", null, problemBoardList.map((val, index) => /*#__PURE__*/React.createElement("tr", {
     key: index
   }, /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("a", {
@@ -47,3 +45,7 @@ const ProblemBoardTable = ({
 };
 
 export default ProblemBoardTable;
+const TheadTd = styled.td`
+    width: ${props => headerWidth[props.index]};
+    font-weight: bold;
+`;

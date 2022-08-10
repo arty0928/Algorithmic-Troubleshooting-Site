@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 
 const headerWidth = ["10%", "60%", "10%", "10%", "10%"];
 const rankImage = {
@@ -18,7 +19,7 @@ const ProblemBoardTable = ({problemBoardHeader, problemBoardList}) => {
     return <table className="table table-bordered">
         <thead>
             <tr>{problemBoardHeader.map((val, index)=>
-                <td key={index} style={{width: headerWidth[index], fontWeight: "bold"}}>{val}</td>
+                <TheadTd key={index} index={index}>{val}</TheadTd>
             )}    
             </tr>
         </thead>
@@ -36,3 +37,8 @@ const ProblemBoardTable = ({problemBoardHeader, problemBoardList}) => {
 };
 
 export default ProblemBoardTable;
+
+const TheadTd = styled.td`
+    width: ${(props)=>headerWidth[props.index]};
+    font-weight: bold;
+`;
