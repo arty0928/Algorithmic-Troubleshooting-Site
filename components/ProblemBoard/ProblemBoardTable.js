@@ -25,12 +25,12 @@ const ProblemBoardTable = ({problemBoardHeader, problemBoardList}) => {
         </thead>
         <tbody>{problemBoardList.map((val, index)=>
             <tr key={index}>
-                <td><a href={`/problem/${val.id}`}>{val.id}</a></td>
-                <td><a href={`/problem/${val.id}`}>{val.header.title}</a></td>
-                <td><a href={`/problem/${val.id}`}>
-                    <img src={rankImage[val.header.rank]} style={{width: "1.2em", height: "1.2em"}}/></a></td>
-                <td><a href={`/problem/${val.id}`}>{val.header.source}</a></td>
-                <td><a href={`/problem/${val.id}`}>{val.header.problemId}</a></td>
+                <td><TbodyA href={`/problem/${val.id}`}>{val.id}</TbodyA></td>
+                <td><TbodyA href={`/problem/${val.id}`}>{val.header.title}</TbodyA></td>
+                <td><TbodyA href={`/problem/${val.id}`}>
+                    <img src={rankImage[val.header.rank]}/></TbodyA></td>
+                <td><TbodyA href={`/problem/${val.id}`}>{val.header.source}</TbodyA></td>
+                <td><TbodyA href={`/problem/${val.id}`}>{val.header.problemId}</TbodyA></td>
             </tr>
         )}</tbody>
     </table>;
@@ -41,4 +41,12 @@ export default ProblemBoardTable;
 const TheadTd = styled.td`
     width: ${(props)=>headerWidth[props.index]};
     font-weight: bold;
+`;
+
+const TbodyA = styled.a`
+    text-decoration: none;
+    img {
+        width: 1.2em;
+        height: 1.2em;
+    }
 `;

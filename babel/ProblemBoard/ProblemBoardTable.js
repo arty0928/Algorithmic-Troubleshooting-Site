@@ -25,21 +25,17 @@ const ProblemBoardTable = ({
     index: index
   }, val)))), /*#__PURE__*/React.createElement("tbody", null, problemBoardList.map((val, index) => /*#__PURE__*/React.createElement("tr", {
     key: index
-  }, /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("a", {
+  }, /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement(TbodyA, {
     href: `/problem/${val.id}`
-  }, val.id)), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("a", {
+  }, val.id)), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement(TbodyA, {
     href: `/problem/${val.id}`
-  }, val.header.title)), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("a", {
+  }, val.header.title)), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement(TbodyA, {
     href: `/problem/${val.id}`
   }, /*#__PURE__*/React.createElement("img", {
-    src: rankImage[val.header.rank],
-    style: {
-      width: "1.2em",
-      height: "1.2em"
-    }
-  }))), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("a", {
+    src: rankImage[val.header.rank]
+  }))), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement(TbodyA, {
     href: `/problem/${val.id}`
-  }, val.header.source)), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("a", {
+  }, val.header.source)), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement(TbodyA, {
     href: `/problem/${val.id}`
   }, val.header.problemId))))));
 };
@@ -48,4 +44,11 @@ export default ProblemBoardTable;
 const TheadTd = styled.td`
     width: ${props => headerWidth[props.index]};
     font-weight: bold;
+`;
+const TbodyA = styled.a`
+    text-decoration: none;
+    img {
+        width: 1.2em;
+        height: 1.2em;
+    }
 `;
