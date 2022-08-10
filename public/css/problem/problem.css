@@ -46,7 +46,7 @@ pre {
     list-style: none;
 }
 
-#problem_number, #example_solution {
+#problem_number, #example_solution, #back {
     position: relative;
     display: block;
     float: left;
@@ -61,7 +61,7 @@ pre {
     background-color: #576c8e;
     position: relative;
 }
-#example_solution a {
+#example_solution a, #back a {
     background: 0 0;
     outline: 0 !important;
     text-decoration: none;
