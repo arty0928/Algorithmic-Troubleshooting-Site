@@ -3,7 +3,9 @@ import {Routes, Route, useParams} from 'react-router-dom';
 import {StaticRouter} from 'react-router-dom/server';
 import ProblemBoardTable from './ProblemBoardTable';
 import ProblemBoardPagination from './ProblemBoardPagination';
+import ProblemRegisterButton from './ProblemRegisterButton';
 import {getProblemBoardAPI} from '../../api/problemBoard';
+import styled from 'styled-components';
 
 const ProblemBoard = () => {
     const {id} = useParams();
@@ -23,7 +25,11 @@ const ProblemBoard = () => {
     }, [id]);
     return <div className="container">
             <ProblemBoardTable problemBoardHeader={problemBoardHeader} problemBoardList={problemBoardList}/>
-            <ProblemBoardPagination problemBoardPageNumber={problemBoardPageNumber} id={id}/>
+            <DivStyled>
+                <div className="left"><ProblemRegisterButton/></div>
+                <div className="middle"><ProblemBoardPagination problemBoardPageNumber={problemBoardPageNumber} id={id}/></div>
+                <div className="right"></div>
+            </DivStyled>  
         </div>;
 };
 
@@ -35,3 +41,10 @@ const ProblemBoardRouter = () => {
 };
 
 export default ProblemBoardRouter;
+
+const DivStyled = styled.div`
+    display: flex;
+    div {
+        flex: 1;
+    }
+`;

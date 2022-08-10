@@ -3,7 +3,9 @@ import { Routes, Route, useParams } from 'react-router-dom';
 import { StaticRouter } from 'react-router-dom/server';
 import ProblemBoardTable from './ProblemBoardTable';
 import ProblemBoardPagination from './ProblemBoardPagination';
+import ProblemRegisterButton from './ProblemRegisterButton';
 import { getProblemBoardAPI } from '../../api/problemBoard';
+import styled from 'styled-components';
 
 const ProblemBoard = () => {
   const {
@@ -26,10 +28,16 @@ const ProblemBoard = () => {
   }, /*#__PURE__*/React.createElement(ProblemBoardTable, {
     problemBoardHeader: problemBoardHeader,
     problemBoardList: problemBoardList
-  }), /*#__PURE__*/React.createElement(ProblemBoardPagination, {
+  }), /*#__PURE__*/React.createElement(DivStyled, null, /*#__PURE__*/React.createElement("div", {
+    className: "left"
+  }, /*#__PURE__*/React.createElement(ProblemRegisterButton, null)), /*#__PURE__*/React.createElement("div", {
+    className: "middle"
+  }, /*#__PURE__*/React.createElement(ProblemBoardPagination, {
     problemBoardPageNumber: problemBoardPageNumber,
     id: id
-  }));
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "right"
+  })));
 };
 
 const ProblemBoardRouter = () => {
@@ -43,3 +51,9 @@ const ProblemBoardRouter = () => {
 };
 
 export default ProblemBoardRouter;
+const DivStyled = styled.div`
+    display: flex;
+    div {
+        flex: 1;
+    }
+`;
