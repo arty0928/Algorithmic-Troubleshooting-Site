@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 const headerWidth = ["10%", "60%", "10%", "10%", "10%"];
 const rankImage = {
+  undefined: "/img/rank/0.svg",
   bronze5: "/img/rank/1.svg",
   bronze4: "/img/rank/2.svg",
   bronze3: "/img/rank/3.svg",
@@ -11,7 +12,29 @@ const rankImage = {
   silver4: "/img/rank/7.svg",
   silver3: "/img/rank/8.svg",
   silver2: "/img/rank/9.svg",
-  silver1: "/img/rank/10.svg"
+  silver1: "/img/rank/10.svg",
+  gold5: "/img/rank/11.svg",
+  gold4: "/img/rank/12.svg",
+  gold3: "/img/rank/13.svg",
+  gold2: "/img/rank/14.svg",
+  gold1: "/img/rank/15.svg",
+  platinum5: "/img/rank/16.svg",
+  platinum4: "/img/rank/17.svg",
+  platinum3: "/img/rank/18.svg",
+  platinum2: "/img/rank/19.svg",
+  platinum1: "/img/rank/20.svg",
+  diamond5: "/img/rank/21.svg",
+  diamond4: "/img/rank/22.svg",
+  diamond3: "/img/rank/23.svg",
+  diamond2: "/img/rank/24.svg",
+  diamond1: "/img/rank/25.svg",
+  ruby5: "/img/rank/26.svg",
+  ruby4: "/img/rank/27.svg",
+  ruby3: "/img/rank/28.svg",
+  ruby2: "/img/rank/29.svg",
+  ruby1: "/img/rank/30.svg",
+  master: "/img/rank/31.svg",
+  sprout: "/img/rank/sprout.svg"
 };
 
 const ProblemBoardTable = ({
@@ -32,7 +55,7 @@ const ProblemBoardTable = ({
   }, val.header.title)), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement(TbodyA, {
     href: `/problem/${val.id}`
   }, /*#__PURE__*/React.createElement("img", {
-    src: rankImage[val.header.rank]
+    src: val.header.rank ? rankImage[val.header.rank] : rankImage['undefined']
   }))), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement(TbodyA, {
     href: `${val.header.link}`
   }, val.header.source)), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement(TbodyA, {
