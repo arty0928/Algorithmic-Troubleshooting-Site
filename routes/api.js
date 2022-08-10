@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const fs = require('fs');
 
-const problems = require('../models/problem');
+let problems = require('../models/problem');
 
 // form post
 router.use(express.json());
@@ -50,6 +50,17 @@ router.post('/problem', (req, res, next) => {
     }});
     fs.writeFileSync(__dirname + "/../models/problem.json", JSON.stringify(problems));
     res.redirect('/problemBoard');
+});
+
+router.delete('/problem/:id', (req, res, next) => {
+    const pageId = Number(req.params.id);
+    const index = problems.findIndex(problem=>problem.id===pageId);
+    if (index == -1) return next('no such problem');
+    problems.splice(index, 1);
+    fs.writeFileSync(__dirname + "/../models/problem.json", JSON.stringify(problems));
+    res.send({status: "success"});
+}, (err, req, res) => {
+    res.send({status: "error", content: err});
 });
 
 module.exports = router;

@@ -58,12 +58,22 @@
                 <li>문제를 만든 사람: {{problem_author}}</li>
             </ul>
         </div>
+        <a href=""><button id="deleteButton">삭제</button></a>
     </section>
 
     <footer>
         <!-- 메인 화면의 푸터를 그대로 사용 -->
     </footer>
-
+    <script>
+        document.getElementById("deleteButton").onclick = (e)=>{
+            e.preventDefault();
+            const link = document.location.href.split('/');
+            const id = link[link.length-1];
+            fetch(`/api/problem/${id}`, {method: "DELETE"}).then(val=>{
+                location.href = "/problemBoard";
+            }).catch(console.error);
+        }
+    </script>
 </body>
 </html>
 
