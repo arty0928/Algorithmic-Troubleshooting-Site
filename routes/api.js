@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const fs = require('fs');
 
 const problems = require('../models/problem');
 
@@ -30,7 +31,7 @@ router.get('/problem/:id?', (req, res, next) => {
 router.post('/problem', (req, res, next) => {
     const problem = req.body;
     problems.push({
-        "id": problems.length+1,
+        "id": problems[problems.length-1].id + 1,
         "header": {
             "title": problem.title,
             "rank": problem.rank,
@@ -47,6 +48,7 @@ router.post('/problem', (req, res, next) => {
         "solution": {
             "code": problem.solution_code
     }});
+    fs.writeFileSync(__dirname + "/../models/problem.json", JSON.stringify(problems));
     res.redirect('/problemBoard');
 });
 
