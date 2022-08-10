@@ -29,7 +29,7 @@ const ProblemBoardTable = ({problemBoardHeader, problemBoardList}) => {
                 <td><TbodyA href={`/problem/${val.id}`}>{val.header.title}</TbodyA></td>
                 <td><TbodyA href={`/problem/${val.id}`}>
                     <img src={rankImage[val.header.rank]}/></TbodyA></td>
-                <td><TbodyA href={`/problem/${val.id}`}>{val.header.source}</TbodyA></td>
+                <td><TbodyA href={`${val.header.link}`}>{val.header.source}</TbodyA></td>
                 <td><TbodyA href={`/problem/${val.id}`}>{val.header.problemId}</TbodyA></td>
             </tr>
         )}</tbody>

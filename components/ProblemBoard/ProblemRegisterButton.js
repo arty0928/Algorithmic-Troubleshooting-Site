@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ProblemRegisterButton = () => {
-    return <button>등록</button>;
+    return <a href="/problemRegister"><button>등록</button></a>;
 };
 
 export default ProblemRegisterButton;

@@ -34,7 +34,7 @@ const ProblemBoardTable = ({
   }, /*#__PURE__*/React.createElement("img", {
     src: rankImage[val.header.rank]
   }))), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement(TbodyA, {
-    href: `/problem/${val.id}`
+    href: `${val.header.link}`
   }, val.header.source)), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement(TbodyA, {
     href: `/problem/${val.id}`
   }, val.header.problemId))))));

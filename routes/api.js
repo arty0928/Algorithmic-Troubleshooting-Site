@@ -1,7 +1,11 @@
-const { Router } = require('express');
-const router = Router();
+const express = require('express');
+const router = express.Router();
 
 const problems = require('../models/problem');
+
+// form post
+router.use(express.json());
+router.use(express.urlencoded({ extended: false }));
 
 router.get('/', (req, res) => {
     res.send('hi');
@@ -21,6 +25,29 @@ router.get('/problem/:id?', (req, res, next) => {
     res.json({status: "success", content: problem});
 }, (err, req, res, next) => {
     res.json({status: "error", content: err});
+});
+
+router.post('/problem', (req, res, next) => {
+    const problem = req.body;
+    problems.push({
+        "id": problems.length+1,
+        "header": {
+            "title": problem.title,
+            "rank": problem.rank,
+            "source": problem.source,
+            "problemId": problem.id,
+            "link": problem.link},
+        "content": {
+            "description": problem.description,
+            "input_description": problem.input_description,
+            "output_description": problem.output_description,
+            "input_example": problem.input_example,
+            "output_example": problem.output_example,
+            "author": problem.author},
+        "solution": {
+            "code": problem.solution_code
+    }});
+    res.redirect('/problemBoard');
 });
 
 module.exports = router;
