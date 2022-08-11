@@ -44,9 +44,9 @@
         <input type="radio" name="tabmenu" id="tab3" checked>
         <label for="tab3">python</label>
 
-        <div class="editor_cpp language-cpp" id="code1"></div>
-        <div class="editor_java language-java"></div>
-        <div class="editor_python language-python"></div>
+        <div class="editor_cpp language-cpp conbox con1"></div>
+        <div class="editor_java language-java conbox con2"></div>
+        <div class="editor_python language-python conbox con3"></div>
     </section>
 
     <div class="editor_js language-javascript">
@@ -56,19 +56,17 @@
     <footer>
         <!-- 메인 화면의 푸터를 그대로 사용 -->
     </footer>
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/javascript.min.js"></script>
+    <link rel="stylesheet" href="/css/atom-one-dark.min.css">
+    <script src="/highlight.min.js"></script>
     <script type="module">
         import {CodeJar} from '/codejar.js';
         const highlight = editor => {
             hljs.highlightElement(editor);
         }
-        const jar_js = CodeJar(document.querySelector('.editor_js'), hljs.highlightElement);
-        const jar_cpp = CodeJar(document.querySelector('.editor_cpp'), hljs.highlightElement);
-        const jar_java = CodeJar(document.querySelector('.editor_java'), hljs.highlightElement);
-        const jar_python = CodeJar(document.querySelector('.editor_python'), hljs.highlightElement);
+        const jar_js = CodeJar(document.querySelector('.editor_js'), hljs.highlightElement, {spellcheck: true});
+        const jar_cpp = CodeJar(document.querySelector('.editor_cpp'), hljs.highlightElement, {spellcheck: true});
+        const jar_java = CodeJar(document.querySelector('.editor_java'), hljs.highlightElement, {spellcheck: true});
+        const jar_python = CodeJar(document.querySelector('.editor_python'), hljs.highlightElement, {spellcheck: true});
         const link = document.location.href.split('/');
         const id = link[link.length-2];
         fetch(`/api/problem/${id}`).then(res=>res.json()).then(val=>{
