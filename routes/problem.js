@@ -4,6 +4,10 @@ const {apiURI} = require('../api/apiURI');
 const {Router} = require('express');
 const router = Router();
 
+const problemRegisterRouter = require('./problem/problemRegister');
+
+router.use('/register', problemRegisterRouter);
+
 const getProblemAPI = async (id) => {
     try {
         const res = await axios.get(apiURI + `/problem/${id}`);
