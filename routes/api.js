@@ -31,7 +31,7 @@ router.get('/problem/:id?', (req, res, next) => {
 router.post('/problem', (req, res, next) => {
     const problem = req.body;
     problems.push({
-        "id": problems[problems.length-1].id + 1,
+        "id": problems[problems.length-1]?problems[problems.length-1].id + 1 : 1,
         "header": {
             "title": problem.title,
             "rank": problem.rank,
