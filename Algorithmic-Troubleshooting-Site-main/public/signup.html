@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="./css/outdoor.css" rel="stylesheet">
+    <link href="./css/signup.css" rel="stylesheet">
+
+
+    <title>가입하기</title>
+
+    <style>
+        .header-bar {
+            text-align: center;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <header>
+        <div class="b-example-divider"></div>
+    
+        <div class="container">
+            <header
+                class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+                <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+    
+                        <img src="./img/logo1.PNG">
+                    </svg>
+                </a>
+    
+                <ul class="header-bar nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="" class="nav-link px-2 link-secondary">Home</a></li>
+                    <li><a href="/problemBoard" class="nav-link px-2 link-dark">문제풀기</a></li>
+                    <li><a href="/outdoor" class="nav-link px-2 link-dark">대외활동</a></li>
+                    <!-- <li><a href="#" class="nav-link px-2 link-dark">대회</a></li> -->
+                    <!-- <li><a href="#" class="nav-link px-2 link-dark">About</a></li> -->
+                </ul>
+    
+                <div class="col-md-3 text-end">
+                    <button type="button" class="btn btn-outline-primary me-2">
+    
+                        <a href="./login.html">
+                            Login
+                        </a>
+    
+                    </button>
+                    <button type="button" class="btn btn-primary">
+    
+                        <a class="btn-primary" href="./signup.html">
+                            Sign-up
+                        </a>
+    
+                    </button>
+    
+                </div>
+            </header>
+        </div>
+    </header>
+
+    <main>
+        <div class="signup-center">
+            <div class="sign-up-table">
+                <h3 class="title">Sign - up</h3>
+                <form method="POST" action="http://example.com/signup">
+                    <table class="table">
+                        <tr>
+                            <td>Name</td>
+                            <td><input required placeholder="name" type="text" autofocus></td>
+                        </tr>
+                        <tr>
+                            <td>UserId</td>
+                            <td><input required placeholder="userid" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>PW</td>
+                            <td><input required placeholder="password" type="password"
+                                    pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,16}$"></td>
+                        </tr>
+                        <tr>
+                            <td>PW confirm</td>
+                            <td><input required placeholder="PW confirm" type="password"
+                                    pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,16}$"></td>
+                        </tr>
+                        <tr>
+                            <td>Birth</td>
+                            <td><input required placeholder="birth" type="date"></td>
+                        </tr>
+                        <tr>
+                            <td>Grade</td>
+                            <td><input required placeholder="grade" type="number" step="1" pattern="^[1-5]+$" min="1" max="5"></td>
+                        </tr>
+                        <tr>
+                            <td>Phone Number</td>
+                            <td><input required placeholder="010-1234-1234" type="tel" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"></td>
+                        </tr>
+                    </table>
+                    <div class="button_space">
+                        <input type="submit" value="제출" class="Login-button">
+                        <input type="reset" value="초기화" class="Login-button">
+                    </div>
+                </form>
+                <a class="link" href="./login.html">
+                    <p class="login">
+                        계정이 이미 있나요? Login
+                    </p>
+                </a>
+                </div>
+
+            </div>
+
+            
+        </div>
+    </main>
+
+        
+        
+</body>
+</html>
