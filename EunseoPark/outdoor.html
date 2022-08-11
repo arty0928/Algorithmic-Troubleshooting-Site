@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Album example · Bootstrap v5.0</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/outdoor.css" rel="stylesheet">
+    
+    <link href="pagination.css" rel="stylesheet">
+    <script src="/bootstrap.bundle.min-booy.js"></script>
+    <script src="./outdoor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" charset="utf-8"></script>
+    
+    <!-- fonts -->
+    <!-- <link href="https://webfontworld.github.io/haenam/haenam.css" rel="stylesheet"> -->
+    <link href="https://webfontworld.github.io/sunn/SUIT.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+
+    <header>
+        <div class="b-example-divider"></div>
+        
+        <div class="container">
+            <header
+                class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+                <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+                        
+                        <img src="./img/logo1.PNG">
+                    </svg>
+                </a>
+        
+                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="" class="nav-link px-2 link-secondary">Home</a></li>
+                    <li><a href="#" class="nav-link px-2 link-dark">문제풀기</a></li>
+                    <li><a href="./outdoor.html" class="nav-link px-2 link-dark">대외활동</a></li>
+                    <!-- <li><a href="#" class="nav-link px-2 link-dark">대회</a></li> -->
+                    <!-- <li><a href="#" class="nav-link px-2 link-dark">About</a></li> -->
+                </ul>
+        
+                <div class="col-md-3 text-end">
+                    <button type="button" class="btn btn-outline-primary me-2">
+                        
+                        <a href="./login.html">
+                            Login
+                        </a>
+
+                        </button>
+                    <button type="button" class="btn btn-primary">
+                    
+                        <a class="btn-primary" href="./signup.html">
+                            Sign-up
+                        </a>
+
+                        </button>
+                        
+                </div>
+            </header>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- <section class="py-5 text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1 class="fw-light">Album example</h1>
+
+
+                </div>
+            </div>
+        </section> -->
+
+        <div>
+            <div class="searchbar">
+
+
+
+                <div class="form-inline my-2 my-lg-0 search">
+                    <select id="category" size="1" onchange="categoryChange(this.value)" class="bar">
+                        <li class="option"><option>all</option></li>
+                        <li class="option"><option>공모전</option></li>
+                        <li class="option"><option>대외활동</option></li>
+                        
+                    </select>
+
+                    <input placeholder="제목 검색" type="text" id="keyword" oninput="keywordChange(this.value)"
+                        onkeyup="if(window.event.keyCode==13){search()}" class="form-control mr-sm-2 me-2 bar">
+
+                    <button onclick="search()" class="bar btn btn-outline-success bar">검색</button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div id="products" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                
+                </div>
+        
+                <!-- <div class="pagination1">
+                    <li class="page-item1 previous-page1 disable1"><a class="page-link1" href="#">Previous</a></li>
+                    <li class="page-item1 current-page1 active1"><a class="page-link1" href="#">1</a></li>
+                    <li class="page-item1 dots1"><a class="page-link1" href="#">....</a></li>
+                    <li class="page-item1 current-page1"><a class="page-link1" href="#">5</a></li>
+                    <li class="page-item1 current-page1"><a class="page-link1" href="#">6</a></li>
+                    <li class="page-item1 dots1"><a class="page-link1" href="#">....</a></li>
+                    <li class="page-item1 current-page1"><a class="page-link1" href="#">10</a></li>
+                    <li class="page-item1 next-page1"><a class="page-link1" href="#">Next</a></li>
+        
+                </div> -->
+        
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-muted py-5">
+        <section id="team">
+
+            <div class="title">
+                <h2>팀원소개</h2>
+                <p>ESG 프로젝트를 함께한 팀원을 소개합니다.</p>
+            </div>
+
+            <div class="row">
+                <div class="team-intro">
+                    <img src="./img/박은서.jpg">
+                    <h3>박은서</h3>
+                    <p>
+                        비전공자 출신 개발자
+
+                    </p>
+                    <p>
+                        
+                        하이퍼캐쥬얼 게임 개발 경험 有
+                    </p>
+                </div>
+                <div class="team-intro">
+                    <img src="./img/img_team2.jpg">
+                    <h3>강혜리</h3>
+                    <p>
+                        정보보안암호수학과
+                    </p>
+                </div>
+                <div class="team-intro">
+                    <img src="./img/HxNi.png">
+                    <h3>김진웅</h3>
+                    <p>
+                        0년차 개발자
+                    </p>
+                </div>
+
+                <div class="team-intro">
+                    <img src="./img/배유빈.jpg">
+                    <h3>배유빈</h3>
+                    <p>
+                        202011926 융합인재학과
+                    </p>
+                </div>
+
+                <div class="team-intro">
+                    <img src="./img/img_team2.jpg">
+                    <h3>김시진</h3>
+                    <p>
+                        데이터사이언스학과
+                    </p>
+                </div>
+            </div>
+
+
+        </section>
+
+    </footer>
+
+
+
+
+</body>
+
+</html>
