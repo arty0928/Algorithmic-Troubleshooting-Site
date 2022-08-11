@@ -14,429 +14,183 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/outdoor.css" rel="stylesheet">
     
-    <link href="/css/bootstrap.min.css" type="text/css" rel="stylesheet">
-
-    <script src="/bootstrap.bundle.min-boot.js"></script>
-
-    <script>
-        let page = 0;
-        let category = "";
-        let keyword = "";
-        document.addEventListener('DOMContentLoaded', load);
-        window.onscroll = () => {
-            if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-                load();
-            }
-        };
-
-        function load() {
-            //console.log("page:"+page+"category:"+category+"keyword:"+keyword);
-            fetch(`/outdoor/search?page=${page}&category=${category}&keyword=${keyword}`)
-                .then(response => {
-                    return response.json();
-                })
-                .then(products => {
-                    if (products == "") { return; }
-                    console.log(products);
-                    products.forEach(productJson => {
-                        addProduct(productJson);
-                    });
-                    page = page + 1;
-                })
-        };
-
-        function search() {
-            document.querySelector('#products').innerHTML = "";
-            page = 0
-            load();
-        }
-        function categoryChange(value) {
-            category = value;
-            search();
-        }
-        function keywordChange(value) {
-            keyword = value;
-        }
-        function addExplain(id, title, img, organization, dday, url, category) {
-            const explain = document.createElement('div');
-            explain.innerHTML = `
-                <div>기관</div>
-                <div>${organization}</div>
+    <link href="/css/pagination.css" rel="stylesheet">
+    <!--<script src="/js/bootstrap.bundle.min-booy.js"></script>-->
+    <script src="/js/outdoor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" charset="utf-8"></script>
     
-                <div>제목</div>
-                <div>${title}</div>
+    <!-- fonts -->
+    <!-- <link href="https://webfontworld.github.io/haenam/haenam.css" rel="stylesheet"> -->
+    <link href="https://webfontworld.github.io/sunn/SUIT.css" rel="stylesheet">
+
     
-                <div>DAY</div>
-                <div>${dday}</div>
-    
-                <div>카테고리:</div>
-                <div>${category}</div>`;
-
-            explain.className = 'productEx';
-            document.querySelector('#product' + id).append(explain);
-            console.log(title, img, organization, dday, url, category);
-        }
-
-        function addProduct(productJson) {
-
-            const col = document.createElement('div');
-            col.className = 'col';
-
-            const cardShadowSm = document.createElement('div');
-            cardShadowSm.className = 'car shadow-sm';
-            col.append(cardShadowSm);
-
-
-            const link = document.createElement('a');
-            link.href = productJson.url;
-            
-            cardShadowSm.append(link);
-
-            const image = document.createElement('img');
-            image.className = 'card-img-top';
-            image.src = productJson.image;
-            
-            image.width = "100%";
-            image.height = "250";
-            link.append(image);
-
-            const cardBody = document.createElement('div');
-            cardBody.className = "card-body";
-            cardShadowSm.append(cardBody);
-
-            const cardName = document.createElement('h6');
-            cardName.className = 'card-name';
-            cardName.textContent = productJson.organization;
-            cardBody.append(cardName);
-
-            const cardTitle = document.createElement('h5');
-            cardTitle.className = 'card-title';
-            cardTitle.textContent = productJson.title;
-            cardBody.append(cardTitle);
-
-            const tagBar = document.createElement('div');
-            tagBar.className = "d-flex justify-content-between align-items-center";
-            cardBody.append(tagBar);
-
-            
-            const tags = document.createElement('h6');
-            tags.className = "tags";
-            tags.textContent = productJson.tag;
-            tagBar.append(tags);
-
-
-            
-            const day = document.createElement('small');
-            day.className = "text-muted";
-            day.textContent = "D-?";
-            tagBar.append(day);
-            
-            
-
-
-            
-
-
-
-
-            /**
-        console.log(productJson.image);
-        product.style.backgroundImage = `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url('${productJson.image}')`;
-        product.addEventListener("click", function () { addExplain(productJson.id, productJson.title, productJson.image, productJson.organization, productJson.dday, productJson.url, productJson.category); });
-        product.innerHTML = productJson.title;
-        **/
-
-            document.querySelector('#products').append(col);
-
-        }
-    </script>
-
-
-
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-        .searchbar {
-            
-            text-align: center;
-            margin-top: 30px;
-            margin-bottom: 30px;
-    
-        }
-        #category {
-            height: 40px;
-            border-radius: 4px;
-            margin-right: 10px;
-
-        }
-        
-        .search {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        section {
-            position: relative;
-            width: 100%;
-            padding: 0 20px 0;
-        }
-
-        section .title {
-            width: 760px;
-            text-align: center;
-            margin: 0 auto 0;
-        }
-
-        section .title h2 {
-            font-size: 40px;
-            margin-top: 0;
-            margin-bottom: 15px;
-        }
-
-        section .title p {
-            font-size: 14px;
-            line-height: 24px;
-            font-family: Helvetica, Arial, sans-serif;
-            color: #8c979e;
-            margin-bottom: 20px;
-        }
-
-        section .row {
-            margin: 20px 90px 20px 90px;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            
-        }
-
-        section .team-intro {
-            width: 200px;
-            text-align: center;
-        }
-
-        section .team-intro img {
-            width: 150px;
-            height: 150px;
-            border: 7px solid #fff;
-            border-radius: 50%;
-
-            margin-bottom: 25px;
-        }
-
-        section .team-intro h3 {
-            margin-bottom: 15px;
-        }
-
-        section .team-intro p{
-            line-height: 24px;
-        }
-
-        section#photo {
-            padding-bottom: 100px;
-        }
-
-        .col {
-            margin-bottom: 20px;
-        }
-        .card-shadow-sm {
-            height: 1000px;
-        
-        }
-
-    </style>
-
-
 </head>
 
 <body>
 
     <header>
-        <div class="collapse bg-dark" id="navbarHeader">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-8 col-md-7 py-4">
-                        <h4 class="text-white">About</h4>
-                        <p class="text-muted">Add some information about the album below, the author, or any other
-                            background
-                            context. Make it a few sentences long so folks can pick up some informative tidbits. Then,
-                            link them off
-                            to some social networking sites or contact information.</p>
-                    </div>
-                    <div class="col-sm-4 offset-md-1 py-4">
-                        <h4 class="text-white">Contact</h4>
-                        <ul class="list-unstyled">
-                            <li><a href="#" class="text-white">Follow on Twitter</a></li>
-                            <li><a href="#" class="text-white">Like on Facebook</a></li>
-                            <li><a href="#" class="text-white">Email me</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="navbar navbar-dark bg-dark shadow-sm">
-            <div class="container">
-                <a href="#" class="navbar-brand d-flex align-items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
-                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2"
-                        viewBox="0 0 24 24">
-                        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
-                        <circle cx="12" cy="13" r="4" />
+        <div class="b-example-divider"></div>
+        
+        <div class="container">
+            <header
+                class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+                <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+                        
+                        <img src="/img/logo1.PNG">
                     </svg>
-                    <strong>Album</strong>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
-                    aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
+        
+                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="/" class="nav-link px-2 link-secondary">Home</a></li>
+                    <li><a href="/problemBoard" class="nav-link px-2 link-dark">문제풀기</a></li>
+                    <li><a href="/outdoor" class="nav-link px-2 link-dark">대외활동</a></li>
+                    <!-- <li><a href="#" class="nav-link px-2 link-dark">대회</a></li> -->
+                    <!-- <li><a href="#" class="nav-link px-2 link-dark">About</a></li> -->
+                </ul>
+        
+                <div class="col-md-3 text-end">
+                    <button type="button" class="btn btn-outline-primary me-2">
+                        
+                        <a href="/login.html">
+                            Login
+                        </a>
+
+                        </button>
+                    <button type="button" class="btn btn-primary">
+                    
+                        <a class="btn-primary" href="/signup.html">
+                            Sign-up
+                        </a>
+
+                        </button>
+                        
+                </div>
+            </header>
         </div>
     </header>
 
     <main>
 
-        <section class="py-5 text-center container">
+        <!-- <section class="py-5 text-center container">
             <div class="row py-lg-5">
                 <div class="col-lg-6 col-md-8 mx-auto">
                     <h1 class="fw-light">Album example</h1>
-                    
-                        
+
+
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <div>
             <div class="searchbar">
-            
-                
-            
-            <form class="form-inline my-2 my-lg-0 search">
-                <select id="category" size="1" onchange="categoryChange(this.value)" class="bar">
-                    <option>all</option>
-                    <option>공모전</option>
-                    <option>대외활동</option>
-                </select>
 
-                <input placeholder="제목 검색" type="text" id="keyword" oninput="keywordChange(this.value)"
-                    onkeyup="if(window.event.keyCode==13){search()}" class="form-control mr-sm-2 me-2 bar">
+
+
+                <div class="form-inline my-2 my-lg-0 search">
+                    <select id="category" size="1" onchange="categoryChange(this.value)" class="bar">
+                        <li class="option"><option>all</option></li>
+                        <li class="option"><option>공모전</option></li>
+                        <li class="option"><option>대외활동</option></li>
+                        
+                    </select>
+
+                    <input placeholder="제목 검색" type="text" id="keyword" oninput="keywordChange(this.value)"
+                        onkeyup="if(window.event.keyCode==13){search()}" class="form-control mr-sm-2 me-2 bar">
 
                     <button onclick="search()" class="bar btn btn-outline-success bar">검색</button>
-            </form>
+                </div>
 
             </div>
 
         </div>
 
-        
+
         <div class="album py-5 bg-light">
             <div class="container">
-
                 <div id="products" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
-
-                    
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <a aria-label="Placeholder: Thumbnail" href="https://linkareer.com/activity/97183">
-                                <img class="card-img-top"
-                                    src="https://res.cloudinary.com/linkareer/image/fetch/f_auto/https://api.linkareer.com/attachments/120220"
-                                    alt="Card image cap" width="100%" height="250">
-                            </a>
-
-                            <div class="card-body">
-                                <h6 class="card-name"> 한국정보통신진흥협회</h6>
-                                <h5 class="card-title">[KAIT/과기정통부] 제 2기 인공지능(AI) 서비스 개발과정 수강생 모집
-                                </h5>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                    </div>
-                                    <small class="text-muted">9 mins</small>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-
-                    
-
-
+                
                 </div>
+        
+                <!-- <div class="pagination1">
+                    <li class="page-item1 previous-page1 disable1"><a class="page-link1" href="#">Previous</a></li>
+                    <li class="page-item1 current-page1 active1"><a class="page-link1" href="#">1</a></li>
+                    <li class="page-item1 dots1"><a class="page-link1" href="#">....</a></li>
+                    <li class="page-item1 current-page1"><a class="page-link1" href="#">5</a></li>
+                    <li class="page-item1 current-page1"><a class="page-link1" href="#">6</a></li>
+                    <li class="page-item1 dots1"><a class="page-link1" href="#">....</a></li>
+                    <li class="page-item1 current-page1"><a class="page-link1" href="#">10</a></li>
+                    <li class="page-item1 next-page1"><a class="page-link1" href="#">Next</a></li>
+        
+                </div> -->
+        
             </div>
         </div>
-
     </main>
 
     <footer class="text-muted py-5">
         <section id="team">
-        
+
             <div class="title">
                 <h2>팀원소개</h2>
                 <p>ESG 프로젝트를 함께한 팀원을 소개합니다.</p>
             </div>
-        
+
             <div class="row">
                 <div class="team-intro">
-                    <img src="/img/img_team1.jpg">
+                    <img src="/img/박은서.jpg">
                     <h3>박은서</h3>
                     <p>
-                        기술경영학과 202012174
+                        비전공자 출신 개발자
+
+                    </p>
+                    <p>
+                        
+                        하이퍼캐쥬얼 게임 개발 경험 有
                     </p>
                 </div>
                 <div class="team-intro">
-                    <img src="/img/img_team1.jpg">
+                    <img src="/img/img_team2.jpg">
                     <h3>강혜리</h3>
                     <p>
-                        ...
+                        정보보안암호수학과
                     </p>
                 </div>
                 <div class="team-intro">
-                    <img src="/img/img_team1.jpg">
+                    <img src="/img/HxNi.png">
                     <h3>김진웅</h3>
                     <p>
-                        ...
+                        0년차 개발자
                     </p>
                 </div>
 
                 <div class="team-intro">
-                    <img src="/img/img_team1.jpg">
+                    <img src="/img/배유빈.jpg">
                     <h3>배유빈</h3>
                     <p>
-                        ...
+                        202011926 융합인재학과
                     </p>
                 </div>
 
                 <div class="team-intro">
-                    <img src="/img/img_team1.jpg">
+                    <img src="/img/img_team2.jpg">
                     <h3>김시진</h3>
                     <p>
-                        ...
+                        데이터사이언스학과
                     </p>
                 </div>
             </div>
-        
-        
+
+
         </section>
 
     </footer>
 
 
-    
+
 
 </body>
 

@@ -3,43 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" type="text/css" href="main.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="./css/outdoor.css" rel="stylesheet">
+    <link href="./css/login.css" rel="stylesheet">
+
+
     <title>로그인</title>
 </head>
+
+<header>
+    <div class="b-example-divider"></div>
+
+    <div class="container">
+        <header
+            class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+            <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+
+                    <img src="./img/logo1.PNG">
+                </svg>
+            </a>
+
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="" class="nav-link px-2 link-secondary">Home</a></li>
+                <li><a href="#" class="nav-link px-2 link-dark">문제풀기</a></li>
+                <li><a href="./outdoor.html" class="nav-link px-2 link-dark">대외활동</a></li>
+                <!-- <li><a href="#" class="nav-link px-2 link-dark">대회</a></li> -->
+                <!-- <li><a href="#" class="nav-link px-2 link-dark">About</a></li> -->
+            </ul>
+
+            <div class="col-md-3 text-end">
+                <button type="button" class="btn btn-outline-primary me-2">
+
+                    <a href="./login.html">
+                        Login
+                    </a>
+
+                </button>
+                <button type="button" class="btn btn-primary">
+
+                    <a class="btn-primary" href="./signup.html">
+                        Sign-up
+                    </a>
+
+                </button>
+
+            </div>
+        </header>
+    </div>
+</header>
+
 <body>
-    <div id="wrapper">
-        <div id="header"></div>
-        <nav id="navi">
-            <a class="menu" href="./index.html">
-                메인
-            </a>
-            <a class="menu" href="./signup.html">
-                회원가입
-            </a>
-            <a class="menu" href="./login.html">
-                로그인
-            </a>
-        </nav>
-        <h3>로그인</h3>
-        <form method="POST" action="http://example.com/login">
-        <table>
-            <tr>
-                <td>아이디</td>
-                <td><input required placeholder="아이디를 입력하세요" type="text" autofocus></td>
-            </tr>
-            <tr>
-                <td>비밀번호</td>
-                <td><input required placeholder="비밀번호를 입력하세요" type="password"></td>
-            </tr>
-        </table>
-        <div class="button_space">
-        <input type="submit" value="로그인" class="button">
+        <div class="signup-center">
+            
+            <div class="sign-up-table"> 
+                <h3 class="title">Login</h3>
+                <form method="POST" action="http://example.com/login">
+                    <table class="table">
+                        <tr >
+                            <td class="id">ID</td>
+                            <td><input required placeholder="id" type="text" autofocus></td>
+                        </tr>
+                        <tr >
+                            <td clas="pw">PW</td>
+                            <td><input required placeholder="Password" type="password"></td>
+                        </tr>
+                    </table>
+                    <div class="button_space">
+                        <input type="submit" value="Login" class="Login-button">
+                    </div>
+                </form>
+                <a class="link" href="./signup.html">
+                    <p class="signup">계정이 없나요? Sign-up</p>
+                </a>
+            </div>
+            
         </div>
-        </form>
-        <a class="link" href="./signup.html">계정이 없나요? 가입하기</a>
+        
     </div>
 </body>
 </html>
