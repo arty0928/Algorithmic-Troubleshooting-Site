@@ -9,6 +9,10 @@
     <link rel="stylesheet" type="text/css" href="/css/problem/solution.css">
     <link rel="stylesheet" type="text/css" href="/css/font.css">
     <style>
+        @font-face{
+                font-family: 'DalseoHealingBold';
+                src: url('/font/DalseoHealingBold.ttf');
+        }
         .editor {
             border-radius: 6px;
             box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
@@ -24,6 +28,12 @@
         .editor_js {
             margin-bottom: 20px;
         }
+        .editor_title{
+            display: flex;
+            justify-content: center;
+            font-family: 'DalseoHealingBold';
+        }
+
     </style>
 </head>
 <body>
@@ -92,6 +102,7 @@
         <div class="editor editor_python language-python conbox con3"></div>
     </section>
     <div class="container">
+        <h2 class="editor_title">연습장</h2>
         <div class="editor editor_js language-javascript">
     </div>
     </div>

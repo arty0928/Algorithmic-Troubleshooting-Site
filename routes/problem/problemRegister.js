@@ -19,6 +19,9 @@ router.get("/", (req, res)=>{
                        .replace(/{{input_example}}/g, ``)
                        .replace(/{{output_example}}/g, ``)
                        .replace(/{{author}}/g, ``)
+                       .replace(/{{solution_cpp}}/g, ``)
+                       .replace(/{{solution_java}}/g, ``)
+                       .replace(/{{solution_python}}/g, ``)
                        .replace(/{{solution_code}}/g, ``)
                        .replace(/{{script}}/g, ``)
             res.send(data);

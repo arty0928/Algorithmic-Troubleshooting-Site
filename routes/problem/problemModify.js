@@ -44,6 +44,9 @@ router.get("/", (req, res)=>{
                                    .replace(/{{input_example}}/g, problem.content.input_example)
                                    .replace(/{{output_example}}/g, problem.content.output_example)
                                    .replace(/{{author}}/g, problem.content.author)
+                                   .replace(/{{solution_cpp}}/g, problem.solution.cpp)
+                                   .replace(/{{solution_java}}/g, problem.solution.java)
+                                   .replace(/{{solution_python}}/g, problem.solution.python)
                                    .replace(/{{solution_code}}/g, problem.solution.code)
                                    .replace(/{{script}}/g, script);
                         res.send(data);

@@ -46,6 +46,9 @@ router.post('/problem', (req, res, next) => {
             "output_example": problem.output_example,
             "author": problem.author},
         "solution": {
+            "cpp": problem.solution_cpp,
+            "java": problem.solution_java,
+            "python": problem.solution_python,
             "code": problem.solution_code
     }});
     fs.writeFileSync(__dirname + "/../models/problem.json", JSON.stringify(problems));
@@ -73,6 +76,9 @@ router.put('/problem/:id', (req, res, next) => {
             "output_example": problem.output_example,
             "author": problem.author},
         "solution": {
+            "cpp": problem.solution_cpp,
+            "java": problem.solution_java,
+            "python": problem.solution_python,
             "code": problem.solution_code
     }};
     fs.writeFileSync(__dirname + "/../models/problem.json", JSON.stringify(problems));
