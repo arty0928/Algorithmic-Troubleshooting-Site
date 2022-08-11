@@ -1,16 +1,12 @@
 const express = require("express");
+const router = express.Router();
 const { json } = require("express/lib/response");
-
-const app = express();
-
 const fs = require("fs");
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+router.use(express.json());
+router.use(express.urlencoded({ extended: true }));
 
-app.use(express.static("./"));
-
-app.get("/", (req, res) => { res.sendFile(__dirname + "/outdoor.html"); });
+router.get("/", (req, res) => { res.sendFile("/public/outdoor.html", {root: "."}); });
 
 function categoryFilter(json, category) {
     if (category == null || category == undefined || category == "" || category == "all") {
@@ -42,14 +38,14 @@ async function filter(json, category, keyword, page) {
 }
 
 
-app.get("/search", function (req, res) {
+router.get("/search", function (req, res) {
     if (!req.query.page) {
         res.status(400).send("페이지 값을 넣어주세요");
         return;
     }
-    console.log(req.query);
+    //console.log(req.query);
 
-    fs.readFile("product.json", 'utf8', function (error, product) {
+    fs.readFile(__dirname + "/../models/product.json", 'utf8', function (error, product) {
         if (error) {
             res.status(500).send("500 서버 에러! product.json 읽다가 문제 생김");
         } else {
@@ -67,10 +63,4 @@ app.get("/search", function (req, res) {
     })
 })
 
-const PORT = process.env.PORT || 8000;
-
-app.listen(PORT, () => {
-    console.log("서버가 실행됐습니다.");
-    console.log(`서버주소: http://localhost:${PORT}`);
-
-});
+module.exports = router;

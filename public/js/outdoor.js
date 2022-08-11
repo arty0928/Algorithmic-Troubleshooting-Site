@@ -11,13 +11,13 @@
 
     function load() {
         //console.log("page:"+page+"category:"+category+"keyword:"+keyword);
-        fetch(`/search?page=${page}&category=${category}&keyword=${keyword}`)
+        fetch(`/outdoor/search?page=${page}&category=${category}&keyword=${keyword}`)
             .then(response => {
                 return response.json();
             })
             .then(products => {
                 if (products == "") { return; }
-                console.log(products);
+                //onsole.log(products);
                 products.forEach(productJson => {
                     addProduct(productJson);
                 });
@@ -54,7 +54,7 @@
 
     explain.className = 'productEx';
     document.querySelector('#product' + id).append(explain);
-    console.log(title, img, organization, dday, url, category);
+    //console.log(title, img, organization, dday, url, category);
         }
 
     function addProduct(productJson) {
@@ -139,7 +139,7 @@
     const dayText = document.createElement('p');
     dayText.className = "badge badge-dark day-text";
 
-    console.log(productJson.dday);
+    //console.log(productJson.dday);
     const DeadLineTime = new Date(productJson.dday);
     const todayTime = new Date();
 
