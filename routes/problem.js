@@ -1,21 +1,13 @@
 const fs = require('fs');
-const axios = require('axios');
-const {apiURI} = require('../api/apiURI');
+const {getProblemAPI} = require('./api/problem');
 const {Router} = require('express');
 const router = Router();
 
 const problemRegisterRouter = require('./problem/problemRegister');
+const problemModifyRouter = require('./problem/problemModify');
 
 router.use('/register', problemRegisterRouter);
-
-const getProblemAPI = async (id) => {
-    try {
-        const res = await axios.get(apiURI + `/problem/${id}`);
-        return res.data;
-    } catch(e) {
-        return e;
-    }
-};
+router.use('/:id/modify', problemModifyRouter);
 
 router.get('/:id', (req, res) => {
     fs.readFile(__dirname + '/template/problem.html', 'utf8', (err, data)=>{
@@ -40,7 +32,8 @@ router.get('/:id', (req, res) => {
                             .replace(/{{link_solution}}/g, `/problem/${req.params.id}/solution`);
                         res.send(data);
                     }
-                });
+                })
+                .catch(console.error);
         }
     });
 });

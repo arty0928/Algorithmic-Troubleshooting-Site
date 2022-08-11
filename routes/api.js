@@ -52,6 +52,35 @@ router.post('/problem', (req, res, next) => {
     res.redirect('/problemBoard');
 });
 
+router.put('/problem/:id', (req, res, next) => {
+    const pageId = Number(req.params.id);
+    const index = problems.findIndex(problem=>problem.id===pageId);
+    if (index == -1) return next('no such problem');
+    const problem = req.body;
+    problems[index] = {
+        "id": problems[index].id,
+        "header": {
+            "title": problem.title,
+            "rank": problem.rank,
+            "source": problem.source,
+            "problemId": problem.id,
+            "link": problem.link},
+        "content": {
+            "description": problem.description,
+            "input_description": problem.input_description,
+            "output_description": problem.output_description,
+            "input_example": problem.input_example,
+            "output_example": problem.output_example,
+            "author": problem.author},
+        "solution": {
+            "code": problem.solution_code
+    }};
+    fs.writeFileSync(__dirname + "/../models/problem.json", JSON.stringify(problems));
+    res.send({status: "success"});
+}, (err, req, res) => {
+    res.send({status: "error", content: err});
+});
+
 router.delete('/problem/:id', (req, res, next) => {
     const pageId = Number(req.params.id);
     const index = problems.findIndex(problem=>problem.id===pageId);
