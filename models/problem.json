@@ -2,274 +2,300 @@
     {
         "id": 1,
         "header": {
-            "title": "습격자 초라기",
-            "rank": "platinum3",
+            "title": "K번째 수",
+            "rank": "gold2",
             "source": "baekjoon",
-            "problemId": "1006번",
-            "link": "https://www.acmicpc.net/problem/1006"
+            "problemId": "1300번",
+            "link": "https://www.acmicpc.net/problem/1300"
         },
         "content": {
-            "description": "<div id=\"problem_description\" class=\"problem-text\">\n\t\t\t\t<p>초라기는 한국의 비밀국방기지(원타곤)를 습격하라는 임무를 받은 특급요원이다. 원타곤의 건물은 도넛 형태이며, 초라기는 효율적인 타격 포인트를 정하기 위해 구역을 아래와 같이 두 개의 원 모양으로 나누었다. (그림의 숫자는 각 구역의 번호이다.)</p>\n\n<p style=\"text-align: center;\"><img alt=\"\" src=\"https://www.acmicpc.net/upload/201003/dfck3232_34g7t9f4gp_b.jpg\" style=\"height:320px; width:320px\"></p>\n\n<p>초라기는 각각 W명으로 구성된 특수소대를 다수 출동시켜 모든 구역에 침투시킬 예정이며, 각 구역 별로 적이 몇 명씩 배치되어 있는지는 초라기가 모두 알고 있다. 특수소대를 아래 조건에 따라 침투 시킬 수 있다.</p>\n\n<ol>\n\t<li>한 특수소대는 침투한 구역 외에, 인접한 한 구역 더 침투할 수 있다. (같은 경계를 공유하고 있으면 인접 하다고 한다. 위 그림에서 1구역은 2, 8, 9 구역과 서로 인접한 상태다.) 즉, 한 특수소대는 한 개 혹은 두 개의 구역을 커버할 수 있다.</li>\n\t<li>특수소대끼리는 아군인지 적인지 구분을 못 하기 때문에, 각 구역은 하나의 소대로만 커버해야 한다.</li>\n\t<li>한 특수소대가 커버하는 구역의 적들의 합은 특수소대원 수 W 보다 작거나 같아야 한다.</li>\n</ol>\n\n<p>이때 초라기는 원타곤의 모든 구역을 커버하기 위해 침투 시켜야 할 특수 소대의 최소 개수를 알고 싶어 한다.</p>\n\n\t\t\t\t</div>",
-            "input_description": "<div id=\"problem_input\" class=\"problem-text\">\n\t\t\t\t\t<p>첫째 줄에 테스트 케이스의 개수 T가 주어진다. 각 테스트 케이스는 다음과 같이 구성되어있다.</p>\n\n<p>첫째 줄에는 (구역의 개수)/2 값 N과 특수 소대원의 수 W가 주어진다. (1 ≤ N ≤ 10000, 1 ≤ W ≤ 10000).</p>\n\n<p>둘째 줄에는 1~N번째 구역에 배치된 적의 수가 주어지고, 셋째 줄에는 N+1 ~ 2N번째 구역에 배치된 적의 수가 공백으로 구분되어 주어진다. (1 ≤ 각 구역에 배치된 최대 적의 수 ≤ 10000) 단, 한 구역에서 특수 소대원의 수보다 많은 적이 배치된 구역은 존재하지 않는다. (따라서, 각 구역에 배치된 최대 적의 수 ≤ W)</p>\n\n\t\t\t\t\t</div>",
-            "output_description": "<div id=\"problem_output\" class=\"problem-text\">\n\t\t\t\t\t<p>각 테스트케이스에 대해서 한 줄에 하나씩 원타곤의 모든 구역을 커버하기 위해 침투 시켜야 할 특수 소대의 최소 개수를 출력하시오.</p>\n\n\t\t\t\t\t</div>",
-            "input_example": "1\n8 100\n70 60 55 43 57 60 44 50\n58 40 47 90 45 52 80 40",
-            "output_example": "11",
-            "author": "wooyaggo"
+            "problem_description": "세준이는 크기가 N×N인 배열 A를 만들었다. 배열에 들어있는 수 A[i][j] = i×j 이다.<br>이 수를 일차원 배열 B에 넣으면 B의 크기는 N×N이 된다. B를 오름차순 정렬했을 때, B[k]를 구해보자.<br>배열 A와 B의 인덱스는 1부터 시작한다.",
+            "input_description": "첫째 줄에 배열의 크기 N이 주어진다. N은 105보다 작거나 같은 자연수이다.<br>둘째 줄에 k가 주어진다. k는 min(109, N2)보다 작거나 같은 자연수이다.",
+            "output_description": "B[k]를 출력한다.",
+            "input_example": "3<br>7",
+            "output_example": "6",
+            "author": "baekjoon"
         },
         "solution": {
-            "code": ""
+            "cpp": "#include <iostream>\n#include <cmath>\nusing namespace std;\ntypedef long long ll;\n\nint N, k;\n\nint main()\n{\n\tios_base::sync_with_stdio(false);\n\tcin.tie(NULL);\n\tcout.tie(NULL);\n\n\tcin >> N >> k;\n\n\tint sum = 0;\n\tfor (int i = 1; i <= N; i++) sum += N / i;\n\n\tint start, end, n = 0;\n\tif (sum < k)\n\t{\n\t\tstart = N + 1;\n\t\tend = (N > 33000) ? 1000000000 : N * N;\n\t}\n\telse\n\t{\n\t\tstart = 1;\n\t\tend = N;\n\t}\n\n\twhile (start <= end)\n\t{\n\t\tint mid = (start + end) / 2;\n\n\t\tll cnt = 0;\n\t\tint i = 1;\n\t\twhile (i * i <= mid)\n\t\t{\n\t\t\tcnt += min(mid / i, N);\n\t\t\ti++;\n\t\t}\n\t\tcnt = 2 * cnt - (i - 1) * (i - 1);\n\n\t\tif (cnt >= k)\n\t\t{\n\t\t\tend = mid - 1;\n\t\t\tn = mid;\n\t\t}\n\t\telse\n\t\t{\n\t\t\tstart = mid + 1;\n\t\t}\n\t}\n\n\tcout << n;\n}",
+            "java": "import java.io.BufferedReader;\nimport java.io.BufferedWriter;\nimport java.io.FileInputStream;\nimport java.io.InputStreamReader;\nimport java.io.OutputStreamWriter;\nimport java.io.PrintWriter;\n\npublic class Main {\n\tstatic int N;\n\tstatic int K;\n\n\tpublic static void main(String[] args) throws Exception {\n\t\t\n        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));\n\t\tPrintWriter writer = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));\n\t\t\n\t\tN = Integer.parseInt(reader.readLine());\n\t\tK = Integer.parseInt(reader.readLine());\n\t\t\n\t\tint Answer = solve();\n\t\t\n\t\twriter.println(Answer);\n\t\t\n\t\twriter.close();\n\t\treader.close();\n\t}\n\n\tprivate static int solve() {\n\t\tint low = 1;\n\t\tint high = K;\n\t\tint middle = 0;\n\t\t\n\t\twhile (low < high) {\n\t\t\tmiddle = (low + high) / 2;\n\t\t\t\n\t\t\tint count = howMany(middle);\n\t\t\t\n\t\t\tif (count < K)\n\t\t\t\tlow = middle + 1;\n\t\t\telse \n\t\t\t\thigh = middle;\t\t\t\n\t\t}\n\t\t\n\t\treturn low;\n\t}\n\t\n\tprivate static int howMany(int x) {\n\t\tint count = 0;\n\n\t\tfor (int i = 1; i <= N; i++)\n\t\t\tcount += Math.min(x / i, N);\n\t\t\n\t\treturn count;\t\t\n\t}\n\n}",
+            "python": "import sys\nsys.setrecursionlimit(10**5)\n\nn = int(input())\nk = int(input())\n\ndef bi_srch(start, end):\n    if start > end:\n        return start\n    mid = (start + end) // 2\n\n    cnt = 0\n    for i in range(1, n + 1):\n        low_cnt = mid // i\n        if low_cnt >= n:\n            cnt += n\n        else:\n            cnt += low_cnt\n    ret = 0\n    if cnt < k:\n        ret = bi_srch(mid+1,end)\n    else:\n        ret = bi_srch(start,mid-1)\n    return ret\n\nans = bi_srch(1, k)\nprint(ans)"
         }
     },
     {
         "id": 2,
         "header": {
-            "title": "종이 레이싱",
-            "rank": "diamond5",
+            "title": "나무 자르기",
+            "rank": "silver2",
             "source": "baekjoon",
-            "problemId": "1130번",
-            "link": "https://www.acmicpc.net/problem/1130"
+            "problemId": "2805번",
+            "link": "https://www.acmicpc.net/problem/2805"
         },
         "content": {
-            "description": "<div id=\"problem_description\" class=\"problem-text\">\r\n\t\t\t\t<p>종혁이와 재홍이는 종이 레이싱을 즐긴다. 트랙은 종이를 정사각형으로 나눈 것이다. 각 칸은 도로 또는 장애물이다. 두 개의 도로는 시작과 끝으로 표시되어져 있다. 이 게임의 목표는 시작에서 차를 출발시켜서 끝으로 최대한 빨리 이동시키는 것이다.</p>\r\n\r\n<p>이 게임에서 차는 점 하나로 표시된다. 움직임은 각 턴으로 움직인다. 각 턴의 시작에 차는 어떤 칸의 중심에 있다. 그리고 각 턴의 움직임은 다른 칸의 중심으로 이동하는 것이다. 차의 속도는 정수 좌표를 가진 벡터이다. 각 턴은 다음과 같이 이루어져 있다.</p>\r\n\r\n<ol>\r\n\t<li>이번 턴이 시작하기 바로 전에 차의 속도를 바꿀 수 있는데, 속도의 각 좌표를 1씩 증가시키거나, 1씩 감소시키거나, 그대로 놔둘 수 있다. (두 좌표를 같이 증가시키거나, 감소시켜야 하는 것은 아니다. 서로 다른 연산을 할 수 있다.)</li>\r\n\t<li>차를 움직인다. 만약 차가 (r, c)에 있고, 차의 속도가 (vr, vc)라면, 차가 이동하는 새로운 좌표는 (r+vr, c+vc)이다. 차는 이전에 있던 칸의 중심과, 새로운 칸의 중심을 이은 직선을 따라 이동한다.</li>\r\n</ol>\r\n\r\n<p>만약 차의 이동 경로가 끝이 쓰여 있는 도로를 지난다면, 게임은 즉시 끝이 나고, 그때 까지의 턴의 개수가 이동한 시간이 된다. 만약 차의 경로가 게임이 끝나기 전에 장애물을 지난다면, 차는 부수어지고, 게임을 끝마칠 수 없게 된다. (차는 장애물을 스칠 수 있다)</p>\r\n\r\n<p>차는 종이를 벗어날 수 없다. (종이를 벗어나면 실격처리 된다)</p>\r\n\r\n<p>만약 차가 이동하는 곳의 위치가 장애물이거나, 종이 밖이라고 해도, 그 전에 끝을 통과한다면, 게임은 성공적으로 끝난다.</p>\r\n\r\n<p>종이의 모양과 vr, vc가 주어졌을 때, 게임을 끝내는데 드는 턴의 최솟값을 구하는 프로그램을 작성하시오. 만약 끝까지 가는 것이 불가능하다면 -1을 출력한다.</p>\r\n\r\n\t\t\t\t</div>",
-            "input_description": "<div id=\"problem_input\" class=\"problem-text\">\r\n\t\t\t\t\t<p>첫째 줄에 N과 M이 주어진다. 둘째 줄부터 N개의 줄에 종이의 모양이 주어진다. ‘.’은 도로, ‘S’는 시작, ‘F’는 끝, ‘X’는 장애물이다. 마지막 줄에는 vr과 vc가 주어진다. N과 M은 50보다 작거나 같은 자연수이고, vr과 vc는 절댓값이 50보다 작거나 같은 정수이다. 종이에 S와 F는 항상 하나만 있다.</p>\r\n\r\n\t\t\t\t\t</div>",
-            "output_description": "<div id=\"problem_output\" class=\"problem-text\">\r\n\t\t\t\t\t<p>첫째 줄에 문제의 정답을 출력한다.</p>\r\n\r\n\t\t\t\t\t</div>",
-            "input_example": "5 2\r\nFX\r\nX.\r\n.X\r\nX.\r\nSX\r\n1 0",
-            "output_example": "8",
+            "problem_description": "상근이는 나무 M미터가 필요하다. 근처에 나무를 구입할 곳이 모두 망해버렸기 때문에, 정부에 벌목 허가를 요청했다.<br>정부는 상근이네 집 근처의 나무 한 줄에 대한 벌목 허가를 내주었고, 상근이는 새로 구입한 목재절단기를 이용해서 나무를 구할것이다.<br>목재절단기는 다음과 같이 동작한다. 먼저, 상근이는 절단기에 높이 H를 지정해야 한다.<br>높이를 지정하면 톱날이 땅으로부터 H미터 위로 올라간다. 그 다음, 한 줄에 연속해있는 나무를 모두 절단해버린다.<br>따라서, 높이가 H보다 큰 나무는 H 위의 부분이 잘릴 것이고, 낮은 나무는 잘리지 않을 것이다.<br>예를 들어, 한 줄에 연속해있는 나무의 높이가 20, 15, 10, 17이라고 하자. 상근이가 높이를 15로 지정했다면,<br>나무를 자른 뒤의 높이는 15, 15, 10, 15가 될 것이고, 상근이는 길이가 5인 나무와 2인 나무를 들고 집에 갈 것이다(총 7미터를 집에 들고 간다).<br>절단기에 설정할 수 있는 높이는 양의 정수 또는 0이다.<br>상근이는 환경에 매우 관심이 많기 때문에, 나무를 필요한 만큼만 집으로 가져가려고 한다.<br>이때, 적어도 M미터의 나무를 집에 가져가기 위해서 절단기에 설정할 수 있는 높이의 최댓값을 구하는 프로그램을 작성하시오.",
+            "input_description": "첫째 줄에 나무의 수 N과 상근이가 집으로 가져가려고 하는 나무의 길이 M이 주어진다. (1 ≤ N ≤ 1,000,000, 1 ≤ M ≤ 2,000,000,000)<br>둘째 줄에는 나무의 높이가 주어진다. 나무의 높이의 합은 항상 M보다 크거나 같기 때문에, 상근이는 집에 필요한 나무를 항상 가져갈 수 있다.<br>높이는 1,000,000,000보다 작거나 같은 양의 정수 또는 0이다.",
+            "output_description": "적어도 M미터의 나무를 집에 가져가기 위해서 절단기에 설정할 수 있는 높이의 최댓값을 출력한다.",
+            "input_example": "4 7<br>20 15 10 17",
+            "output_example": "15",
             "author": "baekjoon"
         },
         "solution": {
-            "code": ""
+            "cpp": "#include <iostream>\nusing namespace std;\n\ntypedef long long ll;\n\nll lessthenavg(int* H, int N, int avg, int& ct) {\n\tll ans = 0;\n\tfor (int i = 0; i < N; i++) {\n\t\tif (H[i] <= avg) {\n\t\t\tans += H[i];\n\t\t\tH[i] = INT32_MAX;\n\t\t\tct++;\n\t\t}\n\t}\n\treturn ans;\n}\n\nint main() {\n\n\tios_base::sync_with_stdio(false);\n\tcin.tie(NULL);cout.tie(NULL);\n\n\tint N, M, count = 0, avg;\n\tll total = 0, val;\n\n\tcin >> N >> M;\n\tint* H = new int[N];\n\tfor (int i = 0; i < N; i++) {\n\t\tcin >> H[i];\n\t\ttotal += H[i];\n\t}\n\n\tavg = (total - M) / N;\n\twhile (val = lessthenavg(H, N, avg, count), val != 0) {\n\t\ttotal -= val;\n\t\tavg = (total - M) / (N - count);\n\t}\n\n\tcout << avg;\n}",
+            "java": "import java.io.BufferedReader;\nimport java.io.IOException;\nimport java.io.InputStreamReader;\nimport java.util.StringTokenizer;\n\npublic class Main {\n\tstatic int N, M, MAX;\n\tstatic BufferedReader IN;\n\tstatic StringTokenizer ST;\n\tstatic int[] TREE;\n\tstatic long ANS, SEMI_ANS;\n\t\n\tpublic static long cal(long ans){\n\t\tlong ret = 0;\n\t\tfor(int i = 0; i< N; i++){\n\t\t\tlong tmp = TREE[i] - ans;\n\t\t\tif(tmp > 0)\n\t\t\t\tret += tmp;\n\t\t}\n\t\t\n\t\treturn ret;\n\t}\n\n\tpublic static void main(String[] args) throws IOException {\n\t\t// TODO Auto-generated method stub\n\t\tIN = new BufferedReader(new InputStreamReader(System.in));\n\t\tST = new StringTokenizer(IN.readLine());\n\n\t\tN = Integer.parseInt(ST.nextToken());\n\t\tM = Integer.parseInt(ST.nextToken());\n\t\t\n\t\tTREE = new int[N];\n\t\tST = new StringTokenizer(IN.readLine());\n\t\tfor(int i = 0; i< N; i++){\n\t\t\tint tmp = Integer.parseInt(ST.nextToken());\n\t\t\tTREE[i] = tmp;\n\t\t\tif(tmp > MAX)\n\t\t\t\tMAX = tmp;\n\t\t}\n\t\t\n\t\tlong start = 0;\n\t\tlong end = MAX;\n\t\tlong mid = 0;\n\t\twhile(start <= end){\n\t\t\tmid = (start + end)/2;\n\t\t\tlong mid_value = cal(mid);\n\t\t\tif(mid_value - M > 0){\n\t\t\t\tstart = mid + 1;\n\t\t\t\tSEMI_ANS = mid;\n\t\t\t}\n\t\t\telse if(mid_value - M < 0){\n\t\t\t\tend = mid - 1;\n\t\t\t}\n\t\t\telse{\n\t\t\t\tANS = mid;\n\t\t\t\tbreak;\n\t\t\t}\n\t\t\t\t\t\t\n\t\t}\n\t\tif(ANS == 0)\n\t\t\tANS = SEMI_ANS;\n\t\t\n\t\tSystem.out.println(ANS);\t\t\n\n\t}\n\n}",
+            "python": "from sys import stdin\nfrom collections import Counter\n\ndef BS_Tree(data,m):\n    start,end = 0,max(data)\n    answer = 0\n    while start <= end:\n        mid = (start+end) //2\n        result = 0\n        for item, num in data.items():\n            if item > mid:\n                result+=(item-mid) * num\n        if result >= m:\n            start = mid + 1\n            answer = mid\n        else:\n            end = mid - 1\n    return answer\n    \n   \n_,m = map(int,stdin.readline().split())\ndata = Counter(map(int,stdin.readline().split()))\nprint(BS_Tree(data,m))"
         }
     },
     {
         "id": 3,
         "header": {
-            "title": "초콜릿 쪼개기 게임",
-            "rank": "platinum1",
+            "title": "축사 배정",
+            "rank": "platinum4",
             "source": "baekjoon",
-            "problemId": "22850번",
-            "link": "https://www.acmicpc.net/problem/22850"
+            "problemId": "2188번",
+            "link": "https://www.acmicpc.net/problem/2188"
         },
         "content": {
-            "description": "<div id=\"problem_description\" class=\"problem-text\">\n\t\t\t\t<p>서현과 현서는 <em>N</em> × <em>M</em> 격자 모양의 초콜릿을 쪼개 먹으려고 한다. 하지만 커다란 초콜릿을 쪼개는 일은 너무 지루해서 둘은 게임을 하려고 한다.</p>\n\n<p>게임은 서현부터 시작하여 번갈아가면서 턴을 진행한다. 자신의 턴이 되면 초콜릿 조각 중 하나를 고르고, 그 조각에서 가로줄 또는 세로줄 하나를 고른다. 단, 맨 위나 아래 가로줄, 또는 맨 왼쪽이나 오른쪽 세로줄은 고를 수 없다. 그 후 고른 줄을 먹고 초콜릿을 나머지 두 조각으로 쪼갠다. 자신의 턴에 행동을 할 수 없는 플레이어가 패배하게 된다. </p>\n\n<p>초콜릿이 너무나 커다란 나머지 둘은 게임을 하는 것에도 지쳐버렸다. 만약 둘 모두 최선의 전략을 사용한다면 누가 이기게 될지 서현과 현서를 대신하여 구해주자!</p>\n\n\t\t\t\t</div>",
-            "input_description": "<div id=\"problem_input\" class=\"problem-text\">\n\t\t\t\t\t<p>초콜릿의 세로 길이 <em>N</em>과 가로 길이 <em>M</em>이 공백을 구분으로 차례로 주어진다. </p>\n\n\t\t\t\t\t</div>",
-            "output_description": "<div id=\"problem_output\" class=\"problem-text\">\n\t\t\t\t\t<p>서현이 이기게 된다면 sh을 현서가 이기게 된다면 hs를 출력한다. </p>\n\n\t\t\t\t\t</div>",
-            "input_example": "3 3",
-            "output_example": "sh",
-            "author": "stonejjun03"
+            "description": "농부 존은 소 축사를 완성하였다. 축사 환경을 쾌적하게 유지하기 위해서,<br>존은 축사를 M개의 칸으로 구분하고, 한 칸에는 최대 한 마리의 소만 들어가게 계획했다.<br>첫 주에는 소를 임의 배정해서 축사를 운영했으나, 곧 문제가 발생하게 되었다.<br>바로 소가 자신이 희망하는 몇 개의 축사 외에는 들어가기를 거부하는 것이다.<br>농부 존을 도와 최대한 많은 수의 소가 축사에 들어갈 수 있도록 하는 프로그램을 작성하시오. 축사의 번호는 1부터 M까지 매겨져 있다.",
+            "input_description": "첫째 줄에 소의 수 N과 축사의 수 M이 주어진다. (1 ≤ N, M ≤ 200)<br>둘째 줄부터 N개의 줄에는 각 소가 들어가기 원하는 축사에 대한 정보가 주어진다.<br>i번째 소가 들어가기 원하는 축사의 수 Si (0 ≤ Si ≤ M)이 먼저 주어지고, 이후 Si개의 축사 번호가 주어진다.<br>같은 축사 번호가 두 번 이상 주어지는 경우는 없다.",
+            "output_description": "첫째 줄에 축사에 들어갈 수 있는 소의 최댓값을 출력한다.",
+            "input_example": "5 5<br>2 2 5<br>3 2 3 4<br>2 1 5<br>3 1 2 5<br>1 2",
+            "output_example": "4",
+            "author": "baekjoon"
         },
         "solution": {
-            "code": ""
+            "cpp": "#include <iostream>\n#include <vector>\n#include <cstring>\nusing namespace std;\n\n#define MAX 201\n\nvector<int> want[MAX];\nint room[MAX];\nbool done[MAX];\n\nbool dfs(const int& x)\n{\n\tfor (int i = 0; i < want[x].size(); i++)\n\t{\n\t\tconst int& p = want[x][i];\n\t\tif (done[p]) continue; else done[p] = true;\n\t\tif (room[p] == 0 || dfs(room[p])) return room[p] = x;\n\t}\n\treturn false;\n}\n\nint main()\n{\n\tint n, m, v, t, i, j;\n\tfor (cin >> n >> m, i = 1; i <= n; i++)\n\t\tfor (cin >> v, j = 0; j < v; j++) cin >> t, want[i].push_back(t);\n\n\tfor (i = 1, j = 0; i <= n; i++)\n\t{\n\t\tmemset(done, 0, sizeof(done));\n\t\tif (dfs(i)) j++;\n\t}\n\tcout << j;\n}",
+            "java": "import java.io.BufferedReader;\nimport java.io.InputStreamReader;\nimport java.io.IOException;\nimport java.util.StringTokenizer;\n\nimport java.util.Queue;\nimport java.util.LinkedList;\nimport java.util.Arrays;\nimport java.util.ArrayList;\n\n\npublic class Main {\n\n\tpublic static void main(String[] args) throws IOException {\n\t\t// TODO Auto-generated method stub\n\t\tBufferedReader br=new BufferedReader(new InputStreamReader(System.in));\n\t\tStringTokenizer st=new StringTokenizer(br.readLine());\n\t\tint n=Integer.parseInt(st.nextToken());\n\t\tint m=Integer.parseInt(st.nextToken());\n\t\tint start=0;\n\t\tint end=n+m+1;\n\t\tint[][] cap=new int[n+m+2][n+m+2]; // capacity -- cow = 1~n & cage = n+1~n+m\n\t\tint[][] flow=new int[n+m+2][n+m+2]; // flow\n\t\tfor(int i=1;i<=n;i++) { // cow number = 1~n\n\t\t\tst=new StringTokenizer(br.readLine());\n\t\t\tint num_cage=Integer.parseInt(st.nextToken());\n\t\t\tfor(int j=0;j<num_cage;j++) {\n\t\t\t\tint cage_no=Integer.parseInt(st.nextToken())+n;\n\t\t\t\tcap[i][cage_no]=1;\n\t\t\t\tcap[cage_no][i]=1;\n\t\t\t\tflow[cage_no][i]=1;\n\t\t\t}\n\t\t\tcap[start][i]=1; // to link start point with cows\n\t\t}\n\t\t\n\t\tfor(int i=1;i<=m;i++) {\n\t\t\tcap[n+i][end]=1; // to link end point with cages\n\t\t}\n\t\t\t\n\t\tint[] prev=new int[n+m+2];\n\t\tQueue<Integer> q=new LinkedList<Integer>();\n\t\t\n\t\tint ans=0;\n\t\twhile(true) {\n\t\t\tint[] path=new int[n+m+2];\n\t\t\tArrays.fill(prev, -1);\n\t\t\tq.clear();\n\t\t\tq.add(start);\n\t\t\t\n\t\t\twhile(!q.isEmpty()) {\n\t\t\t\tint curr=q.poll();\n\t\t\t\tfor(int i=0;i<=end;i++) {\n\t\t\t\t\tif((cap[curr][i]==1)&&(flow[curr][i]==0)&&prev[i]==-1) {\n\t\t\t\t\t\tq.add(i);\n\t\t\t\t\t\tprev[i]=curr;\n\t\t\t\t\t\tif(i==end) {break;}\n\t\t\t\t\t\tpath[i]=curr;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\t\n\t\t\tif(prev[end]==-1) {break;}\n\t\t\tfor(int i=end;i!=start;i=prev[i]) {\n\t\t\t\tflow[prev[i]][i]=1;\n\t\t\t\tflow[i][prev[i]]=0;\t\t\t\t\n\t\t\t}\n\t\t\t\n\t\t\tans++;\n\t\t\t\n\t\t}\n\t\t\n\t\tSystem.out.println(ans);\n\t}\n}",
+            "python": "want, room, done = [[]], [], []\n\ndef dfs(x):\n\tglobal want, room, done\n\tfor p in want[x]:\n\t\tif done[p]: continue\n\t\tdone[p] = True\n\t\tif room[p] == 0 or dfs(room[p]):\n\t\t\troom[p] = x\n\t\t\treturn True\n\treturn False\n\ninp = input().split()\nn, m = int(inp[0]), int(inp[1])\nroom = [0] * (m + 1)\nfor i in range(1, n + 1):\n\twant.append([])\n\tinp = input().split()\n\tdel inp[0]\n\tfor t in inp:\n\t\twant[i].append(int(t))\n\ncnt = 0\nfor i in range(1, n + 1):\n\tdone = [False] * (m + 1)\n\tif dfs(i): cnt += 1\nprint(cnt)"
         }
     },
     {
         "id": 4,
         "header": {
-            "title": "",
-            "rank": "",
-            "source": "",
-            "problemId": "",
-            "link": ""
+            "title": "RGB 거리",
+            "rank": "silver1",
+            "source": "baekjoon",
+            "problemId": "1149번",
+            "link": "https://www.acmicpc.net/problem/1149"
         },
         "content": {
-            "description": "",
-            "input_description": "",
-            "output_description": "",
-            "input_example": "",
-            "output_example": "",
-            "author": ""
+            "description": "RGB거리에는 집이 N개 있다. 거리는 선분으로 나타낼 수 있고, 1번 집부터 N번 집이 순서대로 있다.<br>집은 빨강, 초록, 파랑 중 하나의 색으로 칠해야 한다. 각각의 집을 빨강, 초록, 파랑으로 칠하는 비용이 주어졌을 때,<br>아래 규칙을 만족하면서 모든 집을 칠하는 비용의 최솟값을 구해보자.<br>1. 1번 집의 색은 2번 집의 색과 같지 않아야 한다.<br>2. N번 집의 색은 N-1번 집의 색과 같지 않아야 한다.<br>3. i(2 ≤ i ≤ N-1)번 집의 색은 i-1번, i+1번 집의 색과 같지 않아야 한다.<br>",
+            "input_description": "첫째 줄에 집의 수 N(2 ≤ N ≤ 1,000)이 주어진다.<br>둘째 줄부터 N개의 줄에는 각 집을 빨강, 초록, 파랑으로 칠하는 비용이 1번 집부터 한 줄에 하나씩 주어진다.<br>집을 칠하는 비용은 1,000보다 작거나 같은 자연수이다.",
+            "output_description": "첫째 줄에 모든 집을 칠하는 비용의 최솟값을 출력한다.",
+            "input_example": "3<br>26 40 83<br>49 60 57<br>13 89 99",
+            "output_example": "96",
+            "author": "baekjoon"
         },
         "solution": {
-            "code": ""
+            "cpp": "#include<iostream>\n#include<algorithm>\n#include<queue>\nusing namespace std;\n\nint n,ans=987654321;\nint dp[1001][3];\nint cost[1001][3];\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    cout.tie(nullptr);\n\n    cin >> n;\n    dp[0][0] = 0;\n    dp[0][1] = 0;\n    dp[0][2] = 0;\n\n    for (int i = 1; i <= n; i++) {\n        cin >> cost[i][0] >> cost[i][1] >> cost[i][2];\n    }\n    for(int k=0; k <= 2; k++){\n        for(int i=0; i <= 2; i++){\n            if(i == k) dp[1][k]=cost[1][k];\n            else dp[1][i]= 987654321;\n        }\n        for(int i=2;i<=n;i++){\n            dp[i][0] = min(dp[i-1][1],dp[i-1][2])+cost[i][0];\n            dp[i][1] = min(dp[i-1][0],dp[i-1][2])+cost[i][1];\n            dp[i][2] = min(dp[i-1][1],dp[i-1][0])+cost[i][2];\n        }\n        for(int i=0; i <= 2; i++){\n            if(i == k) continue;\n            ans = min(ans, dp[n][i]);\n        }\n    }\n\n    cout << ans;\n    return 0;\n}",
+            "java": "import java.util.*;\n\npublic class Main {\n\tstatic int[][] arr;\n\tstatic int[][] dp;\n\tstatic int n;\n\tpublic static void main(String[] args) {\n\t\tScanner sc = new Scanner(System.in);\n\t\t\n\t\tn = sc.nextInt();\n\t\tarr = new int[n][3];\n\t\t\n\t\tfor (int i = 0; i < n; i++) {\n\t\t\tfor (int j = 0; j < 3; j++) {\n\t\t\t\tarr[i][j] = sc.nextInt();\n\t\t\t}\n\t\t}\n\t\t\n\t\tdp = new int[1001][3];\n\t\t\n\t\tgetMin(1);\n\n\t\tint min = Math.min(dp[n][0], dp[n][1]);\n\t\tmin = Math.min(min, dp[n][2]);\n\t\t\n\t\tSystem.out.println(min);\n\t}\n\t\n\tstatic void getMin(int level) {\n\t\tif (n + 1 == level) {\n\t\t\treturn;\n\t\t}\n\t\t\n\t\tdp[level][0] = Math.min(dp[level - 1][1], dp[level - 1][2]) + arr[level - 1][0];\n\t\tdp[level][1] = Math.min(dp[level - 1][0], dp[level - 1][2]) + arr[level - 1][1];\n\t\tdp[level][2] = Math.min(dp[level - 1][0], dp[level - 1][1]) + arr[level - 1][2];\n\t\t\n\t\tgetMin(level + 1);\n\t}\n}",
+            "python": "n = int(input())\ncost = []\nINF = 1e9\n\nfor _ in range(n):\n  cost.append(list(map(int, input().split())))\n\nresult = INF\n\nfor start_number in range(3) :\n  dist = [[0] * 3 for _ in range(len(cost))]\n\n  for i in range(3) :\n    if i != start_number :\n      dist[0][i] = INF\n    else :\n      dist[0][i] = cost[0][i]\n\n  for i in range(1, len(cost)):\n    dist[i][0] = min(dist[i-1][1], dist[i-1][2]) + cost[i][0]\n    dist[i][1] = min(dist[i-1][0], dist[i-1][2]) + cost[i][1]\n    dist[i][2] = min(dist[i-1][0], dist[i-1][1]) + cost[i][2]\n\n  for i in range(3) :\n    if i != start_number :\n      result = min(result, dist[n-1][i])\n\nprint(result)"
         }
     },
     {
         "id": 5,
         "header": {
-            "title": "",
-            "rank": "",
-            "source": "",
-            "problemId": "",
-            "link": ""
+            "title": "최단 경로",
+            "rank": "gold4",
+            "source": "baekjoon",
+            "problemId": "1753번",
+            "link": "https://www.acmicpc.net/problem/1753"
         },
         "content": {
-            "description": "",
-            "input_description": "",
-            "output_description": "",
-            "input_example": "",
-            "output_example": "",
-            "author": ""
+            "description": "방향그래프가 주어지면 주어진 시작점에서 다른 모든 정점으로의 최단 경로를 구하는 프로그램을 작성하시오.<br>단, 모든 간선의 가중치는 10 이하의 자연수이다.",
+            "input_description": "첫째 줄에 정점의 개수 V와 간선의 개수 E가 주어진다. (1 ≤ V ≤ 20,000, 1 ≤ E ≤ 300,000)<br>모든 정점에는 1부터 V까지 번호가 매겨져 있다고 가정한다.<br>둘째 줄에는 시작 정점의 번호 K(1 ≤ K ≤ V)가 주어진다.<br>셋째 줄부터 E개의 줄에 걸쳐 각 간선을 나타내는 세 개의 정수 (u, v, w)가 순서대로 주어진다.<br>이는 u에서 v로 가는 가중치 w인 간선이 존재한다는 뜻이다. u와 v는 서로 다르며 w는 10 이하의 자연수이다.<br>서로 다른 두 정점 사이에 여러 개의 간선이 존재할 수도 있음에 유의한다.",
+            "output_description": "첫째 줄부터 V개의 줄에 걸쳐, i번째 줄에 i번 정점으로의 최단 경로의 경로값을 출력한다.<br>시작점 자신은 0으로 출력하고, 경로가 존재하지 않는 경우에는 INF를 출력하면 된다.",
+            "input_example": "5 6<br>1<br>5 1 1<br>1 2 2<br>1 3 3<br>2 3 4<br>2 4 5<br>3 4 6",
+            "output_example": "0<br>2<br>3<br>7<br>INF",
+            "author": "baekjoon"
         },
         "solution": {
-            "code": ""
+            "cpp": "#include<iostream>\n#include<vector>\n#include<queue>\nusing namespace std;\n\n#define INF 1000000000 // 10¾ï\n\nint V, E, K;\nint u, v, w;\nint weight, node, next_weight, next_node;\nint ans[20001];\nvector<pair<int, int>> vec[20001];\npriority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;\n\nint main()\n{\n\tcin >> V >> E >> K;\n\n\tfor (int i = 1; i <= V; i++) ans[i] = INF;\n\n\tfor (int i = 0; i < E; i++)\n\t{\n\t\tcin >> u >> v >> w;\n\t\tvec[u].push_back(pair<int, int>(v, w));\n\t}\n\n\tans[K] = 0;\n\tpq.push(make_pair(0, K));\n\n\twhile (!pq.empty())\n\t{\n\t\tweight = pq.top().first;\n\t\tnode = pq.top().second;\n\t\tpq.pop();\n\n\t\tfor (int i = 0; i < vec[node].size(); i++)\n\t\t{\n\t\t\tnext_node = vec[node][i].first;\n\t\t\tnext_weight = weight + vec[node][i].second;\n\t\t\tif (ans[next_node] > next_weight)\n\t\t\t{\n\t\t\t\tans[next_node] = next_weight;\n\t\t\t\tpq.push(make_pair(next_weight, next_node));\n\t\t\t}\n\t\t}\n\t}\n\n\tfor (int i = 1; i <= V; i++)\n\t{\n\t\tif (ans[i] == INF) cout << \"INF\" << '\n';\n\t\telse cout << ans[i] << '\n';\n\t}\n}",
+            "java": "import java.io.BufferedReader;\nimport java.io.IOException;\nimport java.io.InputStreamReader;\nimport java.util.*;\n\npublic class Main {\n\tstatic int distance[];\n\tstatic LinkedList<Point> list[];\n\tstatic boolean visited[];\n\t\n\tpublic static void main(String [] args) throws IOException {\n\t\tint V, E, K, u, v, w;\n\t\tBufferedReader br= new BufferedReader(new InputStreamReader(System.in));\n\t\tStringTokenizer st= new StringTokenizer(br.readLine());\n\t\t\n\t\tV= Integer.parseInt(st.nextToken());\n\t\tE= Integer.parseInt(st.nextToken());\n\t\tK= Integer.parseInt(br.readLine());\n\t\t\n\t\tdistance= new int[V+1];\n\t\tlist= new LinkedList[V+1];\n\t\tvisited= new boolean[V+1];\n\t\t\n\t\tArrays.fill(distance, -1);\n\t\tfor(int i=1; i<=V; i++) {\n\t\t\tlist[i]= new LinkedList<>();\n\t\t}\n\t\t\n\t\tfor(int i=0; i<E; i++) {\n\t\t\tst = new StringTokenizer(br.readLine());\n            u = Integer.parseInt(st.nextToken());\n            v = Integer.parseInt(st.nextToken());\n            w = Integer.parseInt(st.nextToken());\n            list[u].add(new Point(v, w));\n\t\t}\n\t\t\n\t\tdijkstra(K);\n\t\t\n\t\tStringBuilder sb= new StringBuilder();\n\t\t\n\t\tfor(int i=1; i<=V; i++) {\n\t\t\tif(distance[i]==-1) sb.append(\"INF\n\");\n\t\t\telse sb.append(distance[i]+\"\n\");\n\t\t}\n\t\tSystem.out.print(sb.toString());\n\t\tbr.close();\n\t\t\n    }//main\n\t\n\tpublic static void dijkstra(int start) {\n\t\tPriorityQueue<Point> pq= new PriorityQueue<>();\n\t\tPoint now;\n\t\t\n\t\tpq.offer(new Point(start, 0));\n\t\tdistance[start]=0;\n\t\t\n\t\twhile(!pq.isEmpty()) {\n\t\t\tnow= pq.poll();\n\t\t\t\n\t\t\tif(visited[now.end]) continue;\n\t\t\tvisited[now.end]= true;\n\t\t\tfor(Point next: list[now.end]) {\n\t\t\t\tif(distance[next.end]==-1||distance[next.end]>distance[now.end] + next.weight) {\n\t\t\t\t\tdistance[next.end]= distance[now.end] + next.weight;\n\t\t\t\t\tpq.offer(new Point(next.end, distance[next.end]));\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\t\n\tstatic\tclass Point implements Comparable<Point>{\n\t\tint end, weight;\n\t\t\t\n\t\tpublic Point(int end, int weight) {\n\t\t\tthis.end= end;\n\t\t\tthis.weight= weight;\n\t\t}\n\t\tpublic int compareTo(Point p) {\n\t\t\treturn weight - p.weight;\n\t\t}\n\t}\n}",
+            "python": "import sys\nfrom heapq import heappush, heappop\nr = sys.stdin.readline\nINF = 1e9\n\n\ndef dijkstra(v, k, g):\n    dist = [INF] * v\n    dist[k - 1] = 0\n    q = []\n    heappush(q, [0, k-1])\n\n    while q:\n        cost, pos = heappop(q)\n\n        for p, c in g[pos]:\n            c += cost\n            if c < dist[p]:\n                dist[p] = c\n                heappush(q, [c, p])\n\n    return dist\n\n\nV, E = map(int, r().split())\nK = int(r())\ngraph = [[] for _ in range(V)]\nfor _ in range(E):\n    u, v, w = map(int, r().split())\n    graph[u-1].append([v-1, w])\n\nfor d in dijkstra(V, K, graph):\n    print(d if d != INF else \"INF\")"
         }
     },
     {
         "id": 6,
         "header": {
-            "title": "",
-            "rank": "",
-            "source": "",
-            "problemId": "",
-            "link": ""
+            "title": "일곱 난쟁이",
+            "rank": "bronze1",
+            "source": "baekjoon",
+            "problemId": "2309번",
+            "link": "https://www.acmicpc.net/problem/2309"
         },
         "content": {
-            "description": "",
-            "input_description": "",
-            "output_description": "",
-            "input_example": "",
-            "output_example": "",
-            "author": ""
+            "description": "왕비를 피해 일곱 난쟁이들과 함께 평화롭게 생활하고 있던 백설공주에게 위기가 찾아왔다.<br>일과를 마치고 돌아온 난쟁이가 일곱 명이 아닌 아홉 명이었던 것이다.<br>아홉 명의 난쟁이는 모두 자신이 \"백설 공주와 일곱 난쟁이\"의 주인공이라고 주장했다.<br>뛰어난 수학적 직관력을 가지고 있던 백설공주는, 다행스럽게도 일곱 난쟁이의 키의 합이 100이 됨을 기억해 냈다.<br>아홉 난쟁이의 키가 주어졌을 때, 백설공주를 도와 일곱 난쟁이를 찾는 프로그램을 작성하시오.",
+            "input_description": "아홉 개의 줄에 걸쳐 난쟁이들의 키가 주어진다.<br>주어지는 키는 100을 넘지 않는 자연수이며, 아홉 난쟁이의 키는 모두 다르며, 가능한 정답이 여러 가지인 경우에는 아무거나 출력한다.",
+            "output_description": "일곱 난쟁이의 키를 오름차순으로 출력한다. 일곱 난쟁이를 찾을 수 없는 경우는 없다.",
+            "input_example": "20<br>7<br>23<br>19<br>10<br>15<br>25<br>8<br>13",
+            "output_example": "7<br>8<br>10<br>13<br>19<br>20<br>23",
+            "author": "baekjoon"
         },
         "solution": {
-            "code": ""
+            "cpp": "#include <iostream>\n#include <algorithm>\n#include <vector>\n\nusing namespace std;\nint main(void)\n{\n    int Height[9];\n    int sum = 0;\n    for(int i = 0; i < 9; i++){\n        cin >> Height[i];\n        sum += Height[i];\n    }\n    \n    sort(Height, Height + 9);\n    \n    for(int i = 0; i < 8; i++){\n        for(int j = i + 1; j < 9; j++){\n            if(sum - Height[i] - Height[j] == 100){\n                for(int k = 0; k < 9; k++){\n                    if(k != i && k != j)\n                        cout << Height[k] << endl;\n                }\n                return 0;\n            }\n        }\n    }\n    \n\n    return 0;\n}",
+            "java": "import java.io.*;\nimport java.util.Arrays;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));\n        int[] arr = new int[9];\n        int sum = 0;\n        int spy1 = 0, spy2 = 0;\n        for (int i = 0; i < arr.length; i++) {\n            arr[i] = Integer.parseInt(br.readLine());\n            sum += arr[i];\n        }\n        Arrays.sort(arr);\n        for (int i = 0; i < arr.length - 1; i++) {\n            for (int j = i + 1; j < arr.length; j++) {\n                if (sum - arr[i] - arr[j] == 100) {\n                    spy1 = i;\n                    spy2 = j;\n                    break;\n                }\n            }\n        }\n        for (int i = 0; i < arr.length; i++) {\n            if (i == spy1 || i == spy2)\n                continue;\n            System.out.println(arr[i]);\n        }\n        bw.flush();\n        bw.close();\n    }\n}",
+            "python": "import sys\nfake_man = 9\nman_list = []\nfor i in range(fake_man):\n    man_list.append(int(sys.stdin.readline().strip()))\nfor i in range(8):\n    for j in range(1,9):\n        n1 = man_list[i]\n        man_list[i] = 0\n        n2 = man_list[j]\n        man_list[j] = 0\n        if sum(man_list) == 100:\n            man_list.sort()\n            for k in range(2,9):\n                print(man_list[k])\n            exit()\n        man_list[j] = n2\n        man_list[i] = n1"
         }
     },
     {
         "id": 7,
         "header": {
-            "title": "",
-            "rank": "",
-            "source": "",
-            "problemId": "",
-            "link": ""
+            "title": "빵집",
+            "rank": "gold2",
+            "source": "baekjoon",
+            "problemId": "3109번",
+            "link": "https://www.acmicpc.net/problem/3109"
         },
         "content": {
-            "description": "",
-            "input_description": "",
-            "output_description": "",
-            "input_example": "",
-            "output_example": "",
-            "author": ""
+            "problem_description": "남규나라의 왕 zych는 도로 정비 계획을 발표하였다.<br>두 도시를 잇는 도로들을 새로 만들거나, 안전상의 문제로 도로를 없애기도 할 계획이다.<br>도로 정비 계획은 두 도시와, 만들건지, 없앨건지에 대한 정보가 주어지는데,<br>도로를 정비하는 일은 매우 큰 일이기에 계획을 순서대로 하나씩 시행해 나갈 것이다.<br>상황에 따라서는 계획에 포함돼서 만들어진 도로를 제거할 수도 있다.<br>Zych는 차후 도로 정비 계획에 참고하기 위하여, 각 도시들이 수도에 방문하는데 최소 몇 개의 도시들을 방문해야 하는지 조사하기로 하였다.<br>남규나라의 초기 도시상태가 주어지고 도로 정비계획이 주어질 때, 한 도로가 정비될 때마다 각 도시별로 수도를 방문하는 데 최소 방문 도시들을 출력하시오.",
+            "input_description": "첫째 줄에 R과 C가 주어진다. (1 ≤ R ≤ 10,000, 5 ≤ C ≤ 500)<br>다음 R개 줄에는 빵집 근처의 모습이 주어진다. '.'는 빈 칸이고, 'x'는 건물이다. 처음과 마지막 열은 항상 비어있다.",
+            "output_description": "첫째 줄에 원웅이가 놓을 수 있는 파이프라인의 최대 개수를 출력한다.",
+            "input_example": "5 5  <br>.xx..<br>..x..<br>.....<br>...x.<br>...x.",
+            "output_example": "2",
+            "author": "baekjoon"
         },
         "solution": {
-            "code": ""
+            "cpp": "#include <cstdio>\nchar map[10005][505];\nint n, m, ans;\nbool pipe(int r,int c) {\n\tif (map[r][c]!='.')return false;\n\tif (c == m-1) return true;\n\tmap[r][c] = 'x';\n\treturn pipe(r - 1, c + 1) || pipe(r, c + 1) || pipe(r + 1, c + 1);\n}\nint main() {\n\tscanf(\"%d%d\", &n, &m);\n\tfor (int i = 1; i <= n; i++) {\n\t\tscanf(\" %s\", map[i]);\n\t}\n\tfor (int i = 0; i < n; i++) {\n\t\tif (pipe(i, 0))ans++;\n\t}\n\tprintf(\"%d\", ans);\n\treturn 0;\n}",
+            "java": "import java.util.*;\npublic class Main {\n\tstatic String[][] arr;\n\tstatic int r;\n\tstatic int c;\n\tstatic int[] moveX = {-1, 0, 1};\n\tstatic int count;\n\tpublic static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        r = sc.nextInt();\n        c = sc.nextInt();\n        \n        arr = new String[r][c];\n        for (int i = 0; i < r; i++) {\n        \tString[] s = sc.next().split(\"\");\n        \tfor (int j = 0; j < c; j++) {\n        \t\tarr[i][j] = s[j];\n        \t}\n        }\n        \n        for (int i = 0; i < r; i++) {\n    \t\tdfs(i, 0);\n        }\n        \n        System.out.println(count);\n        \n        sc.close();\n    }\n\t\n\tstatic boolean dfs(int x, int y) {\n\t\tif (y == c - 1) {\n\t\t\tcount++;\n\t\t\treturn true;\n\t\t}\n\t\t\n\t\tfor (int i = 0; i < 3; i++) {\n\t\t\tint newX = x + moveX[i];\n\t\t\tint newY = y + 1;\n\t\t\t\n\t\t\tif (newX < 0 || newX >= r || newY < 0 || newY >= c) {\n\t\t\t\tcontinue;\n\t\t\t}\n\n\t\t\tif (arr[newX][newY].equals(\".\")) {\n\t\t\t\tarr[newX][newY] = \"#\";  // 통일한 경로를 가지 않기 위해 \".\" 에서 \"#\"으로 변경\n\t\t\t\tif (dfs(newX, newY)) return true;\n\t\t\t}\n\t\t}\n\t\t\n\t\treturn false;  // 연결을 실패한 경우 false를 리턴하여 탐색 종료\n\t}\n\t\n}",
+            "python": "def solve(i, j):\n    if j == c-1:\n        return True\n    \n    for d in dx:\n        if 0<=i+d<r and table[i+d][j+1] == '.' and not visit[i+d][j+1]:\n            visit[i+d][j+1] = True\n            if solve(i+d, j+1):\n                return True\n    return False\n\nr, c = map(int, input().split())\ntable = [list(input().rstrip()) for _ in range(r)]\nvisit = [[False] * c for _ in range(r)]\ndx = [-1, 0, 1]\nans = 0\nfor i in range(r):\n    if table[i][0] == '.':\n        if solve(i, 0):\n            ans += 1\nprint(ans)"
         }
     },
     {
         "id": 8,
         "header": {
-            "title": "",
-            "rank": "",
-            "source": "",
-            "problemId": "",
-            "link": ""
+            "title": "가장 긴 증가하는 부분 수열 2",
+            "rank": "gold2",
+            "source": "baekjoon",
+            "problemId": "12015번",
+            "link": "https://www.acmicpc.net/problem/12015"
         },
         "content": {
-            "description": "",
-            "input_description": "",
-            "output_description": "",
-            "input_example": "",
-            "output_example": "",
-            "author": ""
+            "description": "세준이는 크기가 N×N인 배열 A를 만들었다. 배열에 들어있는 수 A[i][j] = i×j 이다.<br>이 수를 일차원 배열 B에 넣으면 B의 크기는 N×N이 된다. B를 오름차순 정렬했을 때, B[k]를 구해보자.<br>배열 A와 B의 인덱스는 1부터 시작한다.",
+            "input_description": "첫째 줄에 수열 A의 크기 N(1 ≤ N ≤ 1,000,000)이 주어진다.<br>둘째 줄에는 수열 A를 이루고 있는 Ai(1 ≤ Ai ≤ 1,000,000)가 주어진다.",
+            "output_description": "첫째 줄에 수열 A의 가장 긴 증가하는 부분 수열의 길이를 출력한다.",
+            "input_example": "6",
+            "output_example": "10 20 10 30 20 50",
+            "author": "baekjoon"
         },
         "solution": {
-            "code": ""
+            "cpp": "#include<iostream>\n#include<algorithm>\n#include<vector>\n \n \nusing namespace std;\n \nint cache[1000001];\nint arr[1000001];\nint N;\n \nint dp(int here) {\n    int& ret = cache[here];\n    if (ret != 0)\n        return ret;\n    ret = 1;\n    for (int next = here + 1; next < N; next++) {\n        if (arr[here] < arr[next])\n            ret = max(ret, dp(next) + 1);\n    }\n \n    return ret;\n}\n \nint main() {\n    ios_base::sync_with_stdio(0);\n    cin.tie(0);\n \n    cin >> N;\n    int ret = 0;\n    for (int i = 0; i < N; i++) {\n        cin >> arr[i];\n    }\n    for (int i = 0; i < N; i++) {\n        ret = max(ret, dp(i));\n    }\n    cout << ret;\n    return 0;\n}",
+            "java": "import java.util.ArrayList;\nimport java.util.Scanner;\n\npublic class Main {\n\t\n\tpublic static void main(String [] args){\n\t\tint N, num, left, right, mid;\n\t\tArrayList<Integer> list= new ArrayList<>();\n\t\t\n\t\tScanner scan= new Scanner(System.in);\n\t\t\n\t\tN= scan.nextInt();\n\t\tlist.add(0);\n\t\t\n\t\tfor(int i=0; i<N; i++) {\n\t\t\tnum= scan.nextInt();\n\t\t\t\n\t\t\tif(num > list.get(list.size()-1)) {\n\t\t\t\tlist.add(num);\n\t\t\t}else {\n\t\t\t\tleft=1;\n\t\t\t\tright=list.size()-1;\n\t\t\t\twhile(left<=right) {\n\t\t\t\t\tmid= (left+right)/2;\n\t\t\t\t\tif(num>list.get(mid)) {\n\t\t\t\t\t\tleft=mid+1;\n\t\t\t\t\t}else {\n\t\t\t\t\t\tright=mid-1;\n\t\t\t\t\t}\n\t\t\t\t}//end while\n\t\t\t\tlist.set(left, num);\n\t\t\t}\n\t\t}//end for\n\t\tSystem.out.println(list.size()-1);\n    }\n}",
+            "python": "import sys\nfrom bisect import bisect_left\n\ndef find(target):\n  start, end = 1, len(dist) - 1\n  while start < end :\n    mid = (start + end) // 2\n    if dist[mid] < target :\n      start = mid + 1\n    elif dist[mid] > target :\n      end = mid\n    else :\n      start = end = mid\n  return end\n\n\nn = int(input())\narray = list(map(int, sys.stdin.readline().split()))\ndist = [0]\n\nfor i in array :\n  if dist[-1] < i :\n    dist.append(i)\n  else :\n    dist[find(i)] = i\n    # dist[bisect_left(dist, i)] = i\n\nprint(len(dist) - 1)"
         }
     },
     {
         "id": 9,
         "header": {
-            "title": "",
-            "rank": "",
-            "source": "",
-            "problemId": "",
-            "link": ""
+            "title": "문자열 집합",
+            "rank": "silver3",
+            "source": "baekjoon",
+            "problemId": "14425번",
+            "link": "https://www.acmicpc.net/problem/14425"
         },
         "content": {
-            "description": "",
-            "input_description": "",
-            "output_description": "",
-            "input_example": "",
-            "output_example": "",
-            "author": ""
+            "problem_description": "총 N개의 문자열로 이루어진 집합 S가 주어진다.<br>입력으로 주어지는 M개의 문자열 중에서 집합 S에 포함되어 있는 것이 총 몇 개인지 구하는 프로그램을 작성하시오.",
+            "input_description": "첫째 줄에 문자열의 개수 N과 M (1 ≤ N ≤ 10,000, 1 ≤ M ≤ 10,000)이 주어진다.<br>다음 N개의 줄에는 집합 S에 포함되어 있는 문자열들이 주어진다.<br>다음 M개의 줄에는 검사해야 하는 문자열들이 주어진다.<br>입력으로 주어지는 문자열은 알파벳 소문자로만 이루어져 있으며, 길이는 500을 넘지 않는다.<br>집합 S에 같은 문자열이 여러 번 주어지는 경우는 없다.",
+            "output_description": "첫째 줄에 M개의 문자열 중에 총 몇 개가 집합 S에 포함되어 있는지 출력한다.",
+            "input_example": "5 11<br>baekjoononlinejudge<br>startlink<br>codeplus<br>sundaycoding<br>codingsh<br>baekjoon<br>codeplus<br>codeminus<br>startlink<br>starlink<br>sundaycoding<br>codingsh<br>codinghs<br>sondaycoding<br>startrink<br>icerink<br>",
+            "output_example": "4",
+            "author": "baekjoon"
         },
         "solution": {
-            "code": ""
+            "cpp": "#include <iostream>\n#include <string>\n#include <unordered_set>\n\nusing namespace std;\n\nint main()\n{\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    int N, M;\n    cin >> N >> M;\n    unordered_set<string> target;\n    for (int i = 0; i < N; ++i)\n    {\n        string in;\n        cin >> in;\n        target.insert(in);\n    }\n    int cnt = 0;\n    for (int i = 0; i < M; ++i)\n    {\n        string in;\n        cin >> in;\n        if (target.find(in) != target.end())\n        {\n            ++cnt;\n        }\n    }\n    cout << cnt;\n    return 0;\n}",
+            "java": "import java.io.BufferedReader;\nimport java.io.InputStreamReader;\nimport java.util.HashSet;\n\npublic class Main {\n\tpublic static void main(String[] args) throws Exception {\n\t\tBufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n\t\tString[] input = br.readLine().split(" ,
+            "python": "import sys\n\ndef sol():\n    a = int(input().rstrip().split()[0])\n    s = sys.stdin.read().rstrip().split()\n    group, member = set(s[:a]), s[a:]\n    cnt = sum(1 for i in member if i in group)\n    print(cnt)\n\nsol()"
         }
     },
     {
         "id": 10,
         "header": {
-            "title": "",
-            "rank": "",
-            "source": "",
-            "problemId": "",
-            "link": ""
+            "title": "평범한 배낭",
+            "rank": "gold5",
+            "source": "baekjoon",
+            "problemId": "12865번",
+            "link": "https://www.acmicpc.net/problem/12865"
         },
         "content": {
-            "description": "",
-            "input_description": "",
-            "output_description": "",
-            "input_example": "",
-            "output_example": "",
-            "author": ""
+            "problem_description": "양치기 꿍은 맨날 늑대가 나타났다고 마을 사람들을 속였지만 이젠 더이상 마을 사람들이 속지 않는다.<br>화가 난 꿍은 복수심에 불타 아예 늑대들을 양들이 있는 울타리안에 마구 집어넣어 양들을 잡아먹게 했다.<br>하지만 양들은 보통 양들이 아니다. 같은 울타리 영역 안의 양들의 숫자가 늑대의 숫자보다 더 많을 경우 늑대가 전부 잡아먹힌다.<br>물론 그 외의 경우는 양이 전부 잡아먹히겠지만 말이다. 꿍은 워낙 똑똑했기 때문에 이들의 결과는 이미 알고있다.<br>만약 빈 공간을 '.'(점)으로 나타내고 울타리를 '#', 늑대를 'v', 양을 'k'라고 나타낸다면,<br>여러분은 몇 마리의 양과 늑대가 살아남을지 계산할 수 있겠는가?<br>단, 울타리로 막히지 않은 영역에는 양과 늑대가 없으며 양과 늑대는 대각선으로 이동할 수 없다.",
+            "input_description": "첫 줄에 물품의 수 N(1 ≤ N ≤ 100)과 준서가 버틸 수 있는 무게 K(1 ≤ K ≤ 100,000)가 주어진다.<br>두 번째 줄부터 N개의 줄에 거쳐 각 물건의 무게 W(1 ≤ W ≤ 100,000)와 해당 물건의 가치 V(0 ≤ V ≤ 1,000)가 주어진다.<br>입력으로 주어지는 모든 수는 정수이다.",
+            "output_description": "한 줄에 배낭에 넣을 수 있는 물건들의 가치합의 최댓값을 출력한다.",
+            "input_example": "4 7<br>6 13<br>4 8<br>3 6<br>5 12",
+            "output_example": "14",
+            "author": "baekjoon"
         },
         "solution": {
-            "code": ""
+            "cpp": "#include <cstdio>\n\nvoid cmp(int &a, int b) { if (a < b) a = b; }\n\nint main()\n{\n    int N, K;\n    int weight, value, val[100001] = { 0, };\n    \n    scanf(\"%d %d\", &N, &K);\n\n    for (int i = 0; i < N; i++) \n    {\n        scanf(\"%d %d\", &weight, &value);\n        for (int w = K; w >= weight; w--)\n            cmp(val[w], val[w - weight] + value);\n    }\n\n    printf(\"%d\n\", val[K]);\n\n    return 0;\n}",
+            "java": "class Main {\n\n    public static void main(String[] args) throws Exception {\n\n        int N = read(), K = read();\n        int[] DP = new int[K + 1];\n\n        for (int i = 0; i < N; i++) {\n            int W = read(), V = read();\n            for (int j = K; j >= W; j--)\n                if (DP[j] < DP[j - W] + V) DP[j] = DP[j - W] + V;\n        }\n\n        System.out.print(DP[K]);\n\n    }\n\n    private static int read() throws Exception {\n\n        int c, n = System.in.read() & 15;\n        while ((c = System.in.read()) > 32) n = (n << 3) + (n << 1) + (c & 15);\n        return n;\n\n    }\n\n}",
+            "python": "import sys\ninput = sys.stdin.readline\n\ndef solve(data, k):\n    kk = k + 1\n    cache = {}\n    cache[0] = 0\n    data.sort(reverse=True)\n\n    for w, v in data:\n        tmp = {}\n        for vv, ww in cache.items():\n            if cache.get(vvv:=vv+v, kk) > (www:=ww+w):\n                tmp[vvv] = www\n        cache.update(tmp)\n    return max(cache.keys())\n\ndef main():\n    n, k = map(int, input().split())\n    data = [tuple(map(int, input().split())) for _ in range(n)]\n    print(solve(data, k))\n    \nmain()"
         }
     },
     {
         "id": 11,
         "header": {
-            "title": "",
-            "rank": "",
-            "source": "",
-            "problemId": "",
-            "link": ""
+            "title": "점프 점프",
+            "rank": "silver2",
+            "source": "baekjoon",
+            "problemId": "14248번",
+            "link": "https://www.acmicpc.net/problem/14248"
         },
         "content": {
-            "description": "",
-            "input_description": "",
-            "output_description": "",
-            "input_example": "",
-            "output_example": "",
-            "author": ""
+            "problem_description": "영우는 지금 n개의 돌이 일렬로 놓여있는 돌다리에 있다. 그리고 돌다리의 돌에는 숫자가 하나씩 적혀있다.<br>영우는 이 숫자가 적혀있는 만큼 왼쪽이나 오른쪽으로 점프할 수 있는데, 이때 돌다리 밖으로 나갈 수는 없다.<br>영우는 이 돌다리에서 자기가 방문 가능한 돌들의 개수를 알고 싶어한다.<br>방문 가능하다는 것은 현재위치에서 다른 돌을 적절히 밟아 해당하는 위치로 이동이 가능하다는 뜻이다.<br>현재 위치가 주어졌을 때, 영우가 방문 가능한 돌들의 개수를 출력하시오.",
+            "input_description": "첫 번째 줄에는 돌다리의 돌 개수 n(1≤n≤100,000)이 주어진다. 돌의 번호는 왼쪽부터 1번에서 n번이다.<br>다음 줄에는 그 위치에서 점프할 수 있는 거리 Ai(1≤Ai≤100,000)가 주어진다.<br>다음 줄에는 출발점 s(1≤s≤n)가 주어진다.",
+            "output_description": "영우가 방문 가능한 돌들의 개수를 출력하시오.",
+            "input_example": "5<br>1 4 2 2 1<br>3",
+            "output_example": "5",
+            "author": "baekjoon"
         },
         "solution": {
-            "code": ""
+            "cpp": "#include <bits/stdcpp.h>\nusing namespace std;\n\nconst int mx = 1e5 + 1;\n\nint a[mx];\nbool visited[mx];\n\nint main() {\n\tcin.tie(0), cout.tie(0);\n\tios::sync_with_stdio(0);\n\n\tint N; cin >> N;\n\tfor (int i = 1; i <= N; ++i)\n\t\tcin >> a[i];\n\n\tint src; cin >> src;\n\tvisited[src] = true;\n\n\tqueue<int> q;\n\tq.emplace(src);\n\n\tfor (int u, v; !q.empty();) {\n\t\tu = q.front(); q.pop();\n\t\tv = u - a[u];\n\t\tif (v > 0 && !visited[v]) {\n\t\t\tvisited[v] = true;\n\t\t\tq.emplace(v);\n\t\t}\n\t\tv = u + a[u];\n\t\tif (v <= N && !visited[v]) {\n\t\t\tvisited[v] = true;\n\t\t\tq.emplace(v);\n\t\t}\n\t}\n\tcout << count(visited + 1, visited + N + 1, true);\n\treturn 0;\n}",
+            "java": "import java.io.*;\nimport java.util.*;\n\npublic class Main {\n\n\tstatic int n,m,i,j,a[],h[];\n\tstatic void o(int x) {\n\t\tm++;\n\t\th[x]++;\n\t\tint X=x-a[x],Y=x+a[x];\n\t\tif(X>=0)if(h[X]<1)o(X);\n\t\tif(Y<n)if(h[Y]<1)o(Y);\n\t}\n\tpublic static void main(String[] args)throws Exception{\n\t\tBufferedReader r=new BufferedReader(new InputStreamReader(System.in));\n\t\tn=Integer.parseInt(r.readLine());\n\t\ta=new int[n];\n\t\th=new int[n];\n\t\tStringTokenizer t=new StringTokenizer(r.readLine());\n\t\tfor(;i<n;a[i++]=Integer.parseInt(t.nextToken()));\n\t\to(Integer.parseInt(r.readLine())-1);\n\t\tSystem.out.println(m);\n\t}\n\n}",
+            "python": "def my_bfs(point, visited):\n    global visited_main\n    visited_main.add(point)\n    if len(visited_main) == n:\n        print(n)\n        exit(0)\n    visited.add(point)\n    left_move = point-arr[point]\n    if left_move >= 0:\n        if left_move not in visited:\n            my_bfs(left_move, visited)\n\n    right_move = point+arr[point]\n    if right_move < n:\n        if right_move not in visited:\n            my_bfs(right_move, visited)\n\nn = int(input())\narr = list(map(int, input().strip().split(\" \")))\nstart_point = int(input())\n\nvisited_main = set()\nmy_bfs(start_point-1, set())\nprint(len(visited_main))"
         }
     },
     {
         "id": 12,
         "header": {
-            "title": "",
-            "rank": "",
-            "source": "",
-            "problemId": "",
-            "link": ""
+            "title": "ATM",
+            "rank": "silver4",
+            "source": "baekjoon",
+            "problemId": "11399번",
+            "link": "https://www.acmicpc.net/problem/11399"
         },
         "content": {
-            "description": "",
-            "input_description": "",
-            "output_description": "",
-            "input_example": "",
-            "output_example": "",
-            "author": ""
+            "problem_description": "인하은행에는 ATM이 1대밖에 없다. 지금 이 ATM앞에 N명의 사람들이 줄을 서있다.<br>사람은 1번부터 N번까지 번호가 매겨져 있으며, i번 사람이 돈을 인출하는데 걸리는 시간은 Pi분이다.<br>사람들이 줄을 서는 순서에 따라서, 돈을 인출하는데 필요한 시간의 합이 달라지게 된다.<br>예를 들어, 총 5명이 있고, P1 = 3, P2 = 1, P3 = 4, P4 = 3, P5 = 2 인 경우를 생각해보자.<br>[1, 2, 3, 4, 5] 순서로 줄을 선다면, 1번 사람은 3분만에 돈을 뽑을 수 있다.,br>2번 사람은 1번 사람이 돈을 뽑을 때 까지 기다려야 하기 때문에, 3+1 = 4분이 걸리게 된다.<br>3번 사람은 1번, 2번 사람이 돈을 뽑을 때까지 기다려야 하기 때문에, 총 3+1+4 = 8분이 필요하게 된다.<br>4번 사람은 3+1+4+3 = 11분, 5번 사람은 3+1+4+3+2 = 13분이 걸리게 된다.<br>이 경우에 각 사람이 돈을 인출하는데 필요한 시간의 합은 3+4+8+11+13 = 39분이 된다.<br>줄을 [2, 5, 1, 4, 3] 순서로 줄을 서면, 2번 사람은 1분만에, 5번 사람은 1+2 = 3분, 1번 사람은 1+2+3 = 6분,<br>4번 사람은 1+2+3+3 = 9분, 3번 사람은 1+2+3+3+4 = 13분이 걸리게 된다.<br>각 사람이 돈을 인출하는데 필요한 시간의 합은 1+3+6+9+13 = 32분이다. 이 방법보다 더 필요한 시간의 합을 최소로 만들 수는 없다.<br>줄을 서 있는 사람의 수 N과 각 사람이 돈을 인출하는데 걸리는 시간 Pi가 주어졌을 때,<br>각 사람이 돈을 인출하는데 필요한 시간의 합의 최솟값을 구하는 프로그램을 작성하시오.",
+            "input_description": "첫째 줄에 사람의 수 N(1 ≤ N ≤ 1,000)이 주어진다.<br>둘째 줄에는 각 사람이 돈을 인출하는데 걸리는 시간 Pi(1 ≤ Pi ≤ 1,000)가 주어진다.",
+            "output_description": "첫째 줄에 각 사람이 돈을 인출하는데 필요한 시간의 합의 최솟값을 출력한다.",
+            "input_example": "5<br>3 1 4 3 2",
+            "output_example": "32",
+            "author": "baekjoon"
         },
         "solution": {
-            "code": ""
+            "cpp": "#include <stdio.h>\nint main()\n{\n    int n,sum=0;\n    int a[1001],ans[1001]={0,};\n    scanf(\"%d\",&n);\n    for(int i=0;i<n;i++){\n        scanf(\"%d\",&a[i]);\n        ans[a[i]]++;\n    }\n    for(int i=1;i<=1001;i++){\n        while(ans[i]!=0&&n>0){\n            sum+=i*n;\n            n--;\n            ans[i]--;\n        }\n    }\n    printf(\"%d\",sum);\n}",
+            "java": "import java.io.BufferedReader;\nimport java.io.IOException;\nimport java.io.InputStreamReader;\nimport java.util.Arrays;\nimport java.util.StringTokenizer;\n\npublic class Main {\n\n\tpublic static void main(String[] args) throws NumberFormatException, IOException {\n\t\tBufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n\t\t\n\t\tint N = Integer.parseInt(br.readLine());\n\t\tint[] p = new int[N];\n\t\tStringTokenizer st = new StringTokenizer(br.readLine());\n\t\t\n\t\tfor(int i=0;i<N;i++) {\n\t\t\tp[i] = Integer.parseInt(st.nextToken());\n\t\t}\n\t\t\n\t\tArrays.sort(p);\n\t\tint cnt =0;\n\t\tfor(int i=N;i>0;i--) {\n\t\t\tcnt += p[N-i]* i;\n\t\t}\n\t\tSystem.out.println(cnt);\n\t}\n\t\n}",
+            "python": "queue = []\nmemory = []\n\nnum = int(input())\n\nstring = input()\nqueue = list(map(int, string.split(\" \")))\nqueue.sort()\n\nsum = 0\nwait = 0\nfor i in range(len(queue)):\n    sum += queue[i] + wait\n    wait += queue[i]\n\nprint(sum)"
         }
     },
     {
         "id": 13,
         "header": {
-            "title": "",
-            "rank": "",
-            "source": "",
-            "problemId": "",
-            "link": ""
+            "title": "잃어버린 괄호",
+            "rank": "silver2",
+            "source": "baekjoon",
+            "problemId": "1541번",
+            "link": "https://www.acmicpc.net/problem/1541"
         },
         "content": {
-            "description": "",
-            "input_description": "",
-            "output_description": "",
-            "input_example": "",
-            "output_example": "",
-            "author": ""
+            "problem_description": "세준이는 양수와 +, -, 그리고 괄호를 가지고 식을 만들었다. 그리고 나서 세준이는 괄호를 모두 지웠다.<br>그리고 나서 세준이는 괄호를 적절히 쳐서 이 식의 값을 최소로 만들려고 한다.<br>괄호를 적절히 쳐서 이 식의 값을 최소로 만드는 프로그램을 작성하시오.",
+            "input_description": "첫째 줄에 식이 주어진다. 식은 ‘0’~‘9’, ‘+’, 그리고 ‘-’만으로 이루어져 있고, 가장 처음과 마지막 문자는 숫자이다.<br>그리고 연속해서 두 개 이상의 연산자가 나타나지 않고, 5자리보다 많이 연속되는 숫자는 없다. 수는 0으로 시작할 수 있다.<br>입력으로 주어지는 식의 길이는 50보다 작거나 같다.",
+            "output_description": "첫째 줄에 정답을 출력한다.",
+            "input_example": "50-50+40",
+            "output_example": "-35",
+            "author": "baekjoon"
         },
         "solution": {
-            "code": ""
+            "cpp": "#include <stdio.h>\n\nusing namespace std;\n\nint main()\n{\n    int sign = 1, number = 0, ans = 0;\n    char oper;\n\n    while(1)\n    {\n        scanf(\"%d%c\", &number, &oper);\n        ans = ans + number * sign;\n        if(oper == '-') sign = -1;\n        else if(oper != '+') break;\n    }\n    printf(\"%d\", ans);\n    return 0;\n}",
+            "java": "import java.io.BufferedReader;\nimport java.io.IOException;\nimport java.io.InputStreamReader;\n\npublic class Main {\n\n    public static void main(String[] args) throws IOException {\n\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n\n        String input = br.readLine();\n        String[] strArr1 = input.split(\"\\-\");\n\n        int minSum = 0;\n        for (int i = 0; i < strArr1.length; i++) {\n\n            String[] strArr2 = strArr1[i].split(\"\\+\");\n\n            int tempSum = 0;\n            for (String x : strArr2) {\n\n                tempSum += Integer.parseInt(x);\n            }\n\n            if (i == 0) tempSum *= -1;\n\n            minSum -= tempSum;\n        }\n\n        System.out.println(minSum);\n    }\n}",
+            "python": "arr = input().split(\"-\")\nfirst_flag = 1\n\nsub_result = []\n\nfor item in arr:\n    if item == '':\n        first_flag = -1\n        continue\n\n    sub_result.append(sum(map(int, item.split(\"+\"))))\n\nresult = 0\nfor ind, sub in enumerate(sub_result):\n    if ind == 0:\n        result += first_flag * sub\n        continue\n    result -= sub\n\nprint(result)"
         }
     }
 ]
