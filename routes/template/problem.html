@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/problem/problem.css">
+
+</head>
+<body>
+    <header>
+        <!-- 메인 화면의 헤더를 그대로 사용 -->
+    </header>
+    
+
+    <nav class="navigation">
+        <ul class="navigation-menu">
+            <li id="problem_number"><a href="{{link_problem}}">{{problem_number}}</a></li>
+            <li id="example_solution"><a href="{{link_solution}}">예시 풀이</a></li>
+            <li id="back"><a href="/problemBoard">목록으로</a></li>
+        </ul>
+    </nav>
+
+    <section class="section1">
+        <div class="section1-problem_information">
+            <h1 class="problem_information1">{{problem_title}}</h2>
+        </div>
+
+        <div class="section1-problem_discription">
+            <h2 class="problem_discription1">문제 설명</h2>
+            <p class="problem_discription2">{{problem_description}}</p>
+        </div>
+
+        <div class="section1-problem_input">
+            <h2 class="problem_input1">입력 조건</h2>
+            <p class="problem_input2">{{problem_input_description}}</p>
+        </div>
+
+        <div class="section1-problem_output">
+            <h2 class="problem_output1">출력 조건</h2>
+            <p class="problem_output2">{{problem_output_description}}</p>
+        </div>
+
+        <div class="section1-problem_example_input">
+            <h2 class="problem_example_input1">예제 입력</h2>
+            <pre class="problem_example_input2">{{problem_input_example}}</pre>
+        </div>
+
+        <div class="section1-problem_example_output">
+            <h2 class="problem_example_output1">예제 출력</h2>
+            <pre class="problem_example_output2">{{problem_output_example}}</pre>
+        </div>
+
+        <div class="div-page4_content_source">
+            <h2 class="div-h2_page4_content_common">문제 출처</h2>
+            <ul>
+                <li>문제를 만든 사람: {{problem_author}}</li>
+            </ul>
+        </div>
+        <a href=""><button id="updateButton">수정</button></a>
+        <a href=""><button id="deleteButton">삭제</button></a>
+    </section>
+
+    <footer>
+        <!-- 메인 화면의 푸터를 그대로 사용 -->
+    </footer>
+    <script>
+        document.getElementById("updateButton").onclick = (e)=>{
+            e.preventDefault();
+            document.location.href = document.location.pathname + "/modify";
+        }
+        document.getElementById("deleteButton").onclick = (e)=>{
+            e.preventDefault();
+            const link = document.location.href.split('/');
+            const id = link[link.length-1];
+            fetch(`/api/problem/${id}`, {method: "DELETE"}).then(val=>{
+                location.href = "/problemBoard";
+            }).catch(console.error);
+        }
+    </script>
+</body>
+</html>
+
+
+
