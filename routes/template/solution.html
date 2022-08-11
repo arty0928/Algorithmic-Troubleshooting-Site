@@ -8,7 +8,7 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/problem/solution.css">
     <style>
-        .editor_js {
+        .editor {
             border-radius: 6px;
             box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
             font-family: 'Source Code Pro', monospace;
@@ -83,12 +83,12 @@
         <input type="radio" name="tabmenu" id="tab3" checked>
         <label for="tab3">python</label>
 
-        <div class="editor_cpp language-cpp conbox con1"></div>
-        <div class="editor_java language-java conbox con2"></div>
-        <div class="editor_python language-python conbox con3"></div>
+        <div class="editor editor_cpp language-cpp conbox con1"></div>
+        <div class="editor editor_java language-java conbox con2"></div>
+        <div class="editor editor_python language-python conbox con3"></div>
     </section>
     <div class="container">
-        <div class="editor_js language-javascript">
+        <div class="editor editor_js language-javascript">
     </div>
     </div>
 
@@ -103,10 +103,11 @@
         const highlight = editor => {
             hljs.highlightElement(editor);
         }
-        const jar_js = CodeJar(document.querySelector('.editor_js'), hljs.highlightElement, {spellcheck: true});
-        const jar_cpp = CodeJar(document.querySelector('.editor_cpp'), hljs.highlightElement, {spellcheck: true});
-        const jar_java = CodeJar(document.querySelector('.editor_java'), hljs.highlightElement, {spellcheck: true});
-        const jar_python = CodeJar(document.querySelector('.editor_python'), hljs.highlightElement, {spellcheck: true});
+        const options = {tab: ' '.repeat(4), spellcheck: true};
+        const jar_js = CodeJar(document.querySelector('.editor_js'), hljs.highlightElement, options);
+        const jar_cpp = CodeJar(document.querySelector('.editor_cpp'), hljs.highlightElement, options);
+        const jar_java = CodeJar(document.querySelector('.editor_java'), hljs.highlightElement, options);
+        const jar_python = CodeJar(document.querySelector('.editor_python'), hljs.highlightElement, options);
         const link = document.location.href.split('/');
         const id = link[link.length-2];
         fetch(`/api/problem/${id}`).then(res=>res.json()).then(val=>{
