@@ -21,6 +21,9 @@
             padding: 10px;
             tab-size: 4;
         }
+        .editor_js {
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -104,7 +107,7 @@
         const highlight = editor => {
             hljs.highlightElement(editor);
         }
-        const options = {tab: ' '.repeat(4), spellcheck: true};
+        const options = {tab: ' '.repeat(4), spellcheck: false};
         const jar_js = CodeJar(document.querySelector('.editor_js'), hljs.highlightElement, options);
         const jar_cpp = CodeJar(document.querySelector('.editor_cpp'), hljs.highlightElement, options);
         const jar_java = CodeJar(document.querySelector('.editor_java'), hljs.highlightElement, options);
