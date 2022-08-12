@@ -9,7 +9,7 @@
             "link": "https://www.acmicpc.net/problem/1300"
         },
         "content": {
-            "problem_description": "세준이는 크기가 N×N인 배열 A를 만들었다. 배열에 들어있는 수 A[i][j] = i×j 이다.<br>이 수를 일차원 배열 B에 넣으면 B의 크기는 N×N이 된다. B를 오름차순 정렬했을 때, B[k]를 구해보자.<br>배열 A와 B의 인덱스는 1부터 시작한다.",
+            "description": "세준이는 크기가 N×N인 배열 A를 만들었다. 배열에 들어있는 수 A[i][j] = i×j 이다.<br>이 수를 일차원 배열 B에 넣으면 B의 크기는 N×N이 된다. B를 오름차순 정렬했을 때, B[k]를 구해보자.<br>배열 A와 B의 인덱스는 1부터 시작한다.",
             "input_description": "첫째 줄에 배열의 크기 N이 주어진다. N은 105보다 작거나 같은 자연수이다.<br>둘째 줄에 k가 주어진다. k는 min(109, N2)보다 작거나 같은 자연수이다.",
             "output_description": "B[k]를 출력한다.",
             "input_example": "3<br>7",
@@ -32,7 +32,7 @@
             "link": "https://www.acmicpc.net/problem/2805"
         },
         "content": {
-            "problem_description": "상근이는 나무 M미터가 필요하다. 근처에 나무를 구입할 곳이 모두 망해버렸기 때문에, 정부에 벌목 허가를 요청했다.<br>정부는 상근이네 집 근처의 나무 한 줄에 대한 벌목 허가를 내주었고, 상근이는 새로 구입한 목재절단기를 이용해서 나무를 구할것이다.<br>목재절단기는 다음과 같이 동작한다. 먼저, 상근이는 절단기에 높이 H를 지정해야 한다.<br>높이를 지정하면 톱날이 땅으로부터 H미터 위로 올라간다. 그 다음, 한 줄에 연속해있는 나무를 모두 절단해버린다.<br>따라서, 높이가 H보다 큰 나무는 H 위의 부분이 잘릴 것이고, 낮은 나무는 잘리지 않을 것이다.<br>예를 들어, 한 줄에 연속해있는 나무의 높이가 20, 15, 10, 17이라고 하자. 상근이가 높이를 15로 지정했다면,<br>나무를 자른 뒤의 높이는 15, 15, 10, 15가 될 것이고, 상근이는 길이가 5인 나무와 2인 나무를 들고 집에 갈 것이다(총 7미터를 집에 들고 간다).<br>절단기에 설정할 수 있는 높이는 양의 정수 또는 0이다.<br>상근이는 환경에 매우 관심이 많기 때문에, 나무를 필요한 만큼만 집으로 가져가려고 한다.<br>이때, 적어도 M미터의 나무를 집에 가져가기 위해서 절단기에 설정할 수 있는 높이의 최댓값을 구하는 프로그램을 작성하시오.",
+            "description": "상근이는 나무 M미터가 필요하다. 근처에 나무를 구입할 곳이 모두 망해버렸기 때문에, 정부에 벌목 허가를 요청했다.<br>정부는 상근이네 집 근처의 나무 한 줄에 대한 벌목 허가를 내주었고, 상근이는 새로 구입한 목재절단기를 이용해서 나무를 구할것이다.<br>목재절단기는 다음과 같이 동작한다. 먼저, 상근이는 절단기에 높이 H를 지정해야 한다.<br>높이를 지정하면 톱날이 땅으로부터 H미터 위로 올라간다. 그 다음, 한 줄에 연속해있는 나무를 모두 절단해버린다.<br>따라서, 높이가 H보다 큰 나무는 H 위의 부분이 잘릴 것이고, 낮은 나무는 잘리지 않을 것이다.<br>예를 들어, 한 줄에 연속해있는 나무의 높이가 20, 15, 10, 17이라고 하자. 상근이가 높이를 15로 지정했다면,<br>나무를 자른 뒤의 높이는 15, 15, 10, 15가 될 것이고, 상근이는 길이가 5인 나무와 2인 나무를 들고 집에 갈 것이다(총 7미터를 집에 들고 간다).<br>절단기에 설정할 수 있는 높이는 양의 정수 또는 0이다.<br>상근이는 환경에 매우 관심이 많기 때문에, 나무를 필요한 만큼만 집으로 가져가려고 한다.<br>이때, 적어도 M미터의 나무를 집에 가져가기 위해서 절단기에 설정할 수 있는 높이의 최댓값을 구하는 프로그램을 작성하시오.",
             "input_description": "첫째 줄에 나무의 수 N과 상근이가 집으로 가져가려고 하는 나무의 길이 M이 주어진다. (1 ≤ N ≤ 1,000,000, 1 ≤ M ≤ 2,000,000,000)<br>둘째 줄에는 나무의 높이가 주어진다. 나무의 높이의 합은 항상 M보다 크거나 같기 때문에, 상근이는 집에 필요한 나무를 항상 가져갈 수 있다.<br>높이는 1,000,000,000보다 작거나 같은 양의 정수 또는 0이다.",
             "output_description": "적어도 M미터의 나무를 집에 가져가기 위해서 절단기에 설정할 수 있는 높이의 최댓값을 출력한다.",
             "input_example": "4 7<br>20 15 10 17",
@@ -147,7 +147,7 @@
             "link": "https://www.acmicpc.net/problem/3109"
         },
         "content": {
-            "problem_description": "남규나라의 왕 zych는 도로 정비 계획을 발표하였다.<br>두 도시를 잇는 도로들을 새로 만들거나, 안전상의 문제로 도로를 없애기도 할 계획이다.<br>도로 정비 계획은 두 도시와, 만들건지, 없앨건지에 대한 정보가 주어지는데,<br>도로를 정비하는 일은 매우 큰 일이기에 계획을 순서대로 하나씩 시행해 나갈 것이다.<br>상황에 따라서는 계획에 포함돼서 만들어진 도로를 제거할 수도 있다.<br>Zych는 차후 도로 정비 계획에 참고하기 위하여, 각 도시들이 수도에 방문하는데 최소 몇 개의 도시들을 방문해야 하는지 조사하기로 하였다.<br>남규나라의 초기 도시상태가 주어지고 도로 정비계획이 주어질 때, 한 도로가 정비될 때마다 각 도시별로 수도를 방문하는 데 최소 방문 도시들을 출력하시오.",
+            "description": "남규나라의 왕 zych는 도로 정비 계획을 발표하였다.<br>두 도시를 잇는 도로들을 새로 만들거나, 안전상의 문제로 도로를 없애기도 할 계획이다.<br>도로 정비 계획은 두 도시와, 만들건지, 없앨건지에 대한 정보가 주어지는데,<br>도로를 정비하는 일은 매우 큰 일이기에 계획을 순서대로 하나씩 시행해 나갈 것이다.<br>상황에 따라서는 계획에 포함돼서 만들어진 도로를 제거할 수도 있다.<br>Zych는 차후 도로 정비 계획에 참고하기 위하여, 각 도시들이 수도에 방문하는데 최소 몇 개의 도시들을 방문해야 하는지 조사하기로 하였다.<br>남규나라의 초기 도시상태가 주어지고 도로 정비계획이 주어질 때, 한 도로가 정비될 때마다 각 도시별로 수도를 방문하는 데 최소 방문 도시들을 출력하시오.",
             "input_description": "첫째 줄에 R과 C가 주어진다. (1 ≤ R ≤ 10,000, 5 ≤ C ≤ 500)<br>다음 R개 줄에는 빵집 근처의 모습이 주어진다. '.'는 빈 칸이고, 'x'는 건물이다. 처음과 마지막 열은 항상 비어있다.",
             "output_description": "첫째 줄에 원웅이가 놓을 수 있는 파이프라인의 최대 개수를 출력한다.",
             "input_example": "5 5  <br>.xx..<br>..x..<br>.....<br>...x.<br>...x.",
@@ -193,7 +193,7 @@
             "link": "https://www.acmicpc.net/problem/14425"
         },
         "content": {
-            "problem_description": "총 N개의 문자열로 이루어진 집합 S가 주어진다.<br>입력으로 주어지는 M개의 문자열 중에서 집합 S에 포함되어 있는 것이 총 몇 개인지 구하는 프로그램을 작성하시오.",
+            "description": "총 N개의 문자열로 이루어진 집합 S가 주어진다.<br>입력으로 주어지는 M개의 문자열 중에서 집합 S에 포함되어 있는 것이 총 몇 개인지 구하는 프로그램을 작성하시오.",
             "input_description": "첫째 줄에 문자열의 개수 N과 M (1 ≤ N ≤ 10,000, 1 ≤ M ≤ 10,000)이 주어진다.<br>다음 N개의 줄에는 집합 S에 포함되어 있는 문자열들이 주어진다.<br>다음 M개의 줄에는 검사해야 하는 문자열들이 주어진다.<br>입력으로 주어지는 문자열은 알파벳 소문자로만 이루어져 있으며, 길이는 500을 넘지 않는다.<br>집합 S에 같은 문자열이 여러 번 주어지는 경우는 없다.",
             "output_description": "첫째 줄에 M개의 문자열 중에 총 몇 개가 집합 S에 포함되어 있는지 출력한다.",
             "input_example": "5 11<br>baekjoononlinejudge<br>startlink<br>codeplus<br>sundaycoding<br>codingsh<br>baekjoon<br>codeplus<br>codeminus<br>startlink<br>starlink<br>sundaycoding<br>codingsh<br>codinghs<br>sondaycoding<br>startrink<br>icerink<br>",
@@ -216,7 +216,7 @@
             "link": "https://www.acmicpc.net/problem/12865"
         },
         "content": {
-            "problem_description": "양치기 꿍은 맨날 늑대가 나타났다고 마을 사람들을 속였지만 이젠 더이상 마을 사람들이 속지 않는다.<br>화가 난 꿍은 복수심에 불타 아예 늑대들을 양들이 있는 울타리안에 마구 집어넣어 양들을 잡아먹게 했다.<br>하지만 양들은 보통 양들이 아니다. 같은 울타리 영역 안의 양들의 숫자가 늑대의 숫자보다 더 많을 경우 늑대가 전부 잡아먹힌다.<br>물론 그 외의 경우는 양이 전부 잡아먹히겠지만 말이다. 꿍은 워낙 똑똑했기 때문에 이들의 결과는 이미 알고있다.<br>만약 빈 공간을 '.'(점)으로 나타내고 울타리를 '#', 늑대를 'v', 양을 'k'라고 나타낸다면,<br>여러분은 몇 마리의 양과 늑대가 살아남을지 계산할 수 있겠는가?<br>단, 울타리로 막히지 않은 영역에는 양과 늑대가 없으며 양과 늑대는 대각선으로 이동할 수 없다.",
+            "description": "양치기 꿍은 맨날 늑대가 나타났다고 마을 사람들을 속였지만 이젠 더이상 마을 사람들이 속지 않는다.<br>화가 난 꿍은 복수심에 불타 아예 늑대들을 양들이 있는 울타리안에 마구 집어넣어 양들을 잡아먹게 했다.<br>하지만 양들은 보통 양들이 아니다. 같은 울타리 영역 안의 양들의 숫자가 늑대의 숫자보다 더 많을 경우 늑대가 전부 잡아먹힌다.<br>물론 그 외의 경우는 양이 전부 잡아먹히겠지만 말이다. 꿍은 워낙 똑똑했기 때문에 이들의 결과는 이미 알고있다.<br>만약 빈 공간을 '.'(점)으로 나타내고 울타리를 '#', 늑대를 'v', 양을 'k'라고 나타낸다면,<br>여러분은 몇 마리의 양과 늑대가 살아남을지 계산할 수 있겠는가?<br>단, 울타리로 막히지 않은 영역에는 양과 늑대가 없으며 양과 늑대는 대각선으로 이동할 수 없다.",
             "input_description": "첫 줄에 물품의 수 N(1 ≤ N ≤ 100)과 준서가 버틸 수 있는 무게 K(1 ≤ K ≤ 100,000)가 주어진다.<br>두 번째 줄부터 N개의 줄에 거쳐 각 물건의 무게 W(1 ≤ W ≤ 100,000)와 해당 물건의 가치 V(0 ≤ V ≤ 1,000)가 주어진다.<br>입력으로 주어지는 모든 수는 정수이다.",
             "output_description": "한 줄에 배낭에 넣을 수 있는 물건들의 가치합의 최댓값을 출력한다.",
             "input_example": "4 7<br>6 13<br>4 8<br>3 6<br>5 12",
@@ -239,7 +239,7 @@
             "link": "https://www.acmicpc.net/problem/14248"
         },
         "content": {
-            "problem_description": "영우는 지금 n개의 돌이 일렬로 놓여있는 돌다리에 있다. 그리고 돌다리의 돌에는 숫자가 하나씩 적혀있다.<br>영우는 이 숫자가 적혀있는 만큼 왼쪽이나 오른쪽으로 점프할 수 있는데, 이때 돌다리 밖으로 나갈 수는 없다.<br>영우는 이 돌다리에서 자기가 방문 가능한 돌들의 개수를 알고 싶어한다.<br>방문 가능하다는 것은 현재위치에서 다른 돌을 적절히 밟아 해당하는 위치로 이동이 가능하다는 뜻이다.<br>현재 위치가 주어졌을 때, 영우가 방문 가능한 돌들의 개수를 출력하시오.",
+            "description": "영우는 지금 n개의 돌이 일렬로 놓여있는 돌다리에 있다. 그리고 돌다리의 돌에는 숫자가 하나씩 적혀있다.<br>영우는 이 숫자가 적혀있는 만큼 왼쪽이나 오른쪽으로 점프할 수 있는데, 이때 돌다리 밖으로 나갈 수는 없다.<br>영우는 이 돌다리에서 자기가 방문 가능한 돌들의 개수를 알고 싶어한다.<br>방문 가능하다는 것은 현재위치에서 다른 돌을 적절히 밟아 해당하는 위치로 이동이 가능하다는 뜻이다.<br>현재 위치가 주어졌을 때, 영우가 방문 가능한 돌들의 개수를 출력하시오.",
             "input_description": "첫 번째 줄에는 돌다리의 돌 개수 n(1≤n≤100,000)이 주어진다. 돌의 번호는 왼쪽부터 1번에서 n번이다.<br>다음 줄에는 그 위치에서 점프할 수 있는 거리 Ai(1≤Ai≤100,000)가 주어진다.<br>다음 줄에는 출발점 s(1≤s≤n)가 주어진다.",
             "output_description": "영우가 방문 가능한 돌들의 개수를 출력하시오.",
             "input_example": "5<br>1 4 2 2 1<br>3",
@@ -262,7 +262,7 @@
             "link": "https://www.acmicpc.net/problem/11399"
         },
         "content": {
-            "problem_description": "인하은행에는 ATM이 1대밖에 없다. 지금 이 ATM앞에 N명의 사람들이 줄을 서있다.<br>사람은 1번부터 N번까지 번호가 매겨져 있으며, i번 사람이 돈을 인출하는데 걸리는 시간은 Pi분이다.<br>사람들이 줄을 서는 순서에 따라서, 돈을 인출하는데 필요한 시간의 합이 달라지게 된다.<br>예를 들어, 총 5명이 있고, P1 = 3, P2 = 1, P3 = 4, P4 = 3, P5 = 2 인 경우를 생각해보자.<br>[1, 2, 3, 4, 5] 순서로 줄을 선다면, 1번 사람은 3분만에 돈을 뽑을 수 있다.,br>2번 사람은 1번 사람이 돈을 뽑을 때 까지 기다려야 하기 때문에, 3+1 = 4분이 걸리게 된다.<br>3번 사람은 1번, 2번 사람이 돈을 뽑을 때까지 기다려야 하기 때문에, 총 3+1+4 = 8분이 필요하게 된다.<br>4번 사람은 3+1+4+3 = 11분, 5번 사람은 3+1+4+3+2 = 13분이 걸리게 된다.<br>이 경우에 각 사람이 돈을 인출하는데 필요한 시간의 합은 3+4+8+11+13 = 39분이 된다.<br>줄을 [2, 5, 1, 4, 3] 순서로 줄을 서면, 2번 사람은 1분만에, 5번 사람은 1+2 = 3분, 1번 사람은 1+2+3 = 6분,<br>4번 사람은 1+2+3+3 = 9분, 3번 사람은 1+2+3+3+4 = 13분이 걸리게 된다.<br>각 사람이 돈을 인출하는데 필요한 시간의 합은 1+3+6+9+13 = 32분이다. 이 방법보다 더 필요한 시간의 합을 최소로 만들 수는 없다.<br>줄을 서 있는 사람의 수 N과 각 사람이 돈을 인출하는데 걸리는 시간 Pi가 주어졌을 때,<br>각 사람이 돈을 인출하는데 필요한 시간의 합의 최솟값을 구하는 프로그램을 작성하시오.",
+            "description": "인하은행에는 ATM이 1대밖에 없다. 지금 이 ATM앞에 N명의 사람들이 줄을 서있다.<br>사람은 1번부터 N번까지 번호가 매겨져 있으며, i번 사람이 돈을 인출하는데 걸리는 시간은 Pi분이다.<br>사람들이 줄을 서는 순서에 따라서, 돈을 인출하는데 필요한 시간의 합이 달라지게 된다.<br>예를 들어, 총 5명이 있고, P1 = 3, P2 = 1, P3 = 4, P4 = 3, P5 = 2 인 경우를 생각해보자.<br>[1, 2, 3, 4, 5] 순서로 줄을 선다면, 1번 사람은 3분만에 돈을 뽑을 수 있다.,br>2번 사람은 1번 사람이 돈을 뽑을 때 까지 기다려야 하기 때문에, 3+1 = 4분이 걸리게 된다.<br>3번 사람은 1번, 2번 사람이 돈을 뽑을 때까지 기다려야 하기 때문에, 총 3+1+4 = 8분이 필요하게 된다.<br>4번 사람은 3+1+4+3 = 11분, 5번 사람은 3+1+4+3+2 = 13분이 걸리게 된다.<br>이 경우에 각 사람이 돈을 인출하는데 필요한 시간의 합은 3+4+8+11+13 = 39분이 된다.<br>줄을 [2, 5, 1, 4, 3] 순서로 줄을 서면, 2번 사람은 1분만에, 5번 사람은 1+2 = 3분, 1번 사람은 1+2+3 = 6분,<br>4번 사람은 1+2+3+3 = 9분, 3번 사람은 1+2+3+3+4 = 13분이 걸리게 된다.<br>각 사람이 돈을 인출하는데 필요한 시간의 합은 1+3+6+9+13 = 32분이다. 이 방법보다 더 필요한 시간의 합을 최소로 만들 수는 없다.<br>줄을 서 있는 사람의 수 N과 각 사람이 돈을 인출하는데 걸리는 시간 Pi가 주어졌을 때,<br>각 사람이 돈을 인출하는데 필요한 시간의 합의 최솟값을 구하는 프로그램을 작성하시오.",
             "input_description": "첫째 줄에 사람의 수 N(1 ≤ N ≤ 1,000)이 주어진다.<br>둘째 줄에는 각 사람이 돈을 인출하는데 걸리는 시간 Pi(1 ≤ Pi ≤ 1,000)가 주어진다.",
             "output_description": "첫째 줄에 각 사람이 돈을 인출하는데 필요한 시간의 합의 최솟값을 출력한다.",
             "input_example": "5<br>3 1 4 3 2",
@@ -285,7 +285,7 @@
             "link": "https://www.acmicpc.net/problem/1541"
         },
         "content": {
-            "problem_description": "세준이는 양수와 +, -, 그리고 괄호를 가지고 식을 만들었다. 그리고 나서 세준이는 괄호를 모두 지웠다.<br>그리고 나서 세준이는 괄호를 적절히 쳐서 이 식의 값을 최소로 만들려고 한다.<br>괄호를 적절히 쳐서 이 식의 값을 최소로 만드는 프로그램을 작성하시오.",
+            "description": "세준이는 양수와 +, -, 그리고 괄호를 가지고 식을 만들었다. 그리고 나서 세준이는 괄호를 모두 지웠다.<br>그리고 나서 세준이는 괄호를 적절히 쳐서 이 식의 값을 최소로 만들려고 한다.<br>괄호를 적절히 쳐서 이 식의 값을 최소로 만드는 프로그램을 작성하시오.",
             "input_description": "첫째 줄에 식이 주어진다. 식은 ‘0’~‘9’, ‘+’, 그리고 ‘-’만으로 이루어져 있고, 가장 처음과 마지막 문자는 숫자이다.<br>그리고 연속해서 두 개 이상의 연산자가 나타나지 않고, 5자리보다 많이 연속되는 숫자는 없다. 수는 0으로 시작할 수 있다.<br>입력으로 주어지는 식의 길이는 50보다 작거나 같다.",
             "output_description": "첫째 줄에 정답을 출력한다.",
             "input_example": "50-50+40",
@@ -296,6 +296,282 @@
             "cpp": "#include <stdio.h>\n\nusing namespace std;\n\nint main()\n{\n    int sign = 1, number = 0, ans = 0;\n    char oper;\n\n    while(1)\n    {\n        scanf(\"%d%c\", &number, &oper);\n        ans = ans + number * sign;\n        if(oper == '-') sign = -1;\n        else if(oper != '+') break;\n    }\n    printf(\"%d\", ans);\n    return 0;\n}",
             "java": "import java.io.BufferedReader;\nimport java.io.IOException;\nimport java.io.InputStreamReader;\n\npublic class Main {\n\n    public static void main(String[] args) throws IOException {\n\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n\n        String input = br.readLine();\n        String[] strArr1 = input.split(\"\\-\");\n\n        int minSum = 0;\n        for (int i = 0; i < strArr1.length; i++) {\n\n            String[] strArr2 = strArr1[i].split(\"\\+\");\n\n            int tempSum = 0;\n            for (String x : strArr2) {\n\n                tempSum += Integer.parseInt(x);\n            }\n\n            if (i == 0) tempSum *= -1;\n\n            minSum -= tempSum;\n        }\n\n        System.out.println(minSum);\n    }\n}",
             "python": "arr = input().split(\"-\")\nfirst_flag = 1\n\nsub_result = []\n\nfor item in arr:\n    if item == '':\n        first_flag = -1\n        continue\n\n    sub_result.append(sum(map(int, item.split(\"+\"))))\n\nresult = 0\nfor ind, sub in enumerate(sub_result):\n    if ind == 0:\n        result += first_flag * sub\n        continue\n    result -= sub\n\nprint(result)"
+        }
+    },
+    {
+        "id": 14,
+        "header": {
+            "title": "커피숍 2",
+            "rank": "gold1",
+            "source": "baekjoon",
+            "problemId": "1275번",
+            "link": "https://www.acmicpc.net/problem/1275"
+        },
+        "content": {
+            "description": "모두 알다시피 동호는 커피숍의 마담이다. (마담이 무엇인지는 본인에게 물어보도록 하자.)<br>어느 날 커피숍의 손님 A씨가 동호에게 게임을 하자고 했다.<br>그 게임은 다음과 같은 규칙을 갖는다. N개의 정수가 있으면, 동호는 다음과 같이 말한다.<br>“3~7번째 수의 합은 무엇이죠?” 그러면 상대방은 “그 답은 000입니다.<br>그리고 8번째 수를 2로 고치도록 하죠” 그러면 동호는 “네 알겠습니다.”라고 한 뒤에 다시 상대방이 동호가 했던 것처럼 “8~9번째 수의 합은 무엇이죠?”라고 묻게된다. 이 것을 번갈아 가면서 반복하는 게임이다.<br>당신은 이 게임의 심판 역을 맡았다. 요컨대, 질문에 대한 답들을 미리 알아야 한다는 것이다.<br>당신의 머리가 출중하다면 10만개 가량 되는 정수와 10만턴 정도 되는 게임을 기억할 수 있을 것이다.<br>몇판 이 게임을 즐기던 동호는 많은 사람들이 이 게임을 하기를 바라게 되었고, 당신에게 심판 프로그램을 구현해달라고 요청했다.",
+            "input_description": "첫째 줄에 수의 개수 N과 턴의 개수 Q가 주어진다.(1 ≤ N, Q ≤ 100,000)<br>둘째 줄에는 처음 배열에 들어가 있는 정수 N개가 주어진다.<br>세 번째 줄에서 Q+2번째 줄까지는 x y a b의 형식으로 x~y까지의 합을 구하여라, a번째 수를 b로 바꾸어라 라는 뜻의 데이터가 주어진다.<br>입력되는 모든 수는 -2^31보다 크거나 같고, 2^31-1보다 작거나 같은 정수이다.<br>",
+            "output_description": "한 턴마다 구한 합을 한 줄마다 한 개씩 출력한다.",
+            "input_example": "5 2<br>1 2 3 4 5<br>2 3 3 1<br>3 5 4 1",
+            "output_example": "5<br>10",
+            "author": "baekjoon"
+        },
+        "solution": {
+            "cpp": "#include <iostream>\n#include <cmath>\nusing namespace std;\nlong long *tree;\nlong long arr[100000];\n\nlong long init(int node, int start, int end){\n    if(start==end) return tree[node] = arr[start];\n    int mid = start+(end-start)/2;\n    return tree[node] = init(node*2, start, mid) + init(node*2+1, mid+1,end);\n}\n\nvoid update(int node, int start, int end, int idx, long long diff){\n    if(start<=idx && idx<=end){\n        tree[node]+=diff;\n        if(start!=end){\n            int mid = start+(end-start)/2;\n            update(node*2, start, mid, idx, diff);\n            update(node*2+1, mid+1, end, idx, diff);\n        }\n    }\n}\n\nlong long sum(int node, int start, int end, int left, int right){\n    if(left>end || right < start) return 0;\n    if(left<=start && end<=right) return tree[node];\n    int mid = start+(end-start)/2;\n    return sum(node*2, start, mid, left, right) + sum(node*2+1, mid+1, end, left, right);\n}\n\nint main() {\n    ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);\n    int num,height,query,x,y;\n    long long a,b;\n    cin>>num>>query;\n    height = ceil(log2(num));\n    tree = new long long [1<<(height+1)];\n    for(int i=0;i<num;i++)\n        cin>>arr[i];\n    init(1,0,num-1);\n    \n    for(int i=0;i<query;i++){\n        cin>>x>>y>>a>>b;\n        int big = x>y ? x: y;\n        int small = x>y ? y:x;\n        cout << sum(1, 0, num-1, small-1, big-1)<<'\n';\n        long long diff = b - arr[a-1];\n        arr[a-1] = b;\n        update(1,0,num-1,a-1, diff);\n    }\n    return 0;\n}",
+            "java": "import java.io.BufferedReader;\nimport java.io.BufferedWriter;\nimport java.io.IOException;\nimport java.io.InputStreamReader;\nimport java.io.OutputStreamWriter;\nimport java.util.StringTokenizer;\n\npublic class Main {\n\tstatic int[] arr;\n\tstatic long[] tree;\n\n\tpublic static void main(String[] args) throws NumberFormatException, IOException {\n\t\tBufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n\t\tBufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));\n\t\tStringTokenizer st = new StringTokenizer(br.readLine());\n\n\t\tint N = Integer.parseInt(st.nextToken());\n\t\tint Q = Integer.parseInt(st.nextToken());\n\n\t\tarr = new int[N + 1];\n\n\t\tst = new StringTokenizer(br.readLine());\n\t\tfor (int i = 1; i <= N; i++) {\n\t\t\tarr[i] = Integer.parseInt(st.nextToken());\n\t\t}\n\n\t\ttree = new long[N * 4];\n\n\t\tinit(1, N, 1);\n\n\t\tStringBuilder sb = new StringBuilder();\n\t\tfor (int i = 0; i < Q; i++) {\n\t\t\tst = new StringTokenizer(br.readLine());\n\t\t\tint x = Integer.parseInt(st.nextToken());\n\t\t\tint y = Integer.parseInt(st.nextToken());\n\t\t\tint a = Integer.parseInt(st.nextToken());\n\t\t\tint b = Integer.parseInt(st.nextToken());\n\n\t\t\tif (x > y) {\n\t\t\t\tint temp = y;\n\t\t\t\ty = x;\n\t\t\t\tx = temp;\n\t\t\t}\n\n\t\t\tsb.append(sum(1, N, 1, x, y) + \"\n\");\n\t\t\tupdate(1, N, 1, a, b);\n\t\t}\n\t\t\n\t\tbw.write(sb.toString());\n\t\tbw.flush();\n\t\tbw.close();\n\t\tbr.close();\n\t}\n\t\n\tpublic static long init(int start, int end, int node) {\n\t\tif (start == end) {\n\t\t\treturn tree[node] = arr[start];\n\t\t}\n\n\t\tint mid = (start + end) / 2;\n\t\treturn tree[node] = init(start, mid, node * 2) + init(mid + 1, end, node * 2 + 1);\n\t}\n\t\n\tpublic static long sum(int start, int end, int node, int left, int right) {\n\t\tif (end < left || right < start) {\n\t\t\treturn 0;\n\t\t}\n\n\t\tif (left <= start && end <= right) {\n\t\t\treturn tree[node];\n\t\t}\n\n\t\tint mid = (start + end) / 2;\n\t\treturn sum(start, mid, node * 2, left, right) + sum(mid + 1, end, node * 2 + 1, left, right);\n\t}\n\t\n\tpublic static long update(int start, int end, int node, int idx, long val) {\n\t\tif (idx < start || idx > end) {\n\t\t\treturn tree[node];\n\t\t}\n\t\t\n\t\tif (start == end) {\n\t\t\treturn tree[node] = val;\n\t\t}\n\t\t\n\t\tint mid = (start + end) / 2;\n\t\treturn tree[node] = update(start, mid, node * 2, idx, val) + update(mid + 1, end, node * 2 + 1, idx, val);\n\t}\n\n}",
+            "python": "import sys\n\ninput = sys.stdin.readline\nMIIS = lambda:map(int,input().split())\n\ndef build(arr, node, nodeleft, noderight):\n    if nodeleft == noderight:\n        segment_tree[node] = arr[nodeleft]\n        return segment_tree[node]\n\n    mid = int((nodeleft + noderight)/2)\n    left_value = build(arr, node*2, nodeleft, mid)\n    right_value = build(arr, node*2+1, mid+1, noderight)\n\n    segment_tree[node] = left_value+right_value\n    return segment_tree[node]\n\ndef total_sum(left, right, node, nodeleft, noderight):\n    if right<nodeleft or noderight < left:\n        return 0\n\n    if left <= nodeleft and noderight <= right:\n        return segment_tree[node]\n\n    mid = int((nodeleft + noderight)/2)\n    return total_sum(left, right, node*2, nodeleft, mid) + total_sum(left, right, node*2+1, mid+1, noderight)\n\ndef update(index, newvalue, node, nodeleft, noderight):\n    if index < nodeleft or noderight < index:\n        return segment_tree[node]\n\n    if nodeleft==noderight:\n        segment_tree[node] = newvalue\n        return segment_tree[node]\n\n    mid = int((nodeleft + noderight) / 2)\n    left_value = update(index, newvalue, node*2, nodeleft, mid)\n    right_value = update(index, newvalue, node*2+1, mid+1, noderight)\n    segment_tree[node] = left_value + right_value\n    return segment_tree[node]\n\nN, Q = MIIS()\n\narr = list(MIIS())\n\nsegment_tree = [0]*(N*4 + 1)\nbuild(arr, 1, 0, N-1)\n\nfor _ in range(Q):\n    x, y, a, b= MIIS()\n    if x > y:\n        x, y = y, x\n    print(total_sum(x-1, y-1, 1, 0, N-1))\n    update(a-1, b, 1, 0, N-1)"
+        }
+    },
+    {
+        "id": 15,
+        "header": {
+            "title": "노트북의 주인을 찾아서",
+            "rank": "platinum4",
+            "source": "baekjoon",
+            "problemId": "1298번",
+            "link": "https://www.acmicpc.net/problem/1298"
+        },
+        "content": {
+            "description": "어느 날 모든 학생들은 한 명이 한개의 노트북을 가지고 공부하던 도중, 자리를 바꾸다가 그만 노트북이 뒤섞이고 말았다.<br>대다수의 학생들은 자신의 노트북을 잘 알고 있어서 자신의 노트북을 받을 수 있었지만,<br>애석하게도 N명의 학생들이 정확히 자신의 노트북이 어떤것인지 알지 못했다. 왜냐하면 그들은 노트북을 구입한게 바로 어제였기 때문이다.<br>어차피 새것인 노트북, 바뀐들 어떠하랴. 그들에게 자신의 노트북이라고 생각되는 노트북들을 얘기해 보라고 했다.<br>이번에는 정말 신기하게도 그들 각각이 노트북을 여러개 선택한 것이었다! “이것 아니면 이것 아니면 이것 아니면 이것 일거 같아요”라카더라.<br>우리의 목적은 이들의 요구를 가장 많이 만족시키는 것이다.<br>요컨대, 자신이 자신의 것 같다라고 얘기한 노트북을 갖는 사람을 최대화 하라는 소리다.<br>",
+            "input_description": "첫째 줄에는 노트북이 섞인 날 어제 노트북을 구입한 사람의 수 N(1 ≤ N ≤ 100)과 노트북 예상의 개수 M(0 ≤ M ≤ 5,000) 주어진다.<br>둘쨋줄에서 M+1번째 줄 까지는 각각 한 줄마다 a b가 주어지는데, 이는 a번 사람이 b번 노트북을 자신의 것이라고 생각한다는 의미를 갖는다.<br>노트북과 사람의 번호는 1보다 크거나 같고, N보다 작거나 같다. 두 사람 또는 두 노트북이 같은 번호를 갖는 경우는 없다.",
+            "output_description": "최대로 만족될 수 있는 사람 수를 출력한다.",
+            "input_example": "5 5<br>1 1<br>2 2<br>3 3<br>4 4<br>5 5",
+            "output_example": "5",
+            "author": "baekjoon"
+        },
+        "solution": {
+            "cpp": "#include <bits/stdc++.h>\nusing namespace std;\nconst int MAX = 5005;\n\nint Left[MAX], Right[MAX];\nvector<int> Adj[MAX];\nbool Visit[MAX];\n\nbool DFS(int from) {\n    Visit[from] = true;\n    for(int i=0; i<Adj[from].size(); i++) {\n        int to = Adj[from][i];\n        if(Right[to] == -1 || (!Visit[Right[to]] && DFS(Right[to]))) {\n            Left[from] = to, Right[to] = from;\n            return true;\n        }\n    }\n    return false;\n}\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL), cout.tie(NULL);\n\n    int N, M; cin >> N >> M;\n    for(int i=0; i<M; i++) {\n        int from, to; cin >> from >> to;\n        Adj[from].push_back(to);\n    }\n\n    int match = 0;\n    fill(&Left[1], &Left[MAX], -1), fill(&Right[1], &Right[MAX], -1);\n    for(int i=1; i<=N; i++)\n        if(Left[i] == -1) {\n            fill(&Visit[1], &Visit[MAX], false);\n            if(DFS(i)) match++;\n        }\n    cout << match;\n}",
+            "java": "import java.io.BufferedReader;\nimport java.io.InputStreamReader;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.StringTokenizer;\n\npublic class Main {\n    StringTokenizer st;\n    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n    private void tokenizing() throws Exception { st = new StringTokenizer(br.readLine()); }\n    private int nextInt() { return Integer.parseInt(st.nextToken()); }\n\n    ArrayList<Integer>[] edges;\n    int[] matched, v;\n\n    private boolean matching(int from) {\n        for (int to : edges[from]) {\n            if (v[to] != 0) continue;\n            v[to] = 1;\n            if (matched[to] == 0 || matching(matched[to])) {\n                matched[to] = from;\n                return true;\n            }\n        }\n        return false;\n    }\n\n    private void solution() throws Exception {\n        tokenizing();\n        int n = nextInt();\n        int m = nextInt();\n\n        edges = new ArrayList[n+1];\n        for (int i = 1; i <= n; i++) edges[i] = new ArrayList<>();\n        while (m-->0) {\n            tokenizing();\n            edges[nextInt()].add(nextInt());\n        }\n\n        matched = new int[n+1];\n        v = new int[n+1];\n\n        int cnt = 0;\n        for (int i = 1; i <= n; i++) {\n            if (matching(i)) {\n                cnt++;\n            }\n            Arrays.fill(v, 0);\n        }\n\n        System.out.println(cnt);\n    }\n\n    public static void main(String[] args) throws Exception {\n        new Main().solution();\n    }\n}",
+            "python": "import sys\nfrom collections import deque\ninput = lambda:sys.stdin.readline().strip()\nINF = sys.maxsize\n\ndef bfs():\n    que = deque()\n    for a in range(1,n+1):\n        if not groupA[a]:\n            dist[a] = 0\n            que.append(a)\n        else:\n            dist[a] = INF\n    dist[0] = INF\n    while que:\n        a = que.popleft()\n        if dist[a] < dist[0]:\n            for b in graph[a]:\n                if dist[groupB[b]] == INF:\n                    dist[groupB[b]] = dist[a] + 1\n                    que.append(groupB[b])\n    return dist[0] != INF\n\ndef dfs(a):\n    if a:\n        for b in graph[a]:\n            if dist[groupB[b]] == dist[a] + 1 and dfs(groupB[b]):\n                groupA[a] = b\n                groupB[b] = a\n                return 1\n        dist[a] = INF\n        return 0\n    return 1\n\nn,m = map(int, input().split())\ngraph = [[]for i in range(n+1)]\n\nfor i in range(m):\n\ta,b = map(int, input().split())\n\tgraph[a].append(b)\ngroupA = [0 for i in range(n+1)]\ngroupB = [0 for i in range(n+1)]\ndist = [INF for i in range(n+1)]\nmatch = 0 #¸ÅÄª¼ýÀÚ\nwhile bfs():\n    for a in range(1, n+1):\n        if not groupA[a]:\n            match += dfs(a)\nprint(match)"
+        }
+    },
+    {
+        "id": 16,
+        "header": {
+            "title": "골드바흐의 추측",
+            "rank": "silver2",
+            "source": "baekjoon",
+            "problemId": "9020번",
+            "link": "https://www.acmicpc.net/problem/9020"
+        },
+        "content": {
+            "description": "1보다 큰 자연수 중에서  1과 자기 자신을 제외한 약수가 없는 자연수를 소수라고 한다.<br>예를 들어, 5는 1과 5를 제외한 약수가 없기 때문에 소수이다. 하지만, 6은 6 = 2 × 3 이기 때문에 소수가 아니다.<br>골드바흐의 추측은 유명한 정수론의 미해결 문제로, 2보다 큰 모든 짝수는 두 소수의 합으로 나타낼 수 있다는 것이다.<br>이러한 수를 골드바흐 수라고 한다. 또, 짝수를 두 소수의 합으로 나타내는 표현을 그 수의 골드바흐 파티션이라고 한다.<br>예를 들면, 4 = 2 + 2, 6 = 3 + 3, 8 = 3 + 5, 10 = 5 + 5, 12 = 5 + 7, 14 = 3 + 11, 14 = 7 + 7이다.<br>10000보다 작거나 같은 모든 짝수 n에 대한 골드바흐 파티션은 존재한다.<br>2보다 큰 짝수 n이 주어졌을 때, n의 골드바흐 파티션을 출력하는 프로그램을 작성하시오.<br>만약 가능한 n의 골드바흐 파티션이 여러 가지인 경우에는 두 소수의 차이가 가장 작은 것을 출력한다.",
+            "input_description": "첫째 줄에 테스트 케이스의 개수 T가 주어진다. 각 테스트 케이스는 한 줄로 이루어져 있고 짝수 n이 주어진다.",
+            "output_description": "각 테스트 케이스에 대해서 주어진 n의 골드바흐 파티션을 출력한다.<br>출력하는 소수는 작은 것부터 먼저 출력하며, 공백으로 구분한다.",
+            "input_example": "3<br>8<br>10<br>16",
+            "output_example": "3 5<br>5 5<br>5 11",
+            "author": "baekjoon"
+        },
+        "solution": {
+            "cpp": "#include <iostream>\nusing namespace std;\n#define max 10000 + 1\nint arr[max];\n\nint main()\n{\n\tint testcase;\n\tint num;\n\tint temp1 = 0, temp2 = 0, dis = 0;\n\tint PrimeDis = 10000, prePrimeDis = 0;\n\tint save1 = 0, save2 = 0;\n\t\n\tfor (int i = 2; i < max; i++)\n\t\tarr[i] = i;\n\tfor (int i = 2; i <= max; i++)\n\t{\n\t\tif (arr[i] == 0)\n\t\t\tcontinue;\n\t\tfor (int j = i + i; j <= max; j += i)\n\t\t{\n\t\t\tarr[j] = 0;\n\t\t}\n\t}\n\n\tcin >> testcase;\n\n\tfor (int i = 0; i < testcase; i++)\n\t{\n\t\tPrimeDis = 10000, prePrimeDis = 0;\n\t\tcin >> num;\n\t\tfor (int k = 2; k <= num; k++)\n\t\t{\n\t\t\tprePrimeDis = PrimeDis;\n\t\t\tif (arr[k] == k)\n\t\t\t{\n\t\t\t\tdis = num - k;\t\t\t\t\n\t\t\t\tif (arr[dis] == dis)\n\t\t\t\t{\n\t\t\t\t\ttemp1 = k;\n\t\t\t\t\ttemp2 = dis;\n\t\t\t\t\tPrimeDis = temp2 - temp1;\n\t\t\t\t\tif (PrimeDis < 0)\n\t\t\t\t\t{\n\t\t\t\t\t\tPrimeDis *= -1;\n\t\t\t\t\t}\n\t\t\t\t\tif (prePrimeDis < PrimeDis)\n\t\t\t\t\t{\n\t\t\t\t\t\ttemp1 = save1;\n\t\t\t\t\t\ttemp2 = save2;\n\t\t\t\t\t} \n\t\t\t\t\telse\n\t\t\t\t\t{\n\t\t\t\t\t\tsave1 = temp1;\n\t\t\t\t\t\tsave2 = temp2;\n\t\t\t\t\t}\n\t\t\t\t}\n\n\t\t\t}\n\n\t\t}\n\t\tcout << temp2 << \" \" << temp1 << endl;\n\t}\n\treturn 0;\n}",
+            "java": "import java.io.BufferedReader;\nimport java.io.IOException;\nimport java.io.InputStreamReader;\n\npublic class Test {\n    public static boolean[] prime = new boolean[10001];\n\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringBuilder sb = new StringBuilder();\n\n        getPrime();\n\n        int T = Integer.parseInt(br.readLine());\n\n        while (T-- > 0) {\n            int n = Integer.parseInt(br.readLine());\n            int firstPartition = n / 2;\n            int secondPartition = n / 2;\n\n            while (true) {\n                if (!prime[firstPartition] && !prime[secondPartition]) {\n                    sb.append(firstPartition).append(' ').append(secondPartition).append('\n');\n                    break;\n                }\n                firstPartition--;\n                secondPartition++;\n            }\n        }\n        System.out.print(sb);\n    }\n\n    static void getPrime() {\n\n        prime[0] = prime[1] = true;\n\n        for (int i = 2; i <= Math.sqrt(prime.length); i++) {\n            if (prime[i]) continue;\n\n            for (int j = i * i; j < prime.length; j += i) {\n                prime[j] = true;\n            }\n        }\n    }\n}",
+            "python": "def get_prime(num):\n    a = [False, False] + [True] * (num-1)\n\n    primes=[]\n\n    for i in range (2, (num+1)):\n        if a[i]:\n            primes.append(i)\n            for j in range(2*i, num+1, i):\n                a[j] = False\n    return primes\n\nif __name__ == \"__main__\":\n    test_case = int(input())\n    for _ in range(test_case):\n        even = int(input())\n\n        prime_set = get_prime(even)\n        even_half = even // 2\n\n        for i in range(even_half, 1, -1):\n            if(even-i in prime_set) and (i in prime_set):\n                print(i, even-i)\n                break"
+        }
+    },
+    {
+        "id": 17,
+        "header": {
+            "title": "그룹 단어 체커",
+            "rank": "silver5",
+            "source": "baekjoon",
+            "problemId": "1316번",
+            "link": "https://www.acmicpc.net/problem/1316"
+        },
+        "content": {
+            "description": "그룹 단어란 단어에 존재하는 모든 문자에 대해서, 각 문자가 연속해서 나타나는 경우만을 말한다.<br>예를 들면, ccazzzzbb는 c, a, z, b가 모두 연속해서 나타나고, kin도 k, i, n이 연속해서 나타나기 때문에 그룹 단어이지만,<br>aabbbccb는 b가 떨어져서 나타나기 때문에 그룹 단어가 아니다.<br>단어 N개를 입력으로 받아 그룹 단어의 개수를 출력하는 프로그램을 작성하시오.",
+            "input_description": "첫째 줄에 단어의 개수 N이 들어온다. N은 100보다 작거나 같은 자연수이다.<br>둘째 줄부터 N개의 줄에 단어가 들어온다.<br>단어는 알파벳 소문자로만 되어있고 중복되지 않으며, 길이는 최대 100이다.",
+            "output_description": "첫째 줄에 그룹 단어의 개수를 출력한다.",
+            "input_example": "3<br>happy<br>new<br>year",
+            "output_example": "3",
+            "author": "baekjoon"
+        },
+        "solution": {
+            "cpp": "#include <iostream>\n#include <unordered_map>\nusing namespace std;\n\nint main() {\n\tint N; cin >> N;\n\tint answer = N;\n\n\twhile (N--) {\n\t\tstring word; cin >> word;\n\t\tunordered_map<char, bool> map;\n\n\t\tfor (int i = 0; i < word.size(); i++) {\n\t\t\tif (map[word[i]] == false) {\n\t\t\t\tmap[word[i]] = true;\n\t\t\t\twhile (word[i] == word[i + 1]) i++;\n\t\t\t}\n\t\t\telse {\n\t\t\t\tanswer--;\n\t\t\t\tbreak;\n\t\t\t}\n\t\t}\n\t}\n\n\tcout << answer;\n\treturn 0;\n}",
+            "java": "import java.util.Scanner;\npublic class Main {\n\n\tpublic static void main(String[] args) {\n\n\t\tScanner sc = new Scanner(System.in);\n\t\tint num=sc.nextInt();\n\t\tint cnt=num;\n\n\t\tfor(int c = 0;c<num;c++) {\n\t\t\tString st = sc.next();\n\t\t\tboolean test[] = new boolean[26];\n\n\t\t\tfor(int i=0;i<st.length()-1;i++) {\n\t\t\t\tif(st.charAt(i)!=st.charAt(i+1)) {\n\t\t\t\t\tif(test[st.charAt(i+1)-97]==true) {\n\t\t\t\t\t\tcnt--;\n\t\t\t\t\t\tbreak;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\ttest[st.charAt(i)-97]=true;\n\t\t\t}\n\t\t}\n\t\tSystem.out.println(cnt);\n\t}\n}",
+            "python": "n = int(input())\narr = [input() for _ in range(n)]\n\ncnt = 0\nfor word in arr:\n    cnt += 1\n    for i in range(len(word)-1):\n        if word[i] != word[i+1] and word[i] in word[i+1:]:\n            cnt -= 1\n            break\n\nprint(cnt)"
+        }
+    },
+    {
+        "id": 18,
+        "header": {
+            "title": "알파벳",
+            "rank": "gold4",
+            "source": "baekjoon",
+            "problemId": "1987번",
+            "link": "https://www.acmicpc.net/problem/1987"
+        },
+        "content": {
+            "description": "세로 R칸, 가로 C칸으로 된 표 모양의 보드가 있다.<br>보드의 각 칸에는 대문자 알파벳이 하나씩 적혀 있고, 좌측 상단 칸 (1행 1열) 에는 말이 놓여 있다.<br>말은 상하좌우로 인접한 네 칸 중의 한 칸으로 이동할 수 있는데, 새로 이동한 칸에 적혀 있는 알파벳은<br>지금까지 지나온 모든 칸에 적혀 있는 알파벳과는 달라야 한다. 즉, 같은 알파벳이 적힌 칸을 두 번 지날 수 없다.<br>좌측 상단에서 시작해서, 말이 최대한 몇 칸을 지날 수 있는지를 구하는 프로그램을 작성하시오. 말이 지나는 칸은 좌측 상단의 칸도 포함된다.",
+            "input_description": "첫째 줄에 R과 C가 빈칸을 사이에 두고 주어진다. (1 ≤ R,C ≤ 20)<br>둘째 줄부터 R개의 줄에 걸쳐서 보드에 적혀 있는 C개의 대문자 알파벳들이 빈칸 없이 주어진다.",
+            "output_description": "첫째 줄에 말이 지날 수 있는 최대의 칸 수를 출력한다.",
+            "input_example": "2 4<br>CAAB<br>ADCB",
+            "output_example": "3",
+            "author": "baekjoon"
+        },
+        "solution": {
+            "cpp": "#include<iostream>\n#include <vector>\n#include <queue>\n#include <string>\nusing namespace std;\n\nint r,c,ans;\nstring str;\nchar map[21][21];\n\nint dx[] = {1,0,-1,0};\nint dy[] = {0,1,0,-1};\nint alpha[26];\n\nvoid dfs(int x,int y,int depth) {\n    ans = max(depth, ans);\n    for (int i = 0; i < 4; i++) {\n        int nx = x + dx[i];\n        int ny = y + dy[i];\n        if (nx >= 0 && nx < r && ny >= 0 && ny < c) {\n            if (!alpha[map[nx][ny]-65]){\n                alpha[map[nx][ny]-65]++;\n\n                dfs(nx, ny, depth+1);\n\n                alpha[map[nx][ny]-65]--;\n            }\n        }\n    }\n}\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    cout.tie(nullptr);\n\n    cin >> r >> c;\n\n    for(int i=0; i<r;i++){\n        cin >> str;\n        for(int j=0; j<str.size();j++){\n            map[i][j] = str[j];\n        }\n    }\n    alpha[map[0][0]-65]++;\n    dfs(0,0,1);\n\n    cout << ans;\n\n    return 0;\n}\n",
+            "java": "import java.util.Arrays;\nimport java.util.Scanner;\n\npublic class Main {\n\n\tstatic char[][] alpha;\n\tstatic int[][] distChk;\n\tstatic int totalCnt;\n\tstatic int maxValue;\n\n\tstatic int N;\n\tstatic int M;\n\t\n\tpublic static void main(String[] args) {\n\t\tScanner sc = new Scanner(System.in);\n\t\tN = sc.nextInt();\n\t\tM = sc.nextInt();\n\t\talpha = new char[N][M];\n\t\tStringBuilder sb = new StringBuilder();\n\t\t\n\t\tfor(int i = 0; i < N; i++) {\n\t\t\talpha[i] = sc.next().toCharArray(); \n\t\t}\n\n\t\tcheckAlpha(0, 0, sb);\n\t\t\n\t\tSystem.out.println(maxValue);\n\t}\n\t\n\tprivate static void checkAlpha(int row, int col, StringBuilder sb) {\n\t\tif(row < 0 || row >= N || col < 0 || col >= M) {\n\t\t\treturn;\n\t\t}\n\t\t\n\t\tString tmp = String.valueOf(alpha[row][col]);\n\n\t\tfor(int i = 0; i < sb.length(); i++) {\n\t\t\tif(alpha[row][col] == sb.charAt(i)) {\n\t\t\t\treturn;\n\t\t\t}\n\t\t}\n\n\t\tsb.append(tmp);\n\t\tint sblen = sb.length();\n\n\t\tmaxValue = maxValue<sblen?sblen:maxValue;\n\n\t\tcheckAlpha(row, col+1, sb);\n\t\tcheckAlpha(row+1, col, sb);\n\t\tcheckAlpha(row-1, col, sb);\n\t\tcheckAlpha(row, col-1, sb);\n\t\t\n\t\tsb.deleteCharAt(sblen-1);\n\t}\n}",
+            "python": "def dfs(x, y, cnt):\n    answer = max(answer, cnt)\n    for i in range(4):\n        tx = x + dx[i]\n        ty = y + dy[i]\n\n        if 0 <= tx < r and 0 <= ty < c and not check[alphabet[tx][ty]]:\n            global answer\n            check[alphabet[tx][ty]] = 1\n            dfs(tx, ty, cnt + 1)\n            check[alphabet[tx][ty]] = 0   \n\nimport sys\n\nr, c = map(int, sys.stdin.readline().split())\n\nalphabet = []\nfor _ in range(r):\n    alphabet.append(list(map(lambda a: ord(a) - 65, sys.stdin.readline().rstrip())))\n\ncheck = [0] * 26\ncheck[alphabet[0][0]] = 1\n\ndx = [1, -1, 0, 0]\ndy = [0, 0, 1, -1]\n\nanswer = 0\ndfs(0, 0, 1)\nprint(answer)"
+        }
+    },
+    {
+        "id": 19,
+        "header": {
+            "title": "가장 가까운 두 점",
+            "rank": "platinum2",
+            "source": "baekjoon",
+            "problemId": "2261번",
+            "link": "https://www.acmicpc.net/problem/2261"
+        },
+        "content": {
+            "description": "2차원 평면상에 n개의 점이 주어졌을 때, 이 점들 중 가장 가까운 두 점을 구하는 프로그램을 작성하시오.",
+            "input_description": "첫째 줄에 자연수 n(2 ≤ n ≤ 100,000)이 주어진다.<br>다음 n개의 줄에는 차례로 각 점의 x, y좌표가 주어진다.<br>각각의 좌표는 절댓값이 10,000을 넘지 않는 정수이다. 여러 점이 같은 좌표를 가질 수도 있다.",
+            "output_description": "첫째 줄에 가장 가까운 두 점의 거리의 제곱을 출력한다.",
+            "input_example": "4<br>0 0<br>10 10<br>0 10<br>10 0",
+            "output_example": "100",
+            "author": "baekjoon"
+        },
+        "solution": {
+            "cpp": "#include <iostream>\n#include <algorithm>\n#include <vector>\n#include <cmath>\n#include <set>\nusing namespace std;\n\n#define INF (1 << 30)\n#define X first\n#define Y second\ntypedef pair<int, int> pi;\n\nint n, x, y;\nvector<pi> v;\nset<pi> s;\n\nint dist(pi a, pi b) \n{\n    int x_dist = (a.X - b.X) * (a.X - b.X);\n    int y_dist = (a.Y - b.Y) * (a.Y - b.Y);\n    return x_dist + y_dist;\n}\n\nint main() {\n\n    cin >> n;\n\n    for (int i = 0; i < n; ++i)\n    {\n        cin >> x >> y;\n        v.push_back({ x,y });\n    }\n\n    sort(v.begin(), v.end());\n    s.insert({ v[0].Y, v[0].X });\n    s.insert({ v[1].Y, v[1].X });\n\n    int mini = dist(v[0], v[1]);\n    int idx = 0;\n\n    for (int i = 2; i < n; ++i)\n    {\n        while (idx < i)\n        {\n            int d = v[i].X - v[idx].X;\n            if (d * d <= mini) break;\n            else\n            {\n                s.erase({ v[idx].Y, v[idx].X });\n                idx++;\n            }\n        }\n\n        auto start = s.lower_bound({ v[i].Y - sqrt(mini), -INF });\n        auto end = s.upper_bound({ v[i].Y + sqrt(mini), INF });\n        for (auto it = start; it != end; it++)\n            mini = min(mini, dist({ it->Y, it->X }, v[i]));\n        s.insert({ v[i].Y, v[i].X });\n    }\n    \n    cout << mini << '\n';\n}",
+            "java": "import java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Collections;\nimport java.util.Comparator;\nimport java.util.List;\nimport java.util.Scanner;\n\npublic class Main {\n\tstatic Point p[];\n\t\n\tstatic class Point{\n\t\tint x, y;\n\t\tpublic Point(int x, int y) {\n\t\t\tthis.x=x;\n\t\t\tthis.y=y;\n\t\t}\n\t}\n\t\n\tpublic static void main(String [] args) {\n\t\t\n\t\tScanner scan= new Scanner(System.in);\n\t\t\n\t\tint N= scan.nextInt();\n\t\tp= new Point[N];\n\t\tfor(int i=0; i<N; i++) {\n\t\t\tp[i]= new Point(scan.nextInt(), scan.nextInt());\n\t\t}\n\t\tArrays.sort(p, (p1, p2)->p1.x-p2.x);\n\t\tSystem.out.println(div(0, N-1));\n\t}\n\t\n\tpublic static int div(int left, int right) {\n\t\tint size= right-left+1;\n\t\tif(size<=3) {\n\t\t\treturn bruteForce(left, right);\n\t\t}\n\t\t\n\t\tint mid= (left+right)/2;\n\t\tint left_s= div(left, mid);\n\t\tint right_s= div(mid+1, right);\n\t\t\n\t\tint min_s= Math.min(left_s, right_s);\n\t\t\n\t\tList<Point> mid_s= new ArrayList<>();\n\t\tint d_x;\n\t\tfor(int i= left; i<=right; i++) {\n\t\t\td_x=p[i].x-p[mid].x;\n\t\t\tif(d_x*d_x<min_s) {\n\t\t\t\tmid_s.add(p[i]);\n\t\t\t}\n\t\t}\n\n\t\tCollections.sort(mid_s, (p1, p2)->p1.y-p2.y);\n\t\tint d_y, d;\n\t\tsize= mid_s.size();\n\t\tfor(int i=0; i<size-1; i++) {\n\t\t\tfor(int j=i+1; j<size; j++) {\n\t\t\t\td_y= mid_s.get(j).y-mid_s.get(i).y;\n\t\t\t\tif(d_y*d_y<min_s) {\n\t\t\t\t\td= getD(mid_s.get(i), mid_s.get(j));\n\t\t\t\t\tmin_s=min_s<d ? min_s:d;\n\t\t\t\t}else break;\n\t\t\t}\n\t\t}\n\t\t\n\t\treturn min_s;\n\t\t\n\t}\n\t\n\t\n\tpublic static int getD(Point p1, Point p2) {\n\t\treturn (p1.x-p2.x)*(p1.x-p2.x)+(p1.y-p2.y)*(p1.y-p2.y);\n\t}\n\t\n\tpublic static int bruteForce(int left, int right) {\n\t\tint d_min= Integer.MAX_VALUE;\n\t\tint dis;\n\t\t\n\t\tfor(int i=left; i<right; i++) {\n\t\t\tfor(int j=i+1; j<=right; j++) {\n\t\t\t\tdis= getD(p[i], p[j]);\n\t\t\t\td_min=d_min<dis ? d_min:dis;\n\t\t\t}\n\t\t}\n\t\treturn d_min;\n\t}\n\t\n}",
+            "python": "import sys, random\ninput = sys.stdin.readline\nn = int(input())\npl = [list(map(int,input().split())) for i in range(n)]\n\npl.sort()\n\ndef getDist(p1, p2):\n    return (p1[0] - p2[0])**2 + (p1[1] - p2[1])**2\n\ndef dac(start,end):\n    if start == end:\n        return float('inf')\n\n    if end - start == 1:\n        return getDist(pl[start],pl[end])\n    \n    mid = (start + end)//2\n    minDist = min(dac(start, mid), dac(mid,end))\n\n    target_pl = []\n    for i in range(start, end+1):\n        if (pl[mid][0] - pl[i][0])**2 < minDist:\n            target_pl.append(pl[i])\n            \n    target_pl.sort(key=lambda x: x[1])\n    \n    t = len(target_pl)\n    for i in range(t-1):\n        for j in range(i+1,t):\n            if (target_pl[i][1] - target_pl[j][1])**2 < minDist:\n                minDist = min(minDist, getDist(target_pl[i],target_pl[j]))\n            else:\n                break\n    return minDist\n\nprint(dac(0,n-1))"
+        }
+    },
+    {
+        "id": 20,
+        "header": {
+            "title": "시리얼 번호",
+            "rank": "silver3",
+            "source": "baekjoon",
+            "problemId": "1431번",
+            "link": "https://www.acmicpc.net/problem/1431"
+        },
+        "content": {
+            "description": "다솜이는 기타를 많이 가지고 있다. 그리고 각각의 기타는 모두 다른 시리얼 번호를 가지고 있다.<br>다솜이는 기타를 빨리 찾아서 빨리 사람들에게 연주해주기 위해서 기타를 시리얼 번호 순서대로 정렬하고자 한다.<br>모든 시리얼 번호는 알파벳 대문자 (A-Z)와 숫자 (0-9)로 이루어져 있다.<br>시리얼번호 A가 시리얼번호 B의 앞에 오는 경우는 다음과 같다.<br>1. A와 B의 길이가 다르면, 짧은 것이 먼저 온다.<br>2. 만약 서로 길이가 같다면, A의 모든 자리수의 합과 B의 모든 자리수의 합을 비교해서 작은 합을 가지는 것이 먼저온다. (숫자인 것만 더한다)<br>3. 만약 1,2번 둘 조건으로도 비교할 수 없으면, 사전순으로 비교한다. 숫자가 알파벳보다 사전순으로 작다.<br>시리얼이 주어졌을 때, 정렬해서 출력하는 프로그램을 작성하시오.",
+            "input_description": "첫째 줄에 기타의 개수 N이 주어진다. N은 50보다 작거나 같다.<br>둘째 줄부터 N개의 줄에 시리얼 번호가 하나씩 주어진다.<br>시리얼 번호의 길이는 최대 50이고, 알파벳 대문자 또는 숫자로만 이루어져 있다. 시리얼 번호는 중복되지 않는다.",
+            "output_description": "첫째 줄부터 차례대로 N개의 줄에 한줄에 하나씩 시리얼 번호를 정렬한 결과를 출력한다.",
+            "input_example": "5<br>ABCD<br>145C<br>A<br>A910<br>Z321",
+            "output_example": "A<br>ABCD<br>Z321<br>145C<br>A910",
+            "author": "baekjoon"
+        },
+        "solution": {
+            "cpp": "#include <iostream>\n#include <algorithm>\n#include <string>\nusing namespace std;\n\nint cmp(string a, string b) {\n\tint asize = a.size();\n\tint bsize = b.size();\n\tint asum = 0;\n\tint bsum = 0;\n\n\tif (asize != bsize) {\n\t\treturn asize < bsize;\n\t}\n\n\tfor (int i = 0; i < a.size(); i++) {\n\t\tif (a[i] >= '0' && a[i] <= '9') {\n\t\t\tasum += int(a[i]) - 48;\n\t\t}\n\n\t\tif (b[i] >= '0' && b[i] <= '9') {\n\t\t\tbsum += int(b[i]) - 48;\n\t\t}\n\t}\n\n\tif (asum != bsum) {\n\t\treturn asum < bsum;\n\t}\n\n\n\treturn a < b;\n\n}\n\nint main() {\n\tint N;\n\tstring serial[50];\n\n\tcin >> N;\n\tfor (int i = 0; i < N; i++) {\n\t\tcin >> serial[i];\n\t}\n\n\tsort(serial, serial + N, cmp);\n\tfor (int i = 0; i < N; i++) {\n\t\tcout << serial[i] << \"\n\";\n\t}\n\t\n\treturn 0;\n}",
+            "java": "import java.io.BufferedReader;\nimport java.io.IOException;\nimport java.io.InputStreamReader;\nimport java.util.Arrays;\nimport java.util.Comparator;\n\npublic class Main {\n\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int num = Integer.parseInt(br.readLine());\n        String st[] = new String[num];\n        for (int i = 0; i < num; i++) {\n            st[i] = br.readLine();\n        }\n        solve(st);\n    }\n\n    public static void solve(String[] st) {\n        Arrays.sort(st, new Comparator<String>() {\n            @Override\n            public int compare(String o1, String o2) {\n                if (o1.length() > o2.length()) {\n                    return 1;\n                }\n\n                else if (o1.length() < o2.length()) {\n                    return -1;\n                }\n                else {\n                    int sum1 = 0;\n                    int sum2 = 0;\n                    for (int i = 0; i < o1.length(); i++) {\n                        if (!(o1.charAt(i) >= 65 && o1.charAt(i) <= 90)) {\n                            sum1 += o1.charAt(i) - '0';\n                        }\n                    }\n\n                    for (int i = 0; i < o2.length(); i++) {\n                        if (!(o2.charAt(i) >= 65 && o2.charAt(i) <= 90)) {\n                            sum2 += o2.charAt(i) - '0';\n                        }\n                    }\n\n                    if (sum1 > sum2) {\n                        return 1;\n                    }\n                    else if (sum1 < sum2) {\n                        return -1;\n                    }\n                    else {\n                        return o1.compareTo(o2);\n                    }\n                }\n            }\n        });\n\n        for (String s : st) {\n            System.out.println(s);\n        }\n\n    }\n}",
+            "python": "N = int(input())\nli = [input() for _ in range(N)]\n\ntemp = []\nfor i in range(N):\n    sum=0\n    for j in range(len(li[i])):\n        if li[i][j] >='0' and li[i][j]<='9':\n            sum+= int(li[i][j])\n    temp.append([len(li[i]), sum, li[i]])\n\ntemp.sort(key= lambda x: [x[0], x[1], x[2]])\n\nfor t in temp:\n    print(t[2])"
+        }
+    },
+    {
+        "id": 21,
+        "header": {
+            "title": "보석 도둑",
+            "rank": "gold2",
+            "source": "baekjoon",
+            "problemId": "1202번",
+            "link": "https://www.acmicpc.net/problem/1202"
+        },
+        "content": {
+            "description": "세계적인 도둑 상덕이는 보석점을 털기로 결심했다. 상덕이가 털 보석점에는 보석이 총 N개 있다.<br>각 보석은 무게 Mi와 가격 Vi를 가지고 있다. 상덕이는 가방을 K개 가지고 있고, 각 가방에 담을 수 있는 최대 무게는 Ci이다.<br>가방에는 최대 한 개의 보석만 넣을 수 있다. 상덕이가 훔칠 수 있는 보석의 최대 가격을 구하는 프로그램을 작성하시오.",
+            "input_description": "첫째 줄에 N과 K가 주어진다. (1 ≤ N, K ≤ 300,000)<br>다음 N개 줄에는 각 보석의 정보 Mi와 Vi가 주어진다. (0 ≤ Mi, Vi ≤ 1,000,000)<br>다음 K개 줄에는 가방에 담을 수 있는 최대 무게 Ci가 주어진다. (1 ≤ Ci ≤ 100,000,000)<br>모든 숫자는 양의 정수이다.",
+            "output_description": "첫째 줄에 상덕이가 훔칠 수 있는 보석 가격의 합의 최댓값을 출력한다.",
+            "input_example": "2 1<br>5 10<br>100 100<br>11",
+            "output_example": "10",
+            "author": "baekjoon"
+        },
+        "solution": {
+            "cpp": "#include<iostream>\n#include<algorithm>\n#include<vector>\n#include<queue>\n#include<cstring>\n#include<string>\n#include<cctype>\n#include<cmath>\n\nusing namespace std;\n\nlong long n,k,m,v,c,sum;\npriority_queue<long long> pq;\nvector<pair<long long,long long>> jewelry;\nvector<long long> bag;\n\nbool cmp(pair<long long, long long> a, pair<long long, long long> b){\n    if(a.first==b.first) return a.second > b.second;\n    return a.first < b.first;\n}\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(nullptr);\n    cout.tie(nullptr);\n\n    cin >> n >> k;\n\n    for(long long i=0; i<n;i++){\n        cin >> m >> v;\n        jewelry.push_back({m,v});\n    }\n    for(long long i=0; i<k;i++){\n        cin >> c;\n        bag.push_back(c);\n    }\n    sort(jewelry.begin(),jewelry.end(),cmp);\n    sort(bag.begin(),bag.end());\n\n    long long j=0;\n    for(long long i=0; i< k;i++){\n        while(j<n && jewelry[j].first <= bag[i]) {\n            pq.push(jewelry[j].second);\n            j++;\n        }\n        if (!pq.empty()){\n            sum += pq.top(); pq.pop();\n        }\n    }\n\n    cout << sum;\n    return 0;\n}",
+            "java": "import java.io.BufferedReader;\nimport java.io.IOException;\nimport java.io.InputStreamReader;\nimport java.util.ArrayList;\nimport java.util.Collections;\nimport java.util.List;\nimport java.util.PriorityQueue;\nimport java.util.StringTokenizer;\n\npublic class Main {\n\n\tpublic static void main(String[] args) throws IOException{\n\t\t\n\t\tBufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n\t\tStringTokenizer st;\n\t\t\n\t\tst = new StringTokenizer(br.readLine());\n\t\t\n\t\tint N = Integer.parseInt(st.nextToken());\n\t\tint K = Integer.parseInt(st.nextToken());\n\t\t\n\t\tPriorityQueue<int[]> pQ = new PriorityQueue<int[]>((a,b)->{\n\t\t\tif(a[0]-b[0] == 0) {\n\t\t\t\treturn b[1]-a[1];\n\t\t\t}\n\t\t\treturn a[0]-b[0];\n\t\t});\n\t\t\t\n\t\tfor (int i = 0; i < N; i++) {\n\t\t\tst = new StringTokenizer(br.readLine());\n\t\t\t\n\t\t\tint M = Integer.parseInt(st.nextToken());\n\t\t\tint V = Integer.parseInt(st.nextToken());\n\t\t\t\n\t\t\tpQ.add(new int[] {M,V});\n\t\t\t\n\t\t}\n\t\t\n\t\tList<Integer> bag = new ArrayList<Integer>();\n\t\tfor (int i = 0; i < K; i++) {\n\t\t\tint C = Integer.parseInt(br.readLine());\n\t\t\tbag.add(C);\n\t\t}\n\n\t\tCollections.sort(bag);\n\t\t\n\t\tPriorityQueue<Integer> valueQ = new PriorityQueue<Integer>(Collections.reverseOrder());\n\t\tlong total = 0;\n\t\tfor (int i = 0; i < bag.size(); i++) {\n\t\t\tint weight = bag.get(i);\n\t\t\t\n\t\t\twhile (!pQ.isEmpty()) {\n\t\t\t\t \n\t\t\t\tif(pQ.peek()[0] <= weight) {\n\t\t\t\t\tvalueQ.add(pQ.poll()[1]);\n\t\t\t\t}else {\n\t\t\t\t\tbreak;\n\t\t\t\t}\n\t\t\t}\n\t\t\t\n\t\t\tif(valueQ.isEmpty()) continue;\n\t\t\ttotal += valueQ.poll();\n\t\t\t\n\t\t\t\n\t\t}\n\n\t\t\n\t\tSystem.out.println(total);\n\t\t\n\t\t\n\t}\n\n}",
+            "python": "import sys\nimport heapq as hq\ninput = sys.stdin.readline\n\nN, K = map(int, input().split())\ngem, bag = [], []\nfor _ in range(N):\n    gem.append(list(map(int, input().split())))\nfor _ in range(K):\n    bag.append(int(input()))\n\ngem.sort(key=lambda x:x[0])\nbag.sort()\nrest=[]\n\nidx,ans=0,0\nfor item in bag:\n    while idx<len(gem) and gem[idx][0]<=item:\n        hq.heappush(rest, -gem[idx][1])\n        idx+=1\n    if rest:\n        ans-=hq.heappop(rest)\n    \nprint(ans)"
+        }
+    },
+    {
+        "id": 22,
+        "header": {
+            "title": "고층 빌딩",
+            "rank": "platinum5",
+            "source": "baekjoon",
+            "problemId": "1328번",
+            "link": "https://www.acmicpc.net/problem/1328"
+        },
+        "content": {
+            "description": "상근이가 살고있는 동네에는 빌딩 N개가 한 줄로 세워져 있다.<br>모든 빌딩의 높이는 1보다 크거나 같고, N보다 작거나 같으며, 같은 높이를 가지는 빌딩은 없다.<br>상근이는 학교 가는 길에 가장 왼쪽에 서서 빌딩을 몇 개 볼 수 있는지 보았고,<br>집에 돌아오는 길에는 가장 오른쪽에 서서 빌딩을 몇 개 볼 수 있는지 보았다.<br>상근이는 가장 왼쪽과 오른쪽에서만 빌딩을 봤기 때문에, 빌딩이 어떤 순서로 위치해있는지는 알 수가 없다.<br>빌딩의 개수 N과 가장 왼쪽에서 봤을 때 보이는 빌딩의 수 L, 가장 오른쪽에서 봤을 때 보이는 빌딩의 수 R이 주어졌을 때,<br>가능한 빌딩 순서의 경우의 수를 구하는 프로그램을 작성하시오.<br>예를 들어, N = 5, L = 3, R = 2인 경우에 가능한 빌딩의 배치 중 하나는 1 3 5 2 4이다.",
+            "input_description": "첫째 줄에 빌딩의 개수 N과 가장 왼쪽에서 봤을 때 보이는 빌딩의 수 L, 가장 오른쪽에서 봤을 때 보이는 빌딩의 수 R이 주어진다.",
+            "output_description": "첫째 줄에 가능한 빌딩 순서의 경우의 수를 1000000007로 나눈 나머지를 출력한다.",
+            "input_example": "3 2 2",
+            "output_example": "2",
+            "author": "baekjoon"
+        },
+        "solution": {
+            "cpp": "#include <iostream>\n#include <queue>\n#include <cstring>\n#include <vector>\n#include <algorithm>\n#include <cmath>\n#include <map>\n#define mod 1000000007\n\nusing namespace std;\ntypedef long long int lli;\n\nint N, L, R;\nlli dp[101][101][101];\n\nint main(void){\n    cin.tie(NULL);\n    ios_base::sync_with_stdio(false);\n    cin>>N>>L>>R;\n    memset(dp, 0, sizeof(dp));\n    dp[1][1][1] = 1;\n    for(int n = 2; n<= N; n++){\n        for(int l = 0; l <= n; l++){\n            for(int r =0; r<= n; r++){\n                dp[n][l][r] = dp[n-1][l-1][r] + dp[n-1][l][r-1] + dp[n-1][l][r]*(n-2);\n                dp[n][l][r] %= mod;\n            }\n        }\n    }\n    cout<<dp[N][L][R]<<endl;\n}",
+            "java": "import java.io.BufferedReader;\nimport java.io.IOException;\nimport java.io.InputStreamReader;\nimport java.util.StringTokenizer;\n \npublic class Main {\n    static final int MOD = 1000000007;\n     \n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new   InputStreamReader(System.in));\n        StringTokenizer st = null;\n        st = new StringTokenizer(br.readLine());\n        int N = Integer.parseInt(st.nextToken());\n        int L = Integer.parseInt(st.nextToken());\n        int R = Integer.parseInt(st.nextToken());\n         \n        long[][][] DP = new long[101][101][101];\n        DP[1][1][1] = 1;\n        for(int i=2; i<=N; i++){\n            for(int j=1; j<=L; j++){\n                for(int k=1; k<=R; k++){\n                    DP[i][j][k] += DP[i-1][j][k]*(i-2); \n                    DP[i][j][k] += DP[i-1][j-1][k]; \n                    DP[i][j][k] += DP[i-1][j][k-1]; \n                    DP[i][j][k] %= MOD;\n                }\n            }\n        }\n         \n        System.out.println(DP[N][L][R]);\n    }\n}",
+            "python": "import sys\n\nn,l,r = map(int, sys.stdin.readline().split())\ndp = [[[(0) for i in range(n+1)] for ii in range(n+1)] for iii in range(n+1)]\nmod = 1000000007\n\nfor i in range(1,n+1):\n\tdp[i][i][1] = 1\n\tdp[i][1][i] = 1\n\t\nfor i in range(2,n+1):\n\tfor j in range(1,l+1):\n\t\tfor k in range(1,r+1):\n\t\t\tdp[i][j][k] = (dp[i-1][j][k]*(i-2) + dp[i-1][j-1][k] + dp[i-1][j][k-1])%mod\nprint(dp[n][l][r])"
+        }
+    },
+    {
+        "id": 23,
+        "header": {
+            "title": "성 지키기",
+            "rank": "bronze1",
+            "source": "baekjoon",
+            "problemId": "1236번",
+            "link": "https://www.acmicpc.net/problem/1236"
+        },
+        "content": {
+            "description": "영식이는 직사각형 모양의 성을 가지고 있다. 성의 1층은 몇 명의 경비원에 의해서 보호되고 있다.<br>영식이는 모든 행과 모든 열에 한 명 이상의 경비원이 있으면 좋겠다고 생각했다.<br>성의 크기와 경비원이 어디있는지 주어졌을 때, 몇 명의 경비원을 최소로 추가해야 영식이를 만족시키는지 구하는 프로그램을 작성하시오.",
+            "input_description": "첫째 줄에 성의 세로 크기 N과 가로 크기 M이 주어진다. N과 M은 50보다 작거나 같은 자연수이다.<br>둘째 줄부터 N개의 줄에는 성의 상태가 주어진다. 성의 상태는 .은 빈칸, X는 경비원이 있는 칸이다.",
+            "output_description": "첫째 줄에 추가해야 하는 경비원의 최솟값을 출력한다.",
+            "input_example": "4 4 <br>....<br>....<br>....<br>....",
+            "output_example": "4",
+            "author": "baekjoon"
+        },
+        "solution": {
+            "cpp": "#pragma GCC optimize (\"Ofast\")\n\n#define _CRT_SECURE_NO_WARNINGS\n#define _SILENCE_CXX17_C_HEADER_DEPRECATION_WARNING\n\n#include <bits/stdc++.h>\nusing namespace std;\n\ntypedef long long ll;\n\nchar castle[50][50];\n\nint main()\n{\n#ifndef ONLINE_JUDGE\n\tfreopen(\"input.txt\", \"r\", stdin);\n#endif\n\n\tios_base::sync_with_stdio(false);\n\tcin.tie(nullptr), cout.tie(nullptr);\n\n\tint n, m;\n\tcin >> n >> m;\n\t\n\tint empty_row = n, empty_col = m;\n\tfor (int i = 0; i < n; ++i) {\n\t\tbool guard = false;\n\t\tfor (int j = 0; j < m; ++j) {\n\t\t\tcin >> castle[i][j];\n\t\t\tif (castle[i][j] == 'X')\n\t\t\t\tguard = true;\n\t\t}\n\t\tif (guard) --empty_row;\n\t}\n\n\tfor (int j = 0; j < m; ++j) {\n\t\tbool guard = false;\n\t\tfor (int i = 0; i < n; ++i) {\n\t\t\tif (castle[i][j] == 'X') {\n\t\t\t\tguard = true;\n\t\t\t\tbreak;\n\t\t\t}\n\t\t}\n\t\tif (guard) --empty_col;\n\t}\n\n\tcout << max(empty_row, empty_col) << '\n';\n\n\treturn 0;\n}",
+            "java": "import java.util.Scanner;\n\npublic class Main {\n\t\n\tpublic static void main(String[] args) {\n\t\t\n\t\tScanner sc = new Scanner(System.in);\n\t\t\n\t\tString[] input = sc.nextLine().split(\" \");\n\t\tint n = Integer.parseInt(input[0]);\n\t\tint m = Integer.parseInt(input[1]);\n\t\t\n\t\t\n\t\tchar[][] data = new char[50][50];\n\t\t\n\t\tint[] row = new int[50];\n\t\tint[] column = new int[50];\n\t\t\n\t\tfor(int i=0; i<n; i++) {\n\t\t\tdata[i] = sc.nextLine().toCharArray();\n\t\t\t\n\t\t\tfor(int j=0; j<m; j++) {\n\t\t\t\tif(data[i][j] == 'X'){\n\t\t\t\t\trow[i] = 1;\n\t\t\t\t\tcolumn[j] = 1;\n\t\t\t\t\t\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\t\n\t\t\n\t\tint  row_count = 0;\n\t\tfor(int i=0; i<n; i++) {\n\t\t\tif(row[i] == 0) {\n\t\t\t\trow_count ++;\n\t\t\t}\n\t\t}\n\t\t\n\t\tint column_count = 0;\n\t\tfor(int j=0; j<m; j++) {\n\t\t\tif(column[j]== 0) {\n\t\t\t\tcolumn_count++;\n\t\t\t}\n\t\t}\n\t\t\n\t\tSystem.out.println(Math.max(row_count, column_count));\n\t\t\n\t\t\n\t\t\n\t\t\n\t}\n\n}",
+            "python": "m, n = map(int, input().split())\nrow = [False]*m\ncol = [False]*n\n\nfor i in range(m):\n    guard = input()\n    if 'X' in guard:\n        row[i] = True\n    for j in range(n):s\n        if guard[j] == 'X':\n            col[j] = True\n\nprint(max([m-sum(row), n-sum(col)]))\n\n"
+        }
+    },
+    {
+        "id": 24,
+        "header": {
+            "title": "가운데를 말해요",
+            "rank": "gold2",
+            "source": "baekjoon",
+            "problemId": "1655번",
+            "link": "https://www.acmicpc.net/problem/1655"
+        },
+        "content": {
+            "description": "백준이는 동생에게 \"가운데를 말해요\" 게임을 가르쳐주고 있다.<br>백준이가 정수를 하나씩 외칠때마다 동생은 지금까지 백준이가 말한 수 중에서 중간값을 말해야 한다.<br>만약, 그동안 백준이가 외친 수의 개수가 짝수개라면 중간에 있는 두 수 중에서 작은 수를 말해야 한다.<br>예를 들어 백준이가 동생에게 1, 5, 2, 10, -99, 7, 5를 순서대로 외쳤다고 하면, 동생은 1, 1, 2, 2, 2, 2, 5를 차례대로 말해야 한다.<br>백준이가 외치는 수가 주어졌을 때, 동생이 말해야 하는 수를 구하는 프로그램을 작성하시오.",
+            "input_description": "첫째 줄에는 백준이가 외치는 정수의 개수 N이 주어진다. N은 1보다 크거나 같고, 100,000보다 작거나 같은 자연수이다.<br>그 다음 N줄에 걸쳐서 백준이가 외치는 정수가 차례대로 주어진다. 정수는 -10,000보다 크거나 같고, 10,000보다 작거나 같다.",
+            "output_description": "한 줄에 하나씩 N줄에 걸쳐 백준이의 동생이 말해야 하는 수를 순서대로 출력한다.",
+            "input_example": "7<br>1<br>5<br>2<br>10<br>-99<br>7<br>5",
+            "output_example": "1<br>1<br>2<br>2<br>2<br>2<br>5",
+            "author": "baekjoon"
+        },
+        "solution": {
+            "cpp": "#include<iostream>\n#include<algorithm>\n#include<queue>\n#include<vector>\nusing namespace std;\n\nint N,num;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(nullptr);\n    cout.tie(nullptr);\n\n    cin >> N;\n\n    priority_queue<int> max_pq;\n    priority_queue<int,vector<int>,greater<>>  min_pq;\n\n    while (N--) {\n        cin >> num;\n        if (max_pq.size() == min_pq.size()) {\n            max_pq.push(num);\n        }\n        else {\n            min_pq.push(num);\n        }\n        if (!max_pq.empty()&&!min_pq.empty()&&max_pq.top()>min_pq.top()) {\n            int max_val, min_val;\n            max_val = max_pq.top();\n            min_val = min_pq.top();\n            max_pq.pop();\n            min_pq.pop();\n            max_pq.push(min_val);\n            min_pq.push(max_val);\n        }\n        cout << max_pq.top() << '\n';\n    }\n}\n",
+            "java": "import java.io.BufferedReader;\nimport java.io.IOException;\nimport java.io.InputStreamReader;\nimport java.util.*;\n\npublic class Backjoon1655 {\n    private static final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n\n    public static void main(String[] args) throws IOException {\n        int n = Integer.parseInt(br.readLine());\n        StringBuilder sb = new StringBuilder();\n\n        PriorityQueue<Integer> minHeap = new PriorityQueue<>((o1, o2) -> o1 - o2);\n        PriorityQueue<Integer> maxHeap = new PriorityQueue<>((o1, o2) -> o2 - o1);\n\n        for(int i = 0 ; i < n; i++){\n            int num = Integer.parseInt(br.readLine());\n\n            if(minHeap.size() == maxHeap.size()) maxHeap.offer(num);\n            else minHeap.offer(num);\n\n            if(!minHeap.isEmpty() && !maxHeap.isEmpty())\n                if(minHeap.peek() < maxHeap.peek()){\n                    int tmp = minHeap.poll();\n                    minHeap.offer(maxHeap.poll());\n                    maxHeap.offer(tmp);\n                }\n\n            sb.append(maxHeap.peek() + \"\n\");\n        }\n        System.out.println(sb);\n    }\n}",
+            "python": "import heapq\nfrom inspect import stack\nimport sys\ninput = sys.stdin.readline\n\nn = int(input())\nleft_h, right_h = [], []\n\nfor i in range(n):\n    x = int(input())\n\n    if len(left_h) == len(right_h):\n        heapq.heappush(left_h, -x)\n    else:\n        heapq.heappush(right_h, x)\n\n    if right_h and right_h[0] < -left_h[0]:\n        lv = heapq.heappop(left_h)\n        rv = heapq.heappop(right_h)\n        heapq.heappush(left_h, -rv)\n        heapq.heappush(right_h, -lv)\n\n    print(-left_h[0])"
+        }
+    },
+    {
+        "id": 25,
+        "header": {
+            "title": "기타리스트",
+            "rank": "silver1",
+            "source": "baekjoon",
+            "problemId": "1495번",
+            "link": "https://www.acmicpc.net/problem/1495"
+        },
+        "content": {
+            "description": "Day Of Mourning의 기타리스트 강토는 다가오는 공연에서 연주할 N개의 곡을 연주하고 있다.<br>지금까지 공연과는 다른 공연을 보여주기 위해서 이번 공연에서는 매번 곡이 시작하기 전에 볼륨을 바꾸고 연주하려고 한다.<br>먼저, 공연이 시작하기 전에 각각의 곡이 시작하기 전에 바꿀 수 있는 볼륨의 리스트를 만들었다.<br>이 리스트를 V라고 했을 때, V[i]는 i번째 곡을 연주하기 전에 바꿀 수 있는 볼륨을 의미한다.<br>항상 리스트에 적힌 차이로만 볼륨을 바꿀 수 있다. 즉, 현재 볼륨이 P이고 지금 i번째 곡을 연주하기 전이라면,<br>i번 곡은 P+V[i]나 P-V[i] 로 연주해야 한다. 하지만, 0보다 작은 값으로 볼륨을 바꾸거나, M보다 큰 값으로 볼륨을 바꿀 수 없다.<br>곡의 개수 N과 시작 볼륨 S, 그리고 M이 주어졌을 때,<br>마지막 곡을 연주할 수 있는 볼륨 중 최댓값을 구하는 프로그램을 작성하시오. 모든 곡은 리스트에 적힌 순서대로 연주해야 한다.",
+            "input_description": "첫째 줄에 N, S, M이 주어진다. (1 ≤ N ≤ 50, 1 ≤ M ≤ 1,000, 0 ≤ S ≤ M)<br>둘째 줄에는 각 곡이 시작하기 전에 줄 수 있는 볼륨의 차이가 주어진다. 이 값은 1보다 크거나 같고, M보다 작거나 같다.",
+            "output_description": "첫째 줄에 가능한 마지막 곡의 볼륨 중 최댓값을 출력한다.<br>만약 마지막 곡을 연주할 수 없다면 (중간에 볼륨 조절을 할 수 없다면) -1을 출력한다.",
+            "input_example": "3 5 10<br>5 3 7",
+            "output_example": "10",
+            "author": "baekjoon"
+        },
+        "solution": {
+            "cpp": "#include <iostream>\n#include <cstring>\n#include <algorithm>\n\n#define MAX_NUM 101\n#define MAX_VOLUME 1001 \n\nusing namespace std;\n\nint v[MAX_NUM];\nint dp[MAX_NUM][MAX_VOLUME];\n\nint main() {\n    int n, s, m;\n    int max_val = -1;\n\n    fill_n(v, MAX_NUM, 0);\n    \n    for (int i = 0; i < MAX_NUM; i++) {\n        memset(dp[i], -1, sizeof(int) * MAX_VOLUME);\n    }\n\n    cin >> n >> s >> m;\n\n    for (int i = 1; i <= n; i++) {\n        cin >> v[i];\n    }\n\n    if (s + v[1] <= m) { dp[1][s + v[1]] = s + v[1]; }\n    if (s - v[1] >= 0) { dp[1][s - v[1]] = s - v[1]; }\n   \n    for (int i = 1; i <= n-1; i++) {\n        for (int j = 0; j <= m; j++) {\n                if (dp[i][j] != -1) {\n                    if (dp[i][j] + v[i + 1] <= m) { dp[i + 1][dp[i][j] + v[i + 1]] = max(dp[i + 1][dp[i][j] + v[i + 1]], dp[i][j] + v[i + 1]); }\n                    if (dp[i][j] - v[i + 1] >= 0) { dp[i + 1][dp[i][j] - v[i + 1]] = max(dp[i + 1][dp[i][j] - v[i + 1]], dp[i][j] - v[i + 1]); }\n                }\n        }\n    }\n\n    for (int i = 0; i <= m; i++) {\n        if (max_val < dp[n][i]) { max_val = dp[n][i]; }\n    }\n\n    cout << max_val;\n\n}",
+            "java": "import java.io.BufferedReader;\nimport java.io.IOException;\nimport java.io.InputStreamReader;\nimport java.util.ArrayList;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] inputs = br.readLine().split(\" \");\n        int N = Integer.parseInt(inputs[0]);\n        int S = Integer.parseInt(inputs[1]);\n        int M = Integer.parseInt(inputs[2]);\n\n        int[] diff = new int[N+1];\n        inputs = br.readLine().split(\" \");\n        for (int i = 1; i <= N; i++) {\n            diff[i] = Integer.parseInt(inputs[i-1]);\n        }\n\n        int[] volume = new int[M + 1];\n        for(int i=0; i<=M; i++){\n            volume[i] = -1;\n        }\n        volume[S] = 0;\n\n        ArrayList<Integer> list = new ArrayList<>();\n\n        for(int i=1; i<=N; i++){\n            list.clear();\n            for(int j=0; j<=M; j++) {\n                if(volume[j] == i-1) {\n                    if (0 <= j - diff[i] && j - diff[i] <= M) {\n                        list.add(j - diff[i]);\n                    }\n                    if (0 <= j + diff[i] && j + diff[i] <= M) {\n                        list.add(j + diff[i]);\n                    }\n                }\n            }\n            for (int v : list) {\n                volume[v] = i;\n            }\n        }\n\n        for(int i=M; i>=0; i--){\n            if(volume[i] == N){\n                System.out.println(i);\n                return;\n            }\n        }\n        System.out.println(-1);\n    }\n}",
+            "python": "N, S, M = map(int, input().split())\nV = list(map(int, input().split()))\ndp = [[0]*(M+1) for _ in range(N+1)]\ndp[0][S] = 1\n\nfor i in range(1,N+1):\n    for j in range(M+1):\n        if dp[i-1][j]>0:\n            if j + V[i-1]<=M:\n                dp[i][j+V[i-1]] = 1\n            if j - V[i-1]>=0:\n                dp[i][j-V[i-1]] = 1\n \nresult = -1\nfor i in range(M,-1,-1):\n    if dp[N][i]==1:\n        result = i\n        break\n \nprint(result)"
         }
     }
 ]
