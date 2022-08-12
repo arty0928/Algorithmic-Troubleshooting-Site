@@ -16,6 +16,8 @@ router.get('/:id?', (req, res, next) => {
         <head>
             <title></title>
             <link href="/css/bootstrap.min.css" rel="stylesheet">
+            <link href="https://webfontworld.github.io/sunn/SUIT.css" rel="stylesheet">
+            <style>*{font-family: SUIT;}</style>
         </head>
         <body>
             <header>
@@ -47,7 +49,7 @@ router.get('/:id?', (req, res, next) => {
                 </header>
                 </div>
             </header>
-            
+
             <section>
                 <div id="root">${ReactDOMServer.renderToString(React.createElement(StaticRouter, {location: req.url}, 
                     React.createElement(ProblemBoard)))}</div>

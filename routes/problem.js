@@ -49,9 +49,10 @@ router.get('/:id/solution', (req, res) => {
                     if (val.status === "error") res.send(val.content);
                     else {
                         const problem = val.content;
-                        data = data.replace(/{{problem_number}}/g, `${problem.header.source} ${problem.header.problemId}`)
-                                .replace(/{{link_problem}}/g, `/problem/${req.params.id}`)
-                                .replace(/{{link_solution}}/g, `/problem/${req.params.id}/solution`);
+                        data = data.replace(/{{problem_title}}/g, `${problem.header.title}`)
+                                   .replace(/{{problem_number}}/g, `${problem.header.source} ${problem.header.problemId}`)
+                                   .replace(/{{link_problem}}/g, `/problem/${req.params.id}`)
+                                   .replace(/{{link_solution}}/g, `/problem/${req.params.id}/solution`);
                         res.send(data);
                     }
                 });

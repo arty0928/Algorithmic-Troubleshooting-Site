@@ -8,7 +8,8 @@ router.get("/", (req, res)=>{
             console.log(err);
             res.send('cannot get template file');
         } else {
-            data = data.replace(/{{title}}/g, ``)
+            data = data.replace(/{{head_title}}/g, `등록하기`)
+                       .replace(/{{title}}/g, ``)
                        .replace(/{{rank}}/g, ``)
                        .replace(/{{source}}/g, ``)
                        .replace(/{{id}}/g, ``)

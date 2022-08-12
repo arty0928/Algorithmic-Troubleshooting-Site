@@ -33,7 +33,8 @@ router.get("/", (req, res)=>{
                     if (val.status === "error") res.send(val.content);
                     else {
                         const problem = val.content;
-                        data = data.replace(/{{title}}/g, problem.header.title)
+                        data = data.replace(/{{head_title}}/g, `수정하기`)
+                                   .replace(/{{title}}/g, problem.header.title)
                                    .replace(/{{rank}}/g, problem.header.rank)
                                    .replace(/{{source}}/g, problem.header.source)
                                    .replace(/{{id}}/g, problem.header.problemId)
