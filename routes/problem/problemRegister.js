@@ -23,7 +23,6 @@ router.get("/", (req, res)=>{
                        .replace(/{{solution_cpp}}/g, ``)
                        .replace(/{{solution_java}}/g, ``)
                        .replace(/{{solution_python}}/g, ``)
-                       .replace(/{{solution_code}}/g, ``)
                        .replace(/{{script}}/g, ``)
             res.send(data);
         }
