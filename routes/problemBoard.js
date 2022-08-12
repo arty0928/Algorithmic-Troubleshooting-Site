@@ -14,10 +14,10 @@ router.get('/:id?', (req, res, next) => {
     <!DOCTYPE html>
     <html>
         <head>
-            <title></title>
+            <title>문제 게시판</title>
             <link href="/css/bootstrap.min.css" rel="stylesheet">
             <link href="https://webfontworld.github.io/sunn/SUIT.css" rel="stylesheet">
-            <style>*{font-family: SUIT;}</style>
+            <style>header{font-family: SUIT;}</style>
         </head>
         <body>
             <header>
