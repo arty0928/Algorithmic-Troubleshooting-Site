@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/problem/solution.css">
+    <link rel="stylesheet" type="text/css" href="/css/font.css">
+    <style>
+        @font-face{
+                font-family: 'DalseoHealingBold';
+                src: url('/font/DalseoHealingBold.ttf');
+        }
+        .editor {
+            border-radius: 6px;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+            font-family: 'Source Code Pro', monospace;
+            font-size: 14px;
+            font-weight: 400;
+            height: 340px;
+            letter-spacing: normal;
+            line-height: 20px;
+            padding: 10px;
+            tab-size: 4;
+        }
+        .editor_js {
+            margin-bottom: 20px;
+        }
+        .editor_title{
+            display: flex;
+            justify-content: center;
+            font-family: 'DalseoHealingBold';
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="b-example-divider"></div>
+        
+        <div class="container">
+            <header
+                class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+                <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+                        
+                        <img src="/img/logo1.PNG">
+                    </svg>
+                </a>
+        
+                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="/" class="nav-link px-2 link-secondary">Home</a></li>
+                    <li><a href="/problemBoard" class="nav-link px-2 link-dark">문제풀기</a></li>
+                    <li><a href="/outdoor" class="nav-link px-2 link-dark">대외활동</a></li>
+                    <!-- <li><a href="#" class="nav-link px-2 link-dark">대회</a></li> -->
+                    <!-- <li><a href="#" class="nav-link px-2 link-dark">About</a></li> -->
+                </ul>
+        
+                <div class="col-md-3 text-end">
+                    <button type="button" class="btn btn-outline-primary me-2">
+                        
+                        <a href="/login.html">
+                            Login
+                        </a>
+
+                        </button>
+                    <button type="button" class="btn btn-primary">
+                    
+                        <a class="btn-primary" href="/signup.html">
+                            Sign-up
+                        </a>
+
+                        </button>
+                        
+                </div>
+            </header>
+        </div>
+    </header>
+    
+
+    <nav class="navigation">
+        <ul class="navigation-menu">
+            <li id="problem_number"><a href="{{link_problem}}">{{problem_number}}</a></li>
+            <li id="example_solution"><a href="{{link_solution}}">예시 풀이</a></li>
+            <li id="back"><a href="/problemBoard">목록으로</a></li>
+        </ul>
+    </nav>
+
+
+    <section class="section">
+        <input type="radio" name="tabmenu" id="tab1" checked>
+        <label for="tab1">c++</label>
+        <input type="radio" name="tabmenu" id="tab2" checked>
+        <label for="tab2">java</label>
+        <input type="radio" name="tabmenu" id="tab3" checked>
+        <label for="tab3">python</label>
+
+        <div class="editor editor_cpp language-cpp conbox con1"></div>
+        <div class="editor editor_java language-java conbox con2"></div>
+        <div class="editor editor_python language-python conbox con3"></div>
+    </section>
+    <div class="container">
+        <h2 class="editor_title">연습장</h2>
+        <div class="editor editor_js language-javascript">
+    </div>
+    </div>
+
+
+    <footer>
+        <!-- 메인 화면의 푸터를 그대로 사용 -->
+    </footer>
+    <link rel="stylesheet" href="/css/atom-one-dark.min.css">
+    <script src="/highlight.min.js"></script>
+    <script type="module">
+        import {CodeJar} from '/codejar.js';
+        const highlight = editor => {
+            hljs.highlightElement(editor);
+        }
+        const options = {tab: ' '.repeat(4), spellcheck: false};
+        const jar_js = CodeJar(document.querySelector('.editor_js'), hljs.highlightElement, options);
+        const jar_cpp = CodeJar(document.querySelector('.editor_cpp'), hljs.highlightElement, options);
+        const jar_java = CodeJar(document.querySelector('.editor_java'), hljs.highlightElement, options);
+        const jar_python = CodeJar(document.querySelector('.editor_python'), hljs.highlightElement, options);
+        const link = document.location.href.split('/');
+        const id = link[link.length-2];
+        fetch(`/api/problem/${id}`).then(res=>res.json()).then(val=>{
+            jar_js.updateCode(val.content.solution.code);
+            jar_cpp.updateCode(val.content.solution.cpp);
+            jar_java.updateCode(val.content.solution.java);
+            jar_python.updateCode(val.content.solution.python);
+        }).catch(console.err);
+        
+        hljs.configure({ignoreUnescapedHTML: true});
+    </script>
+</body>
+</html>
+
+
+

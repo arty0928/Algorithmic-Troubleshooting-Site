@@ -1,0 +1,87 @@
+html,
+body {
+    height: 100%;
+}
+
+/**
+body {
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #f5f5f5;
+}
+**/
+.sign-up-table{
+    border-radius: 7px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    background-color: #DCEBF1;
+    width: 500px;
+    height: 350px;
+}
+.signup-center{
+
+    margin-top: 100px;
+    margin-left: 580px;
+    margin-right: 50%;
+    margin-bottom: 400px;
+}
+
+.table{
+    text-align: center;
+}
+
+.button_space{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.signup{
+    text-align: center;
+}
+
+.title {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.id, .pw {
+    margin-left: 100px;
+}
+.Login-button{
+    margin-top: 10px;
+    width: 200px;
+    height: 40px;
+    border-radius: 6px;
+    border-color: #3579f6;
+    background-color: #3579f6;
+    color: white;
+}
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+.form-signin .checkbox {
+    font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+} 
