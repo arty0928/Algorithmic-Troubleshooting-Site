@@ -1,110 +1,82 @@
 <!DOCTYPE html>
 <html>
-<head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>알고리즘 포럼</title>
-
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/index.css">
-
-</head>
-<body>
-
-<div class="container">
-    <header>
-        <div class="b-example-divider"></div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>알고리즘 포럼</title>
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/css/index.css">
+    </head>
+    <body>
+        <header>
+            <div class="b-example-divider"></div>  
+            <div class="container">
+                <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+                    <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+                            <img src="/img/logo1.PNG">
+                        </svg>
+                    </a>
+                    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                        <li><a href="/" class="nav-link px-2 link-secondary">Home</a></li>
+                        <li><a href="/problemBoard" class="nav-link px-2 link-dark">문제풀기</a></li>
+                        <li><a href="/outdoor" class="nav-link px-2 link-dark">대외활동</a></li>
+                    </ul>
+                    <div class="col-md-3 text-end">
+                        <button type="button" class="btn btn-outline-primary me-2">   
+                            <a href="/login.html">
+                                Login
+                            </a>
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                            <a class="btn-primary" href="/signup.html">
+                                Sign-up
+                            </a>
+                        </button>
+                    </div>
+                </header>
+            </div>
+        </header>
         
         <div class="container">
-            <header
-                class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-                <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
-                        
-                        <img src="/img/logo1.PNG">
-                    </svg>
-                </a>
-        
-                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="/" class="nav-link px-2 link-secondary">Home</a></li>
-                    <li><a href="/problemBoard" class="nav-link px-2 link-dark">문제풀기</a></li>
-                    <li><a href="/outdoor" class="nav-link px-2 link-dark">대외활동</a></li>
-                    <!-- <li><a href="#" class="nav-link px-2 link-dark">대회</a></li> -->
-                    <!-- <li><a href="#" class="nav-link px-2 link-dark">About</a></li> -->
-                </ul>
-        
-                <div class="col-md-3 text-end">
-                    <button type="button" class="btn btn-outline-primary me-2">
-                        
-                        <a href="/login.html">
-                            Login
-                        </a>
+            <main role="main" id="main">
+                <article class="one">
+                    <a href="#">
+                        <img src="/img/image1.png" alt="Question">
+                        <h2>대표 문제</h2>
+                    </a>
+                </article>
+                
+                <article class="two">
+                    <a href="#">
+                        <img src="/img/image2.png" alt="Algorithmic Study">
+                        <h2>알고리즘 스터디</h2>
+                    </a>
+                </article>
+                
+                <article class="three">
+                    <a href="#">
+                        <img src="/img/image3.png" alt="Programming contest">
+                        <h2>프로그래밍 대회</h2>
+                    </a>
+                </article>
+                
+                <article class="one">
+                    <a href="#">
+                        <img src="/img/image4.png" alt="IT-related activities">
+                        <h2>IT 관련 활동</h2>
+                    </a>
+                </article>        
+            </main>
 
-                        </button>
-                    <button type="button" class="btn btn-primary">
-                    
-                        <a class="btn-primary" href="/signup.html">
-                            Sign-up
-                        </a>
-
-                        </button>
-                        
+            <footer id="footer">
+                <div class="copyright">
+                    <p>건국대학교 ESG</p>
                 </div>
-            </header>
+                <div class="address">
+                    <p>엘리스 프로젝트 7조</p>
+                </div>
+            </footer>
         </div>
-    </header>
-    <main role="main" id="main">
-
-        <article class="one">
-            <a href="#">
-                <img src="/img/image1.png" alt="Question">
-                <h2>대표 문제</h2>
-            </a>
-        </article>
-        
-        <article class="two">
-            <a href="#">
-                <img src="/img/image2.png" alt="Algorithmic Study">
-                <h2>알고리즘 스터디</h2>
-            </a>
-        </article>
-        
-        <article class="three">
-            <a href="#">
-                <img src="/img/image3.png" alt="Programming contest">
-                <h2>프로그래밍 대회</h2>
-            </a>
-        </article>
-        
-        <article class="one">
-            <a href="#">
-                <img src="/img/image4.png" alt="IT-related activities
-
-                ">
-                <h2>IT 관련 활동</h2>
-            </a>
-        </article>
-        
-    </main>
-
-
-    <footer id="footer">
-
-        <div class="copyright">
-            <p>건국대학교 ESG
-            </p>
-
-        </div>
-
-        <div class="address">
-            <p>엘리스 프로젝트 7조</p>
-        </div>
-
-    </footer>
-
-
-</div>
-
-</body>
+    </body>
 </html>
