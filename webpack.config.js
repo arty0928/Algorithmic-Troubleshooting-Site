@@ -19,7 +19,7 @@ function createConfig(type, path, entry) {
                 export: 'default'
             }
         },
-        mode: 'development' // development, production
+        mode: 'production' // development, production
     };
 }
 
